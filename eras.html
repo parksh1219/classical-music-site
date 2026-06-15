@@ -1,0 +1,243 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>시대 · 클래식 음악 감상과 공부</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+  <nav>
+    <a href="index.html" class="brand">클래식 감상 &amp; 공부</a>
+    <ul>
+      <li><a href="index.html">홈</a></li>
+      <li><a href="listen.html">감상</a></li>
+      <li><a href="study.html">공부</a></li>
+      <li><a href="eras.html" class="active">시대</a></li>
+      <li><a href="composers.html">작곡가</a></li>
+      <li><a href="travel.html">여행</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <div class="page-header">
+    <h1>시대로 보는 클래식</h1>
+    <p>중세부터 근현대까지 7개 시대. 각 시대가 왜 바뀌었는지를 중심으로 읽고, 들어볼 곡 링크로 바로 감상할 수 있습니다.</p>
+  </div>
+
+  <div class="container">
+    <h2 class="section-title">시대 타임라인</h2>
+    <ol class="era-list">
+
+      <!-- 중세 -->
+      <li class="era-card" id="era-medieval">
+        <div class="era-period">중세<br>~1400</div>
+        <div>
+          <h2><a class="wiki-link" href="https://ko.wikipedia.org/wiki/%EC%A4%91%EC%84%B8_%EC%9D%8C%EC%95%85" target="_blank" rel="noopener" title="위키백과 — 중세 음악">중세 (∼1400)</a></h2>
+          <p class="era-def">유럽 가톨릭 교회를 중심으로 발전한 음악. 단선율 성가(그레고리안 찬트)에서 출발해 여러 성부가 겹치는 초기 다성음악으로 발전한 시기.</p>
+          <p class="era-features">
+            <strong>이전 시대와의 차이:</strong> 음악이 구술 전통으로 전해졌으나, 가톨릭 교회가 전례를 통일하면서 악보 표기 체계와 함께 성가가 체계화되었다. 10~12세기에는 단선율 위에 새로운 선율을 추가(오르가눔)하는 실험이 시작되어 다성음악의 씨앗이 되었다.<br>
+            <strong>대표 형식:</strong> 그레고리안 찬트(단선율 성가), 오르가눔(2~4성부 다성음악), 이소리듬 미사<br>
+            <strong>대표 작곡가:</strong> 힐데가르트 폰 빙엔(1098~1179), 기욤 드 마쇼(c.1300~1377), 레오냉, 페로탱
+          </p>
+          <p class="era-links">
+            들어볼 곡: <a href="composers.html#composer-hildegard">Hildegard — O Euchari</a>
+            · 작곡가: <a href="composers.html#composer-hildegard">힐데가르트</a>
+          </p>
+        </div>
+      </li>
+
+      <!-- 르네상스 -->
+      <li class="era-card" id="era-renaissance">
+        <div class="era-period">르네상스<br>1400~1600</div>
+        <div>
+          <h2><a class="wiki-link" href="https://ko.wikipedia.org/wiki/%EB%A5%B4%EB%84%A4%EC%83%81%EC%8A%A4_%EC%9D%8C%EC%95%85" target="_blank" rel="noopener" title="위키백과 — 르네상스 음악">르네상스 (1400~1600)</a></h2>
+          <p class="era-def">'재탄생'을 뜻하는 시기. 음악은 인간 중심적 감각을 되찾으며 여러 선율이 아름답게 어우러지는 다성음악(폴리포니)의 정점에 달했다.</p>
+          <p class="era-features">
+            <strong>이전 시대와의 차이:</strong> 중세 음악이 교회 전례에 종속된 단선율 위주였다면, 르네상스는 인문주의의 영향으로 음악이 인간 감성 표현의 예술로 격상되었다. 4~6성부가 서로 뒤쫓으며 짜 나가는 모방 대위법이 정교해졌고, 세속 음악(마드리갈·샹송)도 폭발적으로 성장했다.<br>
+            <strong>대표 형식:</strong> 미사(Mass), 모테트(Motet), 마드리갈(Madrigal), 샹송(Chanson)<br>
+            <strong>대표 작곡가:</strong> 조반니 다 팔레스트리나(1525~1594), 오를란도 디 라소(1532~1594)
+          </p>
+          <p class="era-links">
+            들어볼 곡: <a href="composers.html#composer-palestrina">Palestrina — Missa Papae Marcelli</a>
+            · 작곡가: <a href="composers.html#composer-palestrina">팔레스트리나</a>
+            · <a href="study.html#concepts">이론 개념 — 모방 대위법</a>
+          </p>
+        </div>
+      </li>
+
+      <!-- 바로크 -->
+      <li class="era-card" id="era-baroque">
+        <div class="era-period">바로크<br>1600~1750</div>
+        <div>
+          <h2><a class="wiki-link" href="https://ko.wikipedia.org/wiki/%EB%B0%94%EB%A1%9C%ED%81%AC_%EC%9D%8C%EC%95%85" target="_blank" rel="noopener" title="위키백과 — 바로크 음악">바로크 (1600~1750)</a></h2>
+          <p class="era-def">장식적이고 극적인 표현을 중시한 시기. 통주저음(바소 콘티누오)이 음악의 골격을 이루고, 오페라·협주곡·푸가가 탄생했다.</p>
+          <p class="era-features">
+            <strong>이전 시대와의 차이:</strong> 르네상스 다성음악이 균등한 여러 성부의 조화를 추구했다면, 바로크는 베이스 라인 위에 화음을 쌓는 수직적 화성 구조로 전환되었다. 감정의 극적 대비(테라스 다이내믹스 — 갑작스런 강·약 변화)가 중시되었고, 기악 음악이 성악과 대등한 지위를 얻었다.<br>
+            <strong>대표 형식:</strong> 통주저음(Basso Continuo), 협주곡(Concerto), 오페라, 푸가(Fugue), 칸타타, 오라토리오<br>
+            <strong>대표 작곡가:</strong> J.S. 바흐(1685~1750), G.F. 헨델(1685~1759), 안토니오 비발디(1678~1741)
+          </p>
+          <p class="era-links">
+            들어볼 곡: <a href="listen.html#bach-air-bwv1068">Bach — Air on the G String (BWV 1068)</a>
+            · 작곡가: <a href="composers.html#composer-bach">바흐</a> · <a href="composers.html#composer-vivaldi">비발디</a> · <a href="composers.html#composer-handel">헨델</a>
+            · <a href="study.html#concept-fugue">이론 — 푸가</a>
+          </p>
+        </div>
+      </li>
+
+      <!-- 고전 -->
+      <li class="era-card" id="era-classical">
+        <div class="era-period">고전<br>1750~1820</div>
+        <div>
+          <h2><a class="wiki-link" href="https://ko.wikipedia.org/wiki/%EA%B3%A0%EC%A0%84%EC%A3%BC%EC%9D%98_%EC%9D%8C%EC%95%85" target="_blank" rel="noopener" title="위키백과 — 고전주의 음악">고전 (1750~1820)</a></h2>
+          <p class="era-def">감정의 과잉을 절제하고 명료함·균형·형식미를 추구한 시기. 소나타 형식과 교향곡이 확립되었으며 "빈 고전파"가 중심이 되었다.</p>
+          <p class="era-features">
+            <strong>이전 시대와의 차이:</strong> 바로크 음악이 복잡한 대위법과 화려한 장식음을 특징으로 했다면, 고전 시대는 계몽주의의 영향으로 '단순하고 합리적인 아름다움'을 추구했다. 소나타 형식이라는 논리적 3단 구조가 음악의 표준 언어가 되었다.<br>
+            <strong>대표 형식:</strong> 소나타 형식(Sonata Form), 교향곡(Symphony, 4악장), 현악사중주(String Quartet), 피아노 소나타<br>
+            <strong>대표 작곡가:</strong> 요제프 하이든(1732~1809), W.A. 모차르트(1756~1791), 루트비히 판 베토벤(1770~1827)
+          </p>
+          <p class="era-links">
+            들어볼 곡: <a href="listen.html#beethoven-symphony-no5-op67">Beethoven — Symphony No.5 (Op.67)</a>
+            · 작곡가: <a href="composers.html#composer-haydn">하이든</a> · <a href="composers.html#composer-mozart">모차르트</a> · <a href="composers.html#composer-beethoven">베토벤</a>
+            · <a href="study.html#concept-sonata-form">이론 — 소나타 형식</a>
+          </p>
+        </div>
+      </li>
+
+      <!-- 낭만 -->
+      <li class="era-card" id="era-romantic">
+        <div class="era-period">낭만<br>1820~1900</div>
+        <div>
+          <h2><a class="wiki-link" href="https://ko.wikipedia.org/wiki/%EB%82%AD%EB%A7%8C%EC%A3%BC%EC%9D%98_%EC%9D%8C%EC%95%85" target="_blank" rel="noopener" title="위키백과 — 낭만주의 음악">낭만 (1820~1900)</a></h2>
+          <p class="era-def">형식의 균형보다 개인의 감정·상상력·이야기를 음악으로 표현하는 데 집중한 시기. 오케스트라가 거대해지고 표제음악(이야기 있는 기악곡)이 등장했다.</p>
+          <p class="era-features">
+            <strong>이전 시대와의 차이:</strong> 고전 시대가 이성과 균형을 중시했다면, 낭만 시대는 산업혁명 이후 급변한 사회 속에서 인간 내면의 감정·민족 정서·자연에 대한 동경을 음악으로 표출하려 했다. 오케스트라 규모가 두 배 이상 커졌고, 표제음악이 유행했다.<br>
+            <strong>대표 형식:</strong> 교향시(Symphonic Poem), 표제음악(Program Music), 리트(Lied), 피아노 소품, 대규모 협주곡<br>
+            <strong>대표 작곡가:</strong> 슈베르트(1797~1828), 쇼팽(1810~1849), 브람스(1833~1897), 차이콥스키(1840~1893)
+          </p>
+          <p class="era-links">
+            들어볼 곡: <a href="listen.html#chopin-nocturne-op9-no2">Chopin — Nocturne Op.9 No.2</a>
+            · 작곡가: <a href="composers.html#composer-schubert">슈베르트</a> · <a href="composers.html#composer-chopin">쇼팽</a> · <a href="composers.html#composer-brahms">브람스</a> · <a href="composers.html#composer-tchaikovsky">차이콥스키</a>
+          </p>
+        </div>
+      </li>
+
+      <!-- 국민악파 -->
+      <li class="era-card" id="era-nationalist">
+        <div class="era-period">국민악파<br>19c 후반</div>
+        <div>
+          <h2><a class="wiki-link" href="https://ko.wikipedia.org/wiki/%EA%B5%AD%EB%AF%BC%EC%95%85%ED%8C%8C" target="_blank" rel="noopener" title="위키백과 — 국민악파">국민악파 (19세기 후반 — 낭만 내 분파)</a></h2>
+          <p class="era-def">독일·오스트리아 중심의 음악 문법에서 벗어나, 자국의 민요·민속 리듬·역사·설화를 음악 재료로 삼아 민족 정체성을 표현한 흐름.</p>
+          <p class="era-features">
+            <strong>이전 시대와의 차이:</strong> 낭만주의 후반, 체코·노르웨이·러시아·핀란드 등 민족 자결 운동이 고조되면서 작곡가들이 음악을 통해 자국 문화의 독자성을 천명하려 했다. 5음 음계(민요에서 흔한 5개 음 구조), 민속 무용 리듬, 자국어 텍스트 등이 서양 클래식 형식 안에 녹아들었다.<br>
+            <strong>대표 형식:</strong> 교향시, 민요 주제 변주곡, 오페라(자국어), 관현악 모음곡<br>
+            <strong>대표 작곡가:</strong> 스메타나(1824~1884, 체코), 드보르자크(1841~1904, 체코), 그리그(1843~1907, 노르웨이), 시벨리우스(1865~1957, 핀란드)
+          </p>
+          <p class="era-links">
+            들어볼 곡: <a href="listen.html#smetana-vltava">Smetana — Vltava (Má vlast No.2)</a>
+            · 작곡가: <a href="composers.html#composer-smetana">스메타나</a> · <a href="composers.html#composer-dvorak">드보르자크</a> · <a href="composers.html#composer-grieg">그리그</a> · <a href="composers.html#composer-sibelius">시벨리우스</a>
+            · <a href="travel.html#city-prague">여행 — 프라하</a>
+          </p>
+        </div>
+      </li>
+
+      <!-- 근현대 -->
+      <li class="era-card" id="era-modern">
+        <div class="era-period">근현대<br>1900~</div>
+        <div>
+          <h2><a class="wiki-link" href="https://ko.wikipedia.org/wiki/%ED%98%84%EB%8C%80_%EC%9D%8C%EC%95%85" target="_blank" rel="noopener" title="위키백과 — 현대 음악">근현대 (1900~)</a></h2>
+          <p class="era-def">조성(장조·단조 체계) 자체를 해체하거나 근본적으로 확장하며 음악 언어의 다원화가 이루어진 시기. 인상주의, 표현주의, 신고전주의, 십이음기법 등 다양한 흐름이 공존했다.</p>
+          <p class="era-features">
+            <strong>이전 시대와의 차이:</strong> 낭만 후기 화성이 점점 복잡해지면서 조성의 중심이 흔들리기 시작했다. 드뷔시는 온음음계·교회선법으로 색채적 분위기를 추구했고(인상주의), 쇤베르크는 모든 12반음을 동등하게 사용하는 십이음기법으로 조성 자체를 해체했다(표현주의).<br>
+            <strong>대표 형식:</strong> 인상주의, 무조음악/표현주의, 신고전주의, 실험적 편성, 십이음기법<br>
+            <strong>대표 작곡가:</strong> 드뷔시(1862~1918), 스트라빈스키(1882~1971), 쇼스타코비치(1906~1975), 쇤베르크(1874~1951)
+          </p>
+          <p class="era-links">
+            들어볼 곡: <a href="listen.html#debussy-clair-de-lune-l75">Debussy — Clair de lune (L.75)</a>
+            · 작곡가: <a href="composers.html#composer-debussy">드뷔시</a> · <a href="composers.html#composer-stravinsky">스트라빈스키</a> · <a href="composers.html#composer-shostakovich">쇼스타코비치</a> · <a href="composers.html#composer-schoenberg">쇤베르크</a>
+            · <a href="travel.html#city-paris">여행 — 파리</a>
+          </p>
+        </div>
+      </li>
+
+    </ol><!-- /.era-list -->
+
+    <!-- 요약표 -->
+    <h2 class="section-title" style="margin-top:2.5rem;">시대 흐름 요약표</h2>
+    <div style="overflow-x:auto;">
+      <table style="width:100%; border-collapse:collapse; font-size:0.85rem;">
+        <thead>
+          <tr style="background:var(--color-accent); color:#fff;">
+            <th style="padding:0.5rem 0.75rem; text-align:left;">시대</th>
+            <th style="padding:0.5rem 0.75rem; text-align:left;">연대</th>
+            <th style="padding:0.5rem 0.75rem; text-align:left;">핵심 변화</th>
+            <th style="padding:0.5rem 0.75rem; text-align:left;">대표 작곡가</th>
+            <th style="padding:0.5rem 0.75rem; text-align:left;">입문 추천곡</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom:1px solid var(--color-border);">
+            <td style="padding:0.4rem 0.75rem;"><a href="#era-medieval">중세</a></td>
+            <td style="padding:0.4rem 0.75rem;">∼1400</td>
+            <td style="padding:0.4rem 0.75rem;">단선율→다성음악 시작</td>
+            <td style="padding:0.4rem 0.75rem;">힐데가르트, 마쇼</td>
+            <td style="padding:0.4rem 0.75rem;"><a href="composers.html#composer-hildegard">Hildegard — O Euchari</a></td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--color-border); background:#fdf8f4;">
+            <td style="padding:0.4rem 0.75rem;"><a href="#era-renaissance">르네상스</a></td>
+            <td style="padding:0.4rem 0.75rem;">1400~1600</td>
+            <td style="padding:0.4rem 0.75rem;">다성음악 정점, 세속음악 성장</td>
+            <td style="padding:0.4rem 0.75rem;">팔레스트리나, 라소</td>
+            <td style="padding:0.4rem 0.75rem;"><a href="composers.html#composer-palestrina">Palestrina — Missa Papae Marcelli</a></td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--color-border);">
+            <td style="padding:0.4rem 0.75rem;"><a href="#era-baroque">바로크</a></td>
+            <td style="padding:0.4rem 0.75rem;">1600~1750</td>
+            <td style="padding:0.4rem 0.75rem;">통주저음·대위법, 오페라·협주곡 탄생</td>
+            <td style="padding:0.4rem 0.75rem;">바흐, 헨델, 비발디</td>
+            <td style="padding:0.4rem 0.75rem;"><a href="listen.html#bach-air-bwv1068">Bach — Air on the G String</a></td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--color-border); background:#fdf8f4;">
+            <td style="padding:0.4rem 0.75rem;"><a href="#era-classical">고전</a></td>
+            <td style="padding:0.4rem 0.75rem;">1750~1820</td>
+            <td style="padding:0.4rem 0.75rem;">형식미·균형, 소나타·교향곡 확립</td>
+            <td style="padding:0.4rem 0.75rem;">하이든, 모차르트, 베토벤</td>
+            <td style="padding:0.4rem 0.75rem;"><a href="listen.html#beethoven-symphony-no5-op67">Mozart — Symphony No.40</a></td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--color-border);">
+            <td style="padding:0.4rem 0.75rem;"><a href="#era-romantic">낭만</a></td>
+            <td style="padding:0.4rem 0.75rem;">1820~1900</td>
+            <td style="padding:0.4rem 0.75rem;">감정 표현, 표제음악, 대편성</td>
+            <td style="padding:0.4rem 0.75rem;">슈베르트, 쇼팽, 브람스, 차이콥스키</td>
+            <td style="padding:0.4rem 0.75rem;"><a href="listen.html#chopin-nocturne-op9-no2">Chopin — Nocturne Op.9 No.2</a></td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--color-border); background:#fdf8f4;">
+            <td style="padding:0.4rem 0.75rem;"><a href="#era-nationalist">국민악파</a></td>
+            <td style="padding:0.4rem 0.75rem;">19c 후반</td>
+            <td style="padding:0.4rem 0.75rem;">민족 색채·민요 융합</td>
+            <td style="padding:0.4rem 0.75rem;">스메타나, 드보르자크, 그리그</td>
+            <td style="padding:0.4rem 0.75rem;"><a href="listen.html#smetana-vltava">Smetana — Vltava</a></td>
+          </tr>
+          <tr>
+            <td style="padding:0.4rem 0.75rem;"><a href="#era-modern">근현대</a></td>
+            <td style="padding:0.4rem 0.75rem;">1900~</td>
+            <td style="padding:0.4rem 0.75rem;">무조·인상주의·다원화</td>
+            <td style="padding:0.4rem 0.75rem;">드뷔시, 스트라빈스키, 쇼스타코비치</td>
+            <td style="padding:0.4rem 0.75rem;"><a href="listen.html#debussy-clair-de-lune-l75">Debussy — Clair de lune</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div><!-- /.container -->
+</main>
+
+<footer>
+  <p>콘텐츠는 학습용이며, 음원은 외부 공개 영상/스트리밍으로 연결됩니다.</p>
+  <p>텍스트·사실 정보 출처: music-history-researcher 리서치 산출물 (10_research_history.md)</p>
+</footer>
+</body>
+</html>
+
