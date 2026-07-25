@@ -891,6 +891,35 @@ footer a {
 .disc-hint { font-size: 0.75rem; color: var(--color-text-muted); margin: 0.4rem 0 0; }
 .disc-hint code { background: var(--color-accent-light); padding: 0.05rem 0.3rem; border-radius: 4px; font-size: 0.9em; }
 
+/* --- 명연 무대 영상 (opera.html, 유튜브 직접 링크) --- */
+.stage-videos { margin: 1.4rem 0 0.6rem; }
+.stage-videos-title { font-size: 1rem; font-family: var(--font-serif); color: var(--color-accent); margin: 0 0 0.6rem; }
+.stage-video-list {
+  list-style: none; padding: 0; margin: 0;
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1rem;
+}
+.stage-video-card {
+  display: flex; flex-direction: column;
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 0.7rem 0.7rem 0.6rem;
+}
+.stage-video-card .embed { margin: 0 0 0.55rem; }
+.stage-video-badge {
+  align-self: flex-start;
+  background: #c00;
+  color: #fff;
+  font-size: 0.72rem; font-weight: 700;
+  padding: 0.2rem 0.55rem;
+  border-radius: 999px;
+  white-space: nowrap;
+  margin-bottom: 0.35rem;
+}
+.stage-video-body { display: flex; flex-direction: column; gap: 0.3rem; min-width: 0; }
+.stage-video-body h4 { font-size: 0.88rem; font-weight: 700; margin: 0; color: var(--color-text); line-height: 1.35; }
+.stage-video-body .listen-link { font-size: 0.8rem; margin: 0; }
+
 /* --- 관람함 버튼 (listen.html / opera.html) --- */
 .log-mark {
   font: inherit;
@@ -964,5 +993,6 @@ footer a {
 @media (max-width: 480px) {
   .stage-grid { grid-template-columns: 1fr; }
   .disc-list { grid-template-columns: 1fr; }
+  .stage-video-list { grid-template-columns: 1fr; }
   #log-form { grid-template-columns: 1fr; }
 }
