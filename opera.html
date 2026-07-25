@@ -1,0 +1,1396 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>무대 — 오페라·발레 · 클래식 음악 감상과 공부</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .stage-grid { display: grid; gap: 2rem; }
+    .stage-card { background: var(--color-surface, #fff); border: 1px solid var(--color-border, #e5e7eb); border-radius: 12px; padding: 1.5rem; }
+    .stage-card.upcoming { border-color: var(--color-accent, #c0392b); border-width: 2px; }
+    .badge { display: inline-block; background: var(--color-accent, #c0392b); color: #fff; font-size: 0.78rem; font-weight: 700; padding: 0.2em 0.75em; border-radius: 20px; margin-bottom: 0.6rem; letter-spacing: 0.02em; }
+    .stage-card h3 { font-size: 1.2rem; margin: 0 0 0.25rem; }
+    .stage-card h3 small { font-size: 0.82em; font-weight: 400; opacity: 0.72; display: block; margin-top: 0.1em; }
+    .stage-meta { font-size: 0.83rem; color: var(--color-text-muted, #6b7280); margin-bottom: 0.85rem; line-height: 1.75; }
+    .one-liner { font-size: 0.91rem; font-style: italic; margin-bottom: 0.85rem; opacity: 0.88; }
+    .version-note { font-size: 0.83rem; color: var(--color-text-muted, #6b7280); border-left: 3px solid var(--color-border, #e5e7eb); padding: 0.4em 0.7em; margin-bottom: 0.8rem; }
+    .synopsis { margin-bottom: 1rem; }
+    .synopsis p { margin-bottom: 0.45rem; font-size: 0.9rem; line-height: 1.65; }
+    .synopsis p strong { color: var(--color-heading, #111827); }
+    .scene-table-wrap { overflow-x: auto; margin: 0.5rem 0 1rem; }
+    .scene-table { width: 100%; border-collapse: collapse; font-size: 0.82rem; min-width: 480px; }
+    .scene-table th { background: var(--color-surface-alt, #f9fafb); font-weight: 600; text-align: left; padding: 0.45em 0.75em; border-bottom: 2px solid var(--color-border, #e5e7eb); white-space: nowrap; }
+    .scene-table td { padding: 0.45em 0.75em; border-bottom: 1px solid var(--color-border, #e5e7eb); vertical-align: top; line-height: 1.5; }
+    .scene-table td:nth-child(2) { white-space: nowrap; }
+    .scene-table td:last-child { white-space: nowrap; }
+    .tip { background: var(--color-surface-alt, #f9fafb); border-left: 3px solid var(--color-accent, #c0392b); padding: 0.6rem 0.9rem; font-size: 0.87rem; margin-bottom: 0.9rem; border-radius: 0 6px 6px 0; line-height: 1.6; }
+    .adv-note { background: #fffbeb; border-left: 3px solid #d97706; padding: 0.6rem 0.9rem; font-size: 0.87rem; margin-bottom: 0.9rem; border-radius: 0 6px 6px 0; line-height: 1.6; }
+    .scene-h4 { font-size: 0.92rem; font-weight: 700; margin: 0.75rem 0 0.25rem; }
+    .subsection-label { font-size: 0.9rem; font-weight: 700; color: var(--color-text-muted, #6b7280); background: var(--color-surface-alt, #f9fafb); padding: 0.3em 0.8em; border-radius: 6px; margin: 2rem 0 0.75rem; display: inline-block; }
+    @media (max-width: 480px) {
+      .stage-grid { gap: 1.25rem; }
+      .stage-card { padding: 1rem; }
+      .stage-card h3 { font-size: 1.05rem; }
+      .tip, .adv-note { padding: 0.5rem 0.7rem; }
+    }
+  </style>
+</head>
+<body>
+<header>
+  <nav>
+    <a href="index.html" class="brand">클래식 감상 &amp; 공부</a>
+    <ul>
+      <li><a href="index.html">홈</a></li>
+      <li><a href="listen.html">감상</a></li>
+      <li><a href="opera.html" class="active">무대</a></li>
+      <li><a href="study.html">공부</a></li>
+      <li><a href="eras.html">시대</a></li>
+      <li><a href="composers.html">작곡가</a></li>
+      <li><a href="travel.html">여행</a></li>
+      <li><a href="log.html">기록</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <div class="page-header">
+    <h1>무대 — 오페라 &amp; 발레</h1>
+    <p>입문부터 심화까지 15편. 줄거리·명장면·관람 팁과 YouTube 검색 링크를 담았습니다. 관람 예정 공연은 상단에 표시됩니다.</p>
+  </div>
+
+  <div class="container">
+
+    <!-- ===== 관람 예정 ===== -->
+    <h2 class="section-title" id="upcoming">관람 예정</h2>
+    <div class="stage-grid">
+
+      <!-- stage-puccini-turandot -->
+      <article class="stage-card upcoming" id="stage-puccini-turandot">
+        <span class="badge">관람 예정 · 예술의전당 · 2026-07-23</span>
+        <h3>Turandot <small>투란도트</small></h3>
+        <div class="stage-meta">
+          작곡가: Giacomo Puccini (1858–1924) &nbsp;·&nbsp;
+          초연: 1926년 4월 25일, 라 스칼라, 밀라노 (Franco Alfano 완성, Arturo Toscanini 지휘) &nbsp;·&nbsp;
+          이탈리아어 / 3막 / 약 2시간
+        </div>
+        <p class="one-liner">수수께끼 세 개를 못 풀면 처형당하는 잔혹한 공주와 그녀에게 반한 왕자의 사랑—'Nessun dorma'가 터질 때 객석이 전율한다.</p>
+        <div class="synopsis">
+          <p><strong>1막:</strong> 전설의 중국 베이징. 공주 투란도트는 세 가지 수수께끼를 풀지 못한 구혼자를 처형하는 법을 선포했다. 망명 중인 티무르 왕과 노예 류, 이름 없는 왕자 칼라프가 광장에 도착한다. 칼라프는 투란도트를 보는 순간 사랑에 빠지고, 류와 티무르의 만류에도 불구하고 징을 울려 구혼을 선언한다.</p>
+          <p><strong>2막:</strong> 시험장. 투란도트가 세 수수께끼를 낸다—"매일 밤 태어나 낮에 죽는 것은?" (희망), "불같이 타오르되 냉정하게 식히는 것은?" (피), "그대에게 얼음처럼 차갑지만 그대가 원하는 것은?" (투란도트). 칼라프가 세 개 모두 맞힌다. 투란도트가 결혼을 거부하자 칼라프는 역으로 제안한다: "날이 밝기 전에 내 이름을 알아내면 죽겠다."</p>
+          <p><strong>3막:</strong> 베이징에 명령이 내려진다—"아무도 자지 말라(Nessun dorma)!" 신하들이 류를 잡아 고문하지만 그녀는 끝내 이름을 밝히지 않고 스스로 목숨을 끊는다. 날이 밝아오자 칼라프는 투란도트에게 키스하고 자신의 이름이 '사랑'이라 말한다. 투란도트의 얼음 같은 마음이 녹아 군중 앞에서 "그의 이름은 사랑"이라 선언한다.</p>
+        </div>
+        <p class="scene-h4">놓치면 안 될 명장면</p>
+        <div class="scene-table-wrap">
+          <table class="scene-table">
+            <thead><tr><th>장면 / 곡</th><th>막</th><th>무엇이 들리는가</th><th>길이</th></tr></thead>
+            <tbody>
+              <tr><td>'Nessun dorma'</td><td>3막</td><td>칼라프(테너)의 클라이맥스 아리아. "날이 새면, 나는 이기리라!" — 새벽의 고요를 뚫고 솟구치는 하이 B♭. 오페라 역사상 가장 유명한 테너 아리아</td><td>약 3분</td></tr>
+              <tr><td>'In questa reggia'</td><td>2막</td><td>투란도트(소프라노)의 수수께끼 설명 아리아. 조상이 세 번 구혼당해 죽었다는 복수의 서사. 강렬한 드라마틱 소프라노</td><td>약 8분</td></tr>
+              <tr><td>세 수수께끼 장면</td><td>2막</td><td>합창·오케스트라·솔로이스트가 폭발적으로 맞부딪히는 드라마의 절정. 수수께끼를 맞힐 때마다 합창과 오케스트라가 울부짖음</td><td>약 12분</td></tr>
+              <tr><td>'Tu che di gel sei cinta'</td><td>3막</td><td>류(소프라노/메조)의 희생 직전 아리아. "당신은 얼음으로 만들어졌지만 그는 당신을 녹일 것"—죽음 앞의 고요한 슬픔</td><td>약 3분</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="tip"><strong>관람 팁:</strong> 'Nessun dorma' 클라이맥스에서 하이 B♭가 터지는 순간 박수를 보낼 수 있다. 류의 희생 장면에서 감정이 크게 올라오니 손수건을 준비할 것. 줄거리 흐름이 자연스러워 자막 없이도 어느 정도 따라갈 수 있다.</div>
+        <p class="listen-link">▶ 영상 찾기: <a href="https://www.youtube.com/results?search_query=%22Nessun+dorma%22+Pavarotti" target="_blank" rel="noopener">'Nessun dorma' Pavarotti</a> · <a href="https://www.youtube.com/results?search_query=Turandot+Met+Opera+full" target="_blank" rel="noopener">투란도트 전막</a> · <a href="https://www.youtube.com/results?search_query=%ED%88%AC%EB%9E%80%EB%8F%84%ED%8A%B8+%EC%A0%84%EB%A7%89" target="_blank" rel="noopener">투란도트 전막(한국어)</a></p>
+
+        <div class="disc-collection">
+          <p class="scene-h4">듣고 싶은 명반 (역대 대표 녹음)</p>
+          <ul class="disc-list">
+
+            <li class="disc-card">
+              <div class="disc-cover disc-cover--decca">
+                <img src="https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/d4/7b/96/d47b9677-dff1-274b-07ac-02b77ef20815/00028941427427.rgb.jpg/400x400bb.jpg" alt="Turandot — Mehta(1972, Decca) 음반 표지" loading="lazy" onerror="this.style.display='none'">
+                <span class="disc-sleeve"><span class="disc-sleeve-label">Decca</span><span class="disc-sleeve-year">1972</span></span>
+              </div>
+              <div class="disc-body">
+                <h4>메타 · 서덜랜드 / 파바로티 / 카바예</h4>
+                <p class="disc-credits"><strong>지휘</strong> 주빈 메타 &middot; <strong>주역</strong> 조안 서덜랜드(투란도트), 루치아노 파바로티(칼라프), 몬세라 카바예(류) &middot; <strong>레이블/연도</strong> Decca · 1972</p>
+                <p class="disc-note">파바로티 전성기 목소리와 서덜랜드의 카랑카랑한 하이노트, 카바예의 서정적인 류가 어우러진 스테레오 시대 최고 명반. 'Nessun dorma' 감상의 기준점.</p>
+                <p class="disc-cover-desc"><strong>표지</strong> 붉은/황금색 배경에 세 주역 사진이 나란히, 상단에 Decca 로고와 중국풍 문양 테두리.</p>
+                <p class="listen-link">▶ <a href="https://www.youtube.com/results?search_query=Puccini+Turandot+Mehta+Sutherland+Pavarotti+Caballe+1972" target="_blank" rel="noopener">이 녹음 유튜브에서 찾기</a></p>
+              </div>
+            </li>
+
+            <li class="disc-card">
+              <div class="disc-cover disc-cover--emi">
+                <img src="https://is1-ssl.mzstatic.com/image/thumb/Music/a3/cb/5f/mzi.fshfmvou.jpg/400x400bb.jpg" alt="Turandot — Leinsdorf(1959, RCA) 음반 표지" loading="lazy" onerror="this.style.display='none'">
+                <span class="disc-sleeve"><span class="disc-sleeve-label">RCA</span><span class="disc-sleeve-year">1959</span></span>
+              </div>
+              <div class="disc-body">
+                <h4>라인스도르프 · 닐손 / 비욜링 / 테발디</h4>
+                <p class="disc-credits"><strong>지휘</strong> 에리히 라인스도르프 &middot; <strong>주역</strong> 비르기트 닐손(투란도트), 유시 비욜링(칼라프), 레나타 테발디(류) &middot; <strong>레이블/연도</strong> RCA · 1959(발매 1961)</p>
+                <p class="disc-note">닐손의 강철 같은 하이 C와 비욜링의 우아한 칼라프, 테발디의 애절한 류가 담긴 초기 스테레오 시대의 고전. 투란도트 배역 해석의 기준으로 자주 언급됨.</p>
+                <p class="disc-cover-desc"><strong>표지</strong> 짙은 청록색 배경에 닐손의 흑백 클로즈업 사진, RCA Living Stereo 로고.</p>
+                <p class="listen-link">▶ <a href="https://www.youtube.com/results?search_query=Puccini+Turandot+Leinsdorf+Nilsson+Bjorling+Tebaldi+1959" target="_blank" rel="noopener">이 녹음 유튜브에서 찾기</a></p>
+              </div>
+            </li>
+
+            <li class="disc-card">
+              <div class="disc-cover disc-cover--emi">
+                <img src="https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/9e/d6/72/9ed672c8-0aaf-b7d3-33c1-c4fbdaa6210d/00028942385528.rgb.jpg/400x400bb.jpg" alt="Turandot — Karajan(1981, DG) 음반 표지" loading="lazy" onerror="this.style.display='none'">
+                <span class="disc-sleeve"><span class="disc-sleeve-label">DG</span><span class="disc-sleeve-year">1981</span></span>
+              </div>
+              <div class="disc-body">
+                <h4>카라얀 · 리치아렐리 / 도밍고 / 헨드릭스</h4>
+                <p class="disc-credits"><strong>지휘</strong> 헤르베르트 폰 카라얀 &middot; <strong>주역</strong> 카티아 리치아렐리(투란도트), 플라시도 도밍고(칼라프), 바바라 헨드릭스(류) &middot; <strong>레이블/연도</strong> DG · 1981</p>
+                <p class="disc-note">카라얀 특유의 유려하고 서정적인 관현악 처리가 돋보이는 후기 명반. 도밍고와 헨드릭스는 이상적인 캐스팅이라는 평이 많다(리치아렐리의 타이틀롤은 호불호가 갈림).</p>
+                <p class="disc-cover-desc"><strong>표지</strong> 어두운 남색 바탕에 자금성 이미지, DG 로고가 상단에.</p>
+                <p class="listen-link">▶ <a href="https://www.youtube.com/results?search_query=Puccini+Turandot+Karajan+Ricciarelli+Domingo+Hendricks+1981" target="_blank" rel="noopener">이 녹음 유튜브에서 찾기</a></p>
+              </div>
+            </li>
+
+          </ul>
+          <p class="disc-hint">※ 음반 표지 이미지는 저작권이 있어 사이트에 기본 포함하지 않습니다(색상 슬리브로 대체 표시). 실제 표지를 넣으려면 <code>site/img/covers/</code> 폴더에 위 파일명(<code>turandot-1972-mehta.jpg</code> 등)으로 이미지를 넣으면 자동으로 표시됩니다.</p>
+        </div>
+
+        <p class="links">→ <a href="composers.html#composer-puccini">푸치니 작곡가 페이지</a> &nbsp;
+          <button class="log-mark" data-slug="stage-puccini-turandot" data-work="투란도트" data-type="opera" data-composer="Puccini">♡ 관람함</button></p>
+      </article>
+
+      <!-- stage-tchaikovsky-swan-lake -->
+      <article class="stage-card upcoming" id="stage-tchaikovsky-swan-lake">
+        <span class="badge">관람 예정 · 예술의전당 · 2026-08-22</span>
+        <h3>Swan Lake <small>백조의 호수</small></h3>
+        <div class="stage-meta">
+          작곡가: Pyotr Ilyich Tchaikovsky (1840–1893) &nbsp;·&nbsp;
+          초연: 1877년 볼쇼이 극장(초연 실패) / 표준 버전: 1895년 1월 27일, 마린스키 극장 (안무: Petipa·Ivanov) &nbsp;·&nbsp;
+          발레 / 4막 / 약 2시간 30분
+        </div>
+        <p class="one-liner">백조로 변한 공주와 왕자의 사랑—흑조의 32회 푸에테와 백조 군무가 발레의 정수를 보여준다.</p>
+        <p class="version-note"><strong>안무 버전:</strong> Tchaikovsky 음악 / Marius Petipa(1·3막) + Lev Ivanov(2·4막) 안무 (1895년 마린스키 버전이 세계 표준). 유니버설발레단은 이 전통을 계승한 자체 버전 사용.</p>
+        <div class="synopsis">
+          <p><strong>1막 (성):</strong> 지크프리트 왕자의 성인식 파티. 어머니 왕비가 내일 신부를 선택하라고 압박한다. 왕자는 자유를 원하며 백조 떼를 쫓아 호숫가로 떠난다.</p>
+          <p><strong>2막 (호수):</strong> 마법에 걸린 오데트 공주는 낮에는 백조, 밤에만 인간으로 돌아온다. 악마 로트바르트가 감시한다. 왕자는 오데트에게 반해 영원한 사랑을 맹세한다. 순수한 사랑의 맹세만이 저주를 풀 수 있다.</p>
+          <p><strong>3막 (성 – 무도회):</strong> 왕자의 결혼 파티. 로트바르트가 딸 오딜(흑조)을 오데트로 변장시켜 데려온다. 왕자는 오딜을 오데트로 오인하고 사랑을 맹세한다—저주가 깨지지 않게 된다. 오데트가 호수에서 이 배신을 목격한다.</p>
+          <p><strong>4막 (호수):</strong> 왕자가 뒤늦게 달려와 용서를 구한다. <em>엔딩은 공연마다 다름</em>: ① 비극적 결말(두 사람이 함께 호수에 몸을 던져 저승에서 영원히 함께) — 차이콥스키 원전에 가까움; ② 해피엔딩(사랑의 힘으로 저주가 풀리고 오데트가 인간으로 돌아옴) — 현대 다수 공연. 유니버설발레단 버전은 공연마다 확인 필요.</p>
+        </div>
+        <p class="scene-h4">놓치면 안 될 명장면</p>
+        <div class="scene-table-wrap">
+          <table class="scene-table">
+            <thead><tr><th>장면 / 곡</th><th>막</th><th>무엇이 들리는가</th><th>길이</th></tr></thead>
+            <tbody>
+              <tr><td>백조 군무 (White Swan Adagio)</td><td>2막</td><td>오보에 솔로의 백조 테마 + 여성 발레리나 군무. 한쪽 팔로 파도를 표현하는 '포르 드 브라'. 서정적이고 몽환적</td><td>약 10분</td></tr>
+              <tr><td>오데트-지크프리트 그랑 파드되</td><td>2막</td><td>주역 발레리나+남성 무용수 2인무. 발레 역사상 가장 로맨틱한 장면 중 하나. 리프트·서포트·솔로 바리아시옹</td><td>약 12분</td></tr>
+              <tr><td>흑조의 파드되 (Black Swan Pas de Deux)</td><td>3막</td><td>오딜(흑조)의 32회 연속 푸에테(한 발 회전). 테크닉의 절정. 바이올린+하프의 현란한 반주</td><td>약 15분</td></tr>
+              <tr><td>4막 피날레 (호수의 장면)</td><td>4막</td><td>오케스트라가 처음의 백조 테마를 반복하며 비극(또는 희망)으로 귀결. 감정적으로 가장 강렬한 순간</td><td>약 10분</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="tip"><strong>관람 팁:</strong> 2막 군무는 맨 앞줄보다 2층 전반부가 대형(포메이션)을 보기 좋다. 흑조 파드되의 32회 푸에테는 박수로 응원해도 된다. 오데트 역과 오딜 역을 같은 발레리나가 맡아 두 가지 성격을 연기하는 것이 이 작품의 핵심 묘미다.</div>
+        <p class="listen-link">▶ 영상 찾기: <a href="https://www.youtube.com/results?search_query=Swan+Lake+Mariinsky+full+ballet" target="_blank" rel="noopener">Swan Lake Mariinsky 전막</a> · <a href="https://www.youtube.com/results?search_query=Swan+Lake+Royal+Ballet+Fonteyn" target="_blank" rel="noopener">Swan Lake Royal Ballet Fonteyn</a></p>
+
+        <div class="disc-collection">
+          <p class="scene-h4">듣고 싶은 명반 (역대 대표 녹음)</p>
+          <ul class="disc-list">
+
+            <li class="disc-card">
+              <div class="disc-cover disc-cover--decca">
+                <img src="img/covers/swanlake-1966-fonteyn-nureyev.jpg" alt="Swan Lake — Fonteyn/Nureyev(1966, Film) 음반 표지" loading="lazy" onerror="this.style.display='none'">
+                <span class="disc-sleeve"><span class="disc-sleeve-label">필름</span><span class="disc-sleeve-year">1966</span></span>
+              </div>
+              <div class="disc-body">
+                <h4>랜치베리 · 폰테인 / 누레예프</h4>
+                <p class="disc-credits"><strong>지휘</strong> 루돌프 누레예프 안무(1964년, 페티파 원안 재해석) / 존 랜치베리 지휘 &middot; <strong>주역</strong> 마고 폰테인(오데트/오딜), 루돌프 누레예프(지크프리트) — 빈 슈타츠오퍼 발레 &middot; <strong>레이블/연도</strong> 필름 · 1966</p>
+                <p class="disc-note">20세기 최고의 발레 파트너십으로 불리는 폰테인-누레예프 콤비의 영상 기록. 누레예프가 페티파 원안을 바탕으로 새롭게 안무했다.</p>
+                <p class="disc-cover-desc"><strong>표지</strong> 흑백 무대사진, 백조 튀튀를 입은 폰테인의 클로즈업.</p>
+                <p class="listen-link">▶ <a href="https://www.youtube.com/results?search_query=Swan+Lake+Fonteyn+Nureyev+1966+film" target="_blank" rel="noopener">이 녹음 유튜브에서 찾기</a></p>
+              </div>
+            </li>
+
+            <li class="disc-card">
+              <div class="disc-cover disc-cover--emi">
+                <img src="img/covers/swanlake-1976-plisetskaya.jpg" alt="Swan Lake — Plisetskaya/Bolshoi(1976, Film) 음반 표지" loading="lazy" onerror="this.style.display='none'">
+                <span class="disc-sleeve"><span class="disc-sleeve-label">필름</span><span class="disc-sleeve-year">1976</span></span>
+              </div>
+              <div class="disc-body">
+                <h4>그리고로비치 · 플리세츠카야</h4>
+                <p class="disc-credits"><strong>지휘</strong> 유리 그리고로비치 안무 / 볼쇼이 발레 &middot; <strong>주역</strong> 마야 플리세츠카야(오데트/오딜) &middot; <strong>레이블/연도</strong> 필름 · 1976</p>
+                <p class="disc-note">플리세츠카야 특유의 표현력 짙은 팔 동작("포르 드 브라")과 그리고로비치의 드라마틱한 재안무가 담긴 볼쇼이의 대표 영상.</p>
+                <p class="disc-cover-desc"><strong>표지</strong> 붉은 배경에 플리세츠카야의 역동적인 무대 사진.</p>
+                <p class="listen-link">▶ <a href="https://www.youtube.com/results?search_query=Swan+Lake+Bolshoi+Plisetskaya+Grigorovich+1976" target="_blank" rel="noopener">이 녹음 유튜브에서 찾기</a></p>
+              </div>
+            </li>
+
+            <li class="disc-card">
+              <div class="disc-cover disc-cover--emi">
+                <img src="https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/0e/d3/89/0ed389c1-9aa3-0090-b30f-0962418e01c6/dj.sraipzdt.jpg/400x400bb.jpg" alt="Swan Lake — Previn(1976, EMI) 음반 표지" loading="lazy" onerror="this.style.display='none'">
+                <span class="disc-sleeve"><span class="disc-sleeve-label">EMI</span><span class="disc-sleeve-year">1976</span></span>
+              </div>
+              <div class="disc-body">
+                <h4>프레빈 · 런던 심포니(전곡 관현악)</h4>
+                <p class="disc-credits"><strong>지휘</strong> 앙드레 프레빈 지휘 / 런던 심포니 &middot; <strong>주역</strong> (전곡 관현악, 무용수 없음) &middot; <strong>레이블/연도</strong> EMI · 1976</p>
+                <p class="disc-note">프레빈과 런던 심포니의 절제되고 균형 잡힌 전곡 녹음. 안무 없이 순수 음악으로 온전히 감상하고 싶을 때 표준적인 선택.</p>
+                <p class="disc-cover-desc"><strong>표지</strong> 클래식한 EMI 자켓에 백조 실루엣 일러스트.</p>
+                <p class="listen-link">▶ <a href="https://www.youtube.com/results?search_query=Tchaikovsky+Swan+Lake+Previn+London+Symphony+1976" target="_blank" rel="noopener">이 녹음 유튜브에서 찾기</a></p>
+              </div>
+            </li>
+
+          </ul>
+          <p class="disc-hint">※ 음반 표지 이미지는 저작권이 있어 사이트에 기본 포함하지 않습니다(색상 슬리브로 대체 표시). 실제 표지를 넣으려면 <code>site/img/covers/</code> 폴더에 위 파일명(<code>swanlake-1966-fonteyn-nureyev.jpg</code> 등)으로 이미지를 넣으면 자동으로 표시됩니다.</p>
+        </div>
+
+        <p class="links">→ <a href="composers.html#composer-tchaikovsky">차이콥스키 작곡가 페이지</a> &nbsp;
+          <button class="log-mark" data-slug="stage-tchaikovsky-swan-lake" data-work="백조의 호수" data-type="ballet" data-composer="Tchaikovsky">♡ 관람함</button></p>
+      </article>
+
+    </div><!-- /.stage-grid 관람예정 -->
+
+    <!-- ===== 오페라 ===== -->
+    <h2 class="section-title" id="opera">오페라</h2>
+    <div class="stage-grid">
+
+      <!-- stage-puccini-la-boheme -->
+      <article class="stage-card" id="stage-puccini-la-boheme">
+        <h3>La Bohème <small>라 보엠</small></h3>
+        <div class="stage-meta">
+          작곡가: Giacomo Puccini (1858–1924) &nbsp;·&nbsp;
+          초연: 1896년 2월 1일, 테아트로 레조, 투린 (지휘: Arturo Toscanini) &nbsp;·&nbsp;
+          이탈리아어 / 4막 / 약 1시간 45분
+        </div>
+        <p class="one-liner">파리 다락방의 가난한 청년들과 폐결핵 처녀의 사랑—짧지만 완벽하게 아름다운 오페라 입문작.</p>
+        <div class="synopsis">
+          <p><strong>1막:</strong> 크리스마스 이브. 파리 다락방에서 시인 로돌포, 화가 마르첼로, 음악가 쇼나르, 철학자 콜리네가 추위와 가난을 버틴다. 이웃 처녀 미미가 촛불이 꺼졌다며 불을 빌리러 오고, 로돌포는 그녀의 차가운 손을 잡으며 첫눈에 반한다.</p>
+          <p><strong>2막:</strong> 카페 모뮈스 앞 광장. 크리스마스 축제 분위기. 마르첼로의 옛 연인 무제타가 늙은 귀족을 대동하고 나타나 왈츠를 부르며 마르첼로를 도발한다.</p>
+          <p><strong>3막:</strong> 2개월 후 겨울. 미미의 폐결핵이 악화되었다. 로돌포가 미미를 멀리하는 것은 사실 그녀의 병을 알기에 더 나은 환경을 바라서임이 드러난다. 두 사람은 봄까지만 함께하자며 눈물 속에 잠시 헤어진다.</p>
+          <p><strong>4막:</strong> 거지가 된 미미가 다락방으로 돌아오다 쓰러진다. 친구들이 약을 구하러 나가는 사이 미미는 조용히 숨을 거둔다. 로돌포가 뒤늦게 알고 오열한다.</p>
+        </div>
+        <p class="scene-h4">놓치면 안 될 명장면</p>
+        <div class="scene-table-wrap">
+          <table class="scene-table">
+            <thead><tr><th>장면 / 곡</th><th>막</th><th>무엇이 들리는가</th><th>길이</th></tr></thead>
+            <tbody>
+              <tr><td>'Che gelida manina'</td><td>1막</td><td>테너(로돌포)가 미미의 차가운 손을 잡으며 자기소개. 서정적이고 달콤한 테너 아리아. "당신의 차가운 작은 손!"</td><td>약 3분</td></tr>
+              <tr><td>'Mi chiamano Mimì'</td><td>1막</td><td>소프라노(미미)의 자기소개 아리아. "사람들은 날 미미라 불러요." 청순하고 섬세한 소프라노 음색</td><td>약 4분</td></tr>
+              <tr><td>'Quando m'en vo' (무제타의 왈츠)</td><td>2막</td><td>소프라노(무제타)의 요염한 왈츠. "내가 지나갈 때면 사람들이 다 쳐다봐" — 경쾌하고 관능적</td><td>약 3분</td></tr>
+              <tr><td>4막 피날레 (미미의 죽음)</td><td>4막</td><td>대사 없이 오케스트라와 앙상블이 감정을 이끈다. 로돌포가 "미미!"를 외치며 막이 내리는 순간</td><td>약 10분</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="tip"><strong>관람 팁:</strong> 1막에서 'Che gelida manina' → 'Mi chiamano Mimì' → 'O soave fanciulla'(사랑의 이중창)가 연속으로 나오는 구간이 오페라 역사상 최고의 3연타 중 하나. 이 구간에서 박수를 아낌없이 보내도 된다.</div>
+        <p class="listen-link">▶ 영상 찾기: <a href="https://www.youtube.com/results?search_query=La+Boheme+Met+Opera+full" target="_blank" rel="noopener">La Bohème Met Opera 전막</a> · <a href="https://www.youtube.com/results?search_query=Pavarotti+La+Boheme" target="_blank" rel="noopener">Pavarotti La Bohème</a></p>
+
+        <!-- 명반 컬렉션: 다른 오페라 카드에 이 <div class="disc-collection"> 블록을 통째로 복제해 사용 -->
+        <div class="disc-collection">
+          <p class="scene-h4">듣고 싶은 명반 (역대 대표 녹음)</p>
+          <ul class="disc-list">
+
+            <li class="disc-card">
+              <div class="disc-cover disc-cover--decca">
+                <img src="https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/4a/e4/7c/4ae47c5d-c8f9-2040-e5c2-7660e547d767/25UMGIM38907.rgb.jpg/400x400bb.jpg" alt="La Bohème — Karajan (1972, Decca) 음반 표지" loading="lazy" onerror="this.style.display='none'">
+                <span class="disc-sleeve"><span class="disc-sleeve-label">DECCA</span><span class="disc-sleeve-year">1972</span></span>
+              </div>
+              <div class="disc-body">
+                <h4>카라얀 · 파바로티 / 프레니</h4>
+                <p class="disc-credits"><strong>지휘</strong> 헤르베르트 폰 카라얀 &middot; <strong>주역</strong> 루치아노 파바로티(로돌포), 미렐라 프레니(미미) &middot; <strong>레이블/연도</strong> Decca · 1972</p>
+                <p class="disc-note">카라얀의 웅장한 지휘와 전성기 파바로티·프레니의 호흡이 돋보이는, 흔히 "역대 최고의 라 보엠"으로 꼽히는 스테레오 표준 명반. 입문자에게 가장 먼저 권한다.</p>
+                <p class="disc-cover-desc"><strong>표지</strong> 붉은/검은 배경에 로돌포(파바로티)와 미미(프레니)가 다정하게 다가선 사진이 중앙에 크게, 상·하단에 Decca 로고와 Karajan / Pavarotti / Freni 이름.</p>
+                <p class="listen-link">▶ <a href="https://www.youtube.com/results?search_query=Puccini+La+Boheme+Karajan+Pavarotti+Freni+1972" target="_blank" rel="noopener">이 녹음 유튜브에서 찾기</a></p>
+              </div>
+            </li>
+
+            <li class="disc-card">
+              <div class="disc-cover disc-cover--decca">
+                <img src="https://is1-ssl.mzstatic.com/image/thumb/Music/d9/f7/5b/mzi.qfqlaodf.jpg/400x400bb.jpg" alt="La Bohème — Serafin/Tebaldi (1959, Decca) 음반 표지" loading="lazy" onerror="this.style.display='none'">
+                <span class="disc-sleeve"><span class="disc-sleeve-label">DECCA</span><span class="disc-sleeve-year">1959</span></span>
+              </div>
+              <div class="disc-body">
+                <h4>세라핀 · 베르곤지 / 테발디</h4>
+                <p class="disc-credits"><strong>지휘</strong> 툴리오 세라핀 &middot; <strong>주역</strong> 카를로 베르곤지(로돌포), 레나타 테발디(미미) &middot; <strong>레이블/연도</strong> Decca · 1959</p>
+                <p class="disc-note">테발디의 가장 정석적이고 군더더기 없는 미미를 들을 수 있는 고전 명반. 따뜻하고 균형 잡힌 해석으로 "표준"을 알고 싶을 때 좋다.</p>
+                <p class="disc-cover-desc"><strong>표지</strong> 고전 Decca 특유의 빈티지 일러스트, 주황/초록빛이 도는 오페라 무대 배경. Tebaldi / Bergonzi / Serafin가 고풍스러운 폰트로.</p>
+                <p class="listen-link">▶ <a href="https://www.youtube.com/results?search_query=Puccini+La+Boheme+Tebaldi+Bergonzi+Serafin+1959" target="_blank" rel="noopener">이 녹음 유튜브에서 찾기</a></p>
+              </div>
+            </li>
+
+            <li class="disc-card">
+              <div class="disc-cover disc-cover--emi">
+                <img src="https://is1-ssl.mzstatic.com/image/thumb/Music/v4/88/f4/3c/88f43c8e-f3fe-bb51-7de9-5f7dc9d66112/825646266890.jpg/400x400bb.jpg" alt="La Bohème — Votto/Callas (1956, EMI) 음반 표지" loading="lazy" onerror="this.style.display='none'">
+                <span class="disc-sleeve"><span class="disc-sleeve-label">EMI · Warner</span><span class="disc-sleeve-year">1956</span></span>
+              </div>
+              <div class="disc-body">
+                <h4>보토 · 디 스테파노 / 칼라스</h4>
+                <p class="disc-credits"><strong>지휘</strong> 안토니노 보토 &middot; <strong>주역</strong> 주세페 디 스테파노(로돌포), 마리아 칼라스(미미) &middot; <strong>레이블/연도</strong> EMI(현 Warner Classics) · 1956</p>
+                <p class="disc-note">칼라스 특유의 드라마틱한 연기력과 설득력이 빛나는 50년대 양대 산맥 중 하나. 미미의 감정선을 가장 극적으로 듣고 싶은 사람에게.</p>
+                <p class="disc-cover-desc"><strong>표지</strong> 마리아 칼라스의 흑백 프로필 모노톤 사진이 클래식하게. 재발매판(Warner)은 검정/흰 바탕에 붉은 글씨로 "CALLAS / LA BOHÈME".</p>
+                <p class="listen-link">▶ <a href="https://www.youtube.com/results?search_query=Puccini+La+Boheme+Callas+Di+Stefano+Votto+1956" target="_blank" rel="noopener">이 녹음 유튜브에서 찾기</a></p>
+              </div>
+            </li>
+
+            <li class="disc-card">
+              <div class="disc-cover disc-cover--decca">
+                <img src="https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/35/db/31/35db311a-bb8c-4bbd-1dc9-d7f797292e17/00028946607022.rgb.jpg/400x400bb.jpg" alt="La Bohème — Chailly/Gheorghiu (1998, Decca) 음반 표지" loading="lazy" onerror="this.style.display='none'">
+                <span class="disc-sleeve"><span class="disc-sleeve-label">DECCA</span><span class="disc-sleeve-year">1998</span></span>
+              </div>
+              <div class="disc-body">
+                <h4>샤이 · 알라냐 / 게오르규</h4>
+                <p class="disc-credits"><strong>지휘</strong> 리카르도 샤이 &middot; <strong>주역</strong> 로베르토 알라냐(로돌포), 안젤라 게오르규(미미) &middot; <strong>레이블/연도</strong> Decca · 1998</p>
+                <p class="disc-note">당시 실제 부부였던 알라냐·게오르규가 호흡을 맞춘 현대적 감각의 녹음. 최신 음향과 젊은 목소리로 듣고 싶을 때 추천.</p>
+                <p class="disc-cover-desc"><strong>표지</strong> 세련된 화보 스타일. 알라냐와 게오르규 두 사람이 밀착해 서로를 바라보는 연인 모습 사진이 커버 전면에.</p>
+                <p class="listen-link">▶ <a href="https://www.youtube.com/results?search_query=Puccini+La+Boheme+Chailly+Alagna+Gheorghiu+1998" target="_blank" rel="noopener">이 녹음 유튜브에서 찾기</a></p>
+              </div>
+            </li>
+
+            <li class="disc-card">
+              <div class="disc-cover disc-cover--emi">
+                <img src="https://is1-ssl.mzstatic.com/image/thumb/Music/98/ea/5f/mzi.xumdekoz.jpg/400x400bb.jpg" alt="La Bohème — Beecham/de los Angeles (1956, EMI) 음반 표지" loading="lazy" onerror="this.style.display='none'">
+                <span class="disc-sleeve"><span class="disc-sleeve-label">EMI · Warner</span><span class="disc-sleeve-year">1956</span></span>
+              </div>
+              <div class="disc-body">
+                <h4>비첨 · 비올링 / 데 로스 앙헬레스</h4>
+                <p class="disc-credits"><strong>지휘</strong> 토머스 비첨 경 &middot; <strong>주역</strong> 유시 비욜링(로돌포), 빅토리아 데 로스 앙헬레스(미미) &middot; <strong>레이블/연도</strong> EMI(현 Warner Classics) · 1956</p>
+                <p class="disc-note">비첨의 19세기풍 원숙한 해석과 비욜링·데 로스 앙헬레스의 아름다운 하모니가 담긴 또 하나의 필수 명반. 서정성과 기품이 돋보인다.</p>
+                <p class="disc-cover-desc"><strong>표지</strong> 눈 내리는 파리 거리를 그린 서정적 유화 일러스트. 재발매판은 비욜링과 데 로스 앙헬레스가 마이크 앞에서 녹음 중인 흑백/세피아 사진.</p>
+                <p class="listen-link">▶ <a href="https://www.youtube.com/results?search_query=Puccini+La+Boheme+Beecham+Bjorling+de+los+Angeles+1956" target="_blank" rel="noopener">이 녹음 유튜브에서 찾기</a></p>
+              </div>
+            </li>
+
+          </ul>
+          <p class="disc-hint">※ 음반 표지 이미지는 저작권이 있어 사이트에 기본 포함하지 않습니다(색상 슬리브로 대체 표시). 실제 표지를 넣으려면 <code>site/img/covers/</code> 폴더에 위 파일명(<code>laboheme-1972-karajan.jpg</code> 등)으로 이미지를 넣으면 자동으로 표시됩니다.</p>
+        </div>
+
+        <p class="links">→ <a href="composers.html#composer-puccini">푸치니 작곡가 페이지</a> &nbsp;
+          <button class="log-mark" data-slug="stage-puccini-la-boheme" data-work="라 보엠" data-type="opera" data-composer="Puccini">♡ 관람함</button></p>
+      </article>
+
+      <!-- stage-puccini-madama-butterfly -->
+      <article class="stage-card" id="stage-puccini-madama-butterfly">
+        <h3>Madama Butterfly <small>나비부인</small></h3>
+        <div class="stage-meta">
+          작곡가: Giacomo Puccini (1858–1924) &nbsp;·&nbsp;
+          초연: 1904년 2월 17일(초연 실패) / 개정 버전: 1904년 5월 28일, 브레시아 (성공) &nbsp;·&nbsp;
+          이탈리아어 / 3막(개정 표준 버전) / 약 2시간 30분
+        </div>
+        <p class="one-liner">나가사키에서 미국 장교를 기다리는 일본 소녀의 비극—'Un bel dì, vedremo'에서 눈물을 참기 어렵다.</p>
+        <div class="synopsis">
+          <p><strong>1막:</strong> 나가사키. 미국 해군 장교 핀커튼이 15세 게이샤 초초상(나비부인)과 결혼식을 올린다. 나비부인은 진심으로 사랑해 기독교로 개종까지 한다. 핀커튼은 이 결혼을 일시적인 일로만 여긴다.</p>
+          <p><strong>2막 전반:</strong> 3년이 지났다. 핀커튼은 돌아오지 않고 연락도 없다. 나비부인은 혼자 아들을 낳아 기르며 그의 귀환을 믿는다. 항구에 핀커튼의 배가 들어오자 나비부인은 아이와 함께 밤새 창가에서 기다린다(허밍 코러스).</p>
+          <p><strong>2막 후반(3막):</strong> 다음 날 아침. 핀커튼이 미국인 아내 케이트와 함께 나타난다. 진실을 알게 된 나비부인은 아이를 핀커튼에게 맡기기로 결심하고, 아이의 눈을 가린 뒤 아버지가 남긴 단도로 스스로 목숨을 끊는다.</p>
+        </div>
+        <p class="scene-h4">놓치면 안 될 명장면</p>
+        <div class="scene-table-wrap">
+          <table class="scene-table">
+            <thead><tr><th>장면 / 곡</th><th>막</th><th>무엇이 들리는가</th><th>길이</th></tr></thead>
+            <tbody>
+              <tr><td>'Un bel dì, vedremo'</td><td>2막</td><td>소프라노(나비부인)의 명 아리아. "언젠가 좋은 날이 오면, 연기가 저 수평선 위로..." 귀환을 믿는 애절한 사랑. 소프라노 최고 아리아 중 하나</td><td>약 4분</td></tr>
+              <tr><td>허밍 코러스 (Humming Chorus)</td><td>2막</td><td>합창단이 무언(허밍)으로 노래하는 동안 나비부인과 스즈키가 밤새 창가에서 기다린다. 오케스트라의 고요하고 슬픈 음향</td><td>약 3분</td></tr>
+              <tr><td>꽃의 이중창 'Scuoti quella fronda'</td><td>2막</td><td>소프라노+메조(나비부인+스즈키)가 꽃을 흩뿌리며 귀환을 준비하는 장면. 아름답고 기대에 차 있어 이후 비극이 더 가슴 아프다</td><td>약 4분</td></tr>
+              <tr><td>자결 장면 (Con onor muore)</td><td>3막</td><td>오케스트라가 침잠하며 나비부인이 조용히 사라지는 장면. 대사 없이 음악만으로 죽음을 그린다</td><td>약 5분</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="tip"><strong>관람 팁:</strong> 허밍 코러스 후 조명이 서서히 바뀌며 새벽이 오는 장면 연출이 인상적이다. 나비부인의 나이(15세)와 시대 배경을 미리 알고 가면 줄거리의 비극성이 훨씬 크게 다가온다.</div>
+        <p class="listen-link">▶ 영상 찾기: <a href="https://www.youtube.com/results?search_query=Madama+Butterfly+Un+bel+di+vedremo" target="_blank" rel="noopener">Madama Butterfly 'Un bel dì'</a> · <a href="https://www.youtube.com/results?search_query=Butterfly+Met+Opera+Renee+Fleming" target="_blank" rel="noopener">나비부인 전막 Met Opera</a></p>
+
+        <div class="disc-collection">
+          <p class="scene-h4">듣고 싶은 명반 (역대 대표 녹음)</p>
+          <ul class="disc-list">
+
+            <li class="disc-card">
+              <div class="disc-cover disc-cover--decca">
+                <img src="https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/2c/ae/3a/2cae3a0a-fd70-c4e7-ba64-73b786e47667/00028947865421.rgb.jpg/400x400bb.jpg" alt="Madama Butterfly — Karajan(1974, Decca) 음반 표지" loading="lazy" onerror="this.style.display='none'">
+                <span class="disc-sleeve"><span class="disc-sleeve-label">Decca</span><span class="disc-sleeve-year">1974</span></span>
+              </div>
+              <div class="disc-body">
+                <h4>카라얀 · 프레니 / 파바로티</h4>
+                <p class="disc-credits"><strong>지휘</strong> 헤르베르트 폰 카라얀 &middot; <strong>주역</strong> 미렐라 프레니(나비부인), 루치아노 파바로티(핑커턴) &middot; <strong>레이블/연도</strong> Decca · 1974</p>
+                <p class="disc-note">프레니의 섬세하고 청순한 초초상과 파바로티의 서정적인 핑커턴, 카라얀의 관능적인 빈 필 관현악이 결합된 "역대 최고"로 자주 꼽히는 스테레오 표준.</p>
+                <p class="disc-cover-desc"><strong>표지</strong> 벚꽃과 일본풍 문양 배경에 프레니의 초상 사진, Decca 로고.</p>
+                <p class="listen-link">▶ <a href="https://www.youtube.com/results?search_query=Puccini+Madama+Butterfly+Karajan+Freni+Pavarotti+1974" target="_blank" rel="noopener">이 녹음 유튜브에서 찾기</a></p>
+              </div>
+            </li>
+
+            <li class="disc-card">
+              <div class="disc-cover disc-cover--emi">
+                <img src="https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/2b/7c/9b/2b7c9b1e-0ac2-a658-163e-f1c6dbf7ab83/5054197664243.jpg/400x400bb.jpg" alt="Madama Butterfly — Karajan(1955, EMI) 음반 표지" loading="lazy" onerror="this.style.display='none'">
+                <span class="disc-sleeve"><span class="disc-sleeve-label">EMI</span><span class="disc-sleeve-year">1955</span></span>
+              </div>
+              <div class="disc-body">
+                <h4>카라얀 · 칼라스 / 게다</h4>
+                <p class="disc-credits"><strong>지휘</strong> 헤르베르트 폰 카라얀 &middot; <strong>주역</strong> 마리아 칼라스(나비부인), 니콜라이 게다(핑커턴) &middot; <strong>레이블/연도</strong> EMI · 1955</p>
+                <p class="disc-note">칼라스 특유의 극적 표현력과 심리 묘사가 돋보이는 모노 시대 명반. 3막 자결 장면의 비극성이 특히 압도적이라는 평.</p>
+                <p class="disc-cover-desc"><strong>표지</strong> 흑백 프로필 사진, 클래식한 EMI 레터링.</p>
+                <p class="listen-link">▶ <a href="https://www.youtube.com/results?search_query=Puccini+Madama+Butterfly+Callas+Gedda+Karajan+1955" target="_blank" rel="noopener">이 녹음 유튜브에서 찾기</a></p>
+              </div>
+            </li>
+
+            <li class="disc-card">
+              <div class="disc-cover disc-cover--emi">
+                <img src="https://is1-ssl.mzstatic.com/image/thumb/Music91/v4/17/d6/2a/17d62a77-a549-29cf-3b6c-8384342a0862/084247956405.jpg/400x400bb.jpg" alt="Madama Butterfly — Barbirolli(1966, EMI) 음반 표지" loading="lazy" onerror="this.style.display='none'">
+                <span class="disc-sleeve"><span class="disc-sleeve-label">EMI</span><span class="disc-sleeve-year">1966</span></span>
+              </div>
+              <div class="disc-body">
+                <h4>바르비롤리 · 스코토 / 베르곤지</h4>
+                <p class="disc-credits"><strong>지휘</strong> 존 바르비롤리 &middot; <strong>주역</strong> 레나타 스코토(나비부인), 카를로 베르곤지(핑커턴) &middot; <strong>레이블/연도</strong> EMI · 1966</p>
+                <p class="disc-note">스코토의 섬세한 감정선과 바르비롤리의 유려하고 따뜻한 지휘가 돋보이는 또 다른 정상급 명반. 서정성을 중시하는 입문자에게 추천.</p>
+                <p class="disc-cover-desc"><strong>표지</strong> 일본 전통 가옥과 벚꽃을 그린 파스텔톤 일러스트.</p>
+                <p class="listen-link">▶ <a href="https://www.youtube.com/results?search_query=Puccini+Madama+Butterfly+Barbirolli+Scotto+Bergonzi+1966" target="_blank" rel="noopener">이 녹음 유튜브에서 찾기</a></p>
+              </div>
+            </li>
+
+          </ul>
+          <p class="disc-hint">※ 음반 표지 이미지는 저작권이 있어 사이트에 기본 포함하지 않습니다(색상 슬리브로 대체 표시). 실제 표지를 넣으려면 <code>site/img/covers/</code> 폴더에 위 파일명(<code>butterfly-1974-karajan.jpg</code> 등)으로 이미지를 넣으면 자동으로 표시됩니다.</p>
+        </div>
+
+        <p class="links">→ <a href="composers.html#composer-puccini">푸치니 작곡가 페이지</a> &nbsp;
+          <button class="log-mark" data-slug="stage-puccini-madama-butterfly" data-work="나비부인" data-type="opera" data-composer="Puccini">♡ 관람함</button></p>
+      </article>
+
+      <!-- stage-verdi-la-traviata -->
+      <article class="stage-card" id="stage-verdi-la-traviata">
+        <h3>La traviata <small>라 트라비아타</small></h3>
+        <div class="stage-meta">
+          작곡가: Giuseppe Verdi (1813–1901) &nbsp;·&nbsp;
+          초연: 1853년 3월 6일, 테아트로 라 페니체, 베네치아 (초연 부진 → 1854년 재공연 대성공) &nbsp;·&nbsp;
+          이탈리아어 / 3막 / 약 2시간 30분
+        </div>
+        <p class="one-liner">파리의 고급 창부 비올레타가 진정한 사랑을 만나고 사회의 압박에 굴복하다 폐결핵으로 죽는다—베르디 오페라 입문에 가장 적합한 작품.</p>
+        <div class="synopsis">
+          <p><strong>1막:</strong> 파리. 폐결핵을 앓는 화류계 여성 비올레타의 파티. 알프레도가 1년 동안 멀리서 그녀를 사랑해 왔다고 고백한다. 비올레타는 처음엔 거절하지만 파티 후 홀로 앉아 그의 진심이 마음을 흔들었음을 느낀다.</p>
+          <p><strong>2막:</strong> 교외 별장. 비올레타와 알프레도가 행복한 동거 중이다. 알프레도의 아버지 제르몽이 찾아와 "딸의 결혼이 위태롭다. 당신이 떠나달라"고 요구한다. 비올레타는 자신의 사랑을 희생하고 알프레도 몰래 도망친다. 알프레도가 파티장에서 비올레타를 발견하고 공개적으로 모욕하며 돈을 던진다.</p>
+          <p><strong>3막:</strong> 비올레타의 침실. 병이 깊어 침대에 누운 비올레타에게 제르몽의 편지가 도착한다—모든 사실이 밝혀졌고 알프레도가 달려온다고. 알프레도가 도착해 둘이 미래를 꿈꾸지만, 비올레타는 갑자기 의식을 되찾는 것 같다가 쓰러져 죽는다.</p>
+        </div>
+        <p class="scene-h4">놓치면 안 될 명장면</p>
+        <div class="scene-table-wrap">
+          <table class="scene-table">
+            <thead><tr><th>장면 / 곡</th><th>막</th><th>무엇이 들리는가</th><th>길이</th></tr></thead>
+            <tbody>
+              <tr><td>브린디시 'Libiamo ne' lieti calici'</td><td>1막</td><td>테너+소프라노(알프레도+비올레타)의 건배 이중창. 파티 분위기, 밝고 경쾌. "기쁜 잔으로 마시자!"</td><td>약 3분</td></tr>
+              <tr><td>'Sempre libera'</td><td>1막</td><td>소프라노(비올레타)의 콜로라투라 아리아. "영원히 자유롭게!" — 사랑을 거부하려는 내면 갈등. 소프라노 최고 기교 구간 포함</td><td>약 4분</td></tr>
+              <tr><td>'Di Provenza il mar'</td><td>2막</td><td>바리톤(제르몽)의 아리아. "프로방스 바다와 고향을 떠올려라" — 아들을 설득하는 아버지의 절절한 호소</td><td>약 4분</td></tr>
+              <tr><td>'Addio del passato'</td><td>3막</td><td>소프라노(비올레타)의 임종 직전 아리아. "지나간 행복한 날들이여, 안녕" — 고요하고 쓸쓸하며 가슴을 미는 힘이 있다</td><td>약 4분</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="tip"><strong>관람 팁:</strong> 비올레타 역은 소프라노의 3가지 다른 음색(화려한 콜로라투라 1막 → 서정 소프라노 2막 → 애가 3막)을 모두 요구하는 최고 난도 역할이다. 같은 가수가 세 가지 다른 색깔로 변화하는 것을 감상 포인트로 두면 좋다.</div>
+        <p class="listen-link">▶ 영상 찾기: <a href="https://www.youtube.com/results?search_query=La+Traviata+Violetta+Sempre+libera" target="_blank" rel="noopener">La Traviata 'Sempre libera'</a> · <a href="https://www.youtube.com/results?search_query=La+Traviata+Met+Opera+full" target="_blank" rel="noopener">라 트라비아타 전막</a></p>
+
+        <div class="disc-collection">
+          <p class="scene-h4">듣고 싶은 명반 (역대 대표 녹음)</p>
+          <ul class="disc-list">
+
+            <li class="disc-card">
+              <div class="disc-cover disc-cover--emi">
+                <img src="https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/10/a9/0a/10a90a95-7530-d90b-8d8f-290c0e13c09d/14UMGIM39208.rgb.jpg/400x400bb.jpg" alt="La Traviata — Kleiber(1977, DG) 음반 표지" loading="lazy" onerror="this.style.display='none'">
+                <span class="disc-sleeve"><span class="disc-sleeve-label">DG</span><span class="disc-sleeve-year">1977</span></span>
+              </div>
+              <div class="disc-body">
+                <h4>클라이버 · 코트루바스 / 도밍고</h4>
+                <p class="disc-credits"><strong>지휘</strong> 카를로스 클라이버 &middot; <strong>주역</strong> 일레아나 코트루바스(비올레타), 플라시도 도밍고(알프레도) &middot; <strong>레이블/연도</strong> DG · 1977</p>
+                <p class="disc-note">클라이버 특유의 팽팽한 긴장감과 극적인 리듬 감각으로 "역대 최고의 라 트라비아타"로 자주 꼽히는 스튜디오 명반.</p>
+                <p class="disc-cover-desc"><strong>표지</strong> 어두운 배경에 코트루바스의 클로즈업 사진, DG 로고.</p>
+                <p class="listen-link">▶ <a href="https://www.youtube.com/results?search_query=Verdi+La+Traviata+Kleiber+Cotrubas+Domingo+1977" target="_blank" rel="noopener">이 녹음 유튜브에서 찾기</a></p>
+              </div>
+            </li>
+
+            <li class="disc-card">
+              <div class="disc-cover disc-cover--emi">
+                <img src="https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/03/dd/b2/03ddb25f-156a-c5bc-7dab-8c5c8545e65a/724356645059.jpg/400x400bb.jpg" alt="La Traviata — Giulini(1955, EMI) 음반 표지" loading="lazy" onerror="this.style.display='none'">
+                <span class="disc-sleeve"><span class="disc-sleeve-label">EMI(라 스칼라 실황)</span><span class="disc-sleeve-year">1955</span></span>
+              </div>
+              <div class="disc-body">
+                <h4>줄리니 · 칼라스 / 디 스테파노</h4>
+                <p class="disc-credits"><strong>지휘</strong> 카를로 마리아 줄리니 &middot; <strong>주역</strong> 마리아 칼라스(비올레타), 주세페 디 스테파노(알프레도) &middot; <strong>레이블/연도</strong> EMI(라 스칼라 실황) · 1955</p>
+                <p class="disc-note">칼라스의 전설적인 비올레타 해석이 담긴 라 스칼라 라이브 녹음. 1막의 화려함과 3막 죽음 장면의 대비가 압도적.</p>
+                <p class="disc-cover-desc"><strong>표지</strong> 흑백 무대 실황 사진, "CALLAS LIVE" 풍 레터링.</p>
+                <p class="listen-link">▶ <a href="https://www.youtube.com/results?search_query=Verdi+La+Traviata+Callas+Giulini+1955+live" target="_blank" rel="noopener">이 녹음 유튜브에서 찾기</a></p>
+              </div>
+            </li>
+
+            <li class="disc-card">
+              <div class="disc-cover disc-cover--decca">
+                <img src="https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/cf/f3/ea/cff3ea7c-342a-2560-3667-e3ef195189ac/00028947579229.rgb.jpg/400x400bb.jpg" alt="La Traviata — Pritchard(1962, Decca) 음반 표지" loading="lazy" onerror="this.style.display='none'">
+                <span class="disc-sleeve"><span class="disc-sleeve-label">Decca</span><span class="disc-sleeve-year">1962</span></span>
+              </div>
+              <div class="disc-body">
+                <h4>프리처드 · 서덜랜드 / 베르곤지</h4>
+                <p class="disc-credits"><strong>지휘</strong> 존 프리처드 &middot; <strong>주역</strong> 조안 서덜랜드(비올레타), 카를로 베르곤지(알프레도) &middot; <strong>레이블/연도</strong> Decca · 1962</p>
+                <p class="disc-note">서덜랜드의 화려한 콜로라투라와 커팅 없는 완전판 구성(양쪽 카발레타 포함)이 특징인 정석적 스튜디오 녹음.</p>
+                <p class="disc-cover-desc"><strong>표지</strong> 화사한 파스텔톤 배경, Decca 로고.</p>
+                <p class="listen-link">▶ <a href="https://www.youtube.com/results?search_query=Verdi+La+Traviata+Sutherland+Bergonzi+Pritchard+1962" target="_blank" rel="noopener">이 녹음 유튜브에서 찾기</a></p>
+              </div>
+            </li>
+
+          </ul>
+          <p class="disc-hint">※ 음반 표지 이미지는 저작권이 있어 사이트에 기본 포함하지 않습니다(색상 슬리브로 대체 표시). 실제 표지를 넣으려면 <code>site/img/covers/</code> 폴더에 위 파일명(<code>traviata-1977-kleiber.jpg</code> 등)으로 이미지를 넣으면 자동으로 표시됩니다.</p>
+        </div>
+
+        <p class="links">→ <a href="composers.html#composer-verdi">베르디 작곡가 페이지</a> &nbsp;
+          <button class="log-mark" data-slug="stage-verdi-la-traviata" data-work="라 트라비아타" data-type="opera" data-composer="Verdi">♡ 관람함</button></p>
+      </article>
+
+      <!-- stage-verdi-rigoletto -->
+      <article class="stage-card" id="stage-verdi-rigoletto">
+        <h3>Rigoletto <small>리골레토</small></h3>
+        <div class="stage-meta">
+          작곡가: Giuseppe Verdi (1813–1901) &nbsp;·&nbsp;
+          초연: 1851년 3월 11일, 테아트로 라 페니체, 베네치아 (즉시 대성공) &nbsp;·&nbsp;
+          이탈리아어 / 3막 / 약 2시간 30분
+        </div>
+        <p class="one-liner">저주받은 광대의 복수가 딸의 죽음으로 돌아오는 비극—베르디 최강의 드라마 구조.</p>
+        <div class="synopsis">
+          <p><strong>1막:</strong> 만투아 공작의 궁정. 광대 리골레토는 귀족들을 조롱하며 공작의 바람기를 부추긴다. 몬테로네 백작이 딸을 빼앗긴 것을 항의하자 리골레토가 비웃는다. 몬테로네가 공작과 리골레토에게 저주를 퍼붓는다. 귀족들이 리골레토가 숨겨둔 딸 질다를 납치해 공작에게 데려간다.</p>
+          <p><strong>2막:</strong> 궁정. 공작이 질다를 유혹한다(이미 변장해 만난 사이였다). 리골레토가 딸을 찾아 궁정으로 오지만, 질다 스스로 공작에게 마음을 빼앗겼음을 알게 된다. 리골레토는 복수를 결심한다.</p>
+          <p><strong>3막:</strong> 외곽 선술집. 리골레토가 청부살인업자 스파라푸칠레에게 공작을 죽이도록 의뢰한다. 그러나 스파라푸칠레의 누이 막달레나가 공작에게 홀려 질다가 공작 대신 죽음을 자청한다. 리골레토가 가마니를 받아 강에 던지려는 순간 안에서 공작의 노래가 들린다. 가마니를 열자 죽어가는 딸이 있다. "저주받았어(La maledizione)!" 외치며 리골레토가 쓰러진다.</p>
+        </div>
+        <p class="scene-h4">놓치면 안 될 명장면</p>
+        <div class="scene-table-wrap">
+          <table class="scene-table">
+            <thead><tr><th>장면 / 곡</th><th>막</th><th>무엇이 들리는가</th><th>길이</th></tr></thead>
+            <tbody>
+              <tr><td>'La donna è mobile'</td><td>3막</td><td>테너(공작)의 유명한 아리아. "여자의 마음은 갈대." 단순하고 중독성 있는 멜로디. 베르디가 초연 전날까지 극비로 붙들어둔 곡</td><td>약 2분</td></tr>
+              <tr><td>'Caro nome'</td><td>1막</td><td>소프라노(질다)의 첫사랑 아리아. 처음 만난 청년(사실 공작)의 이름을 떠올리며 반짝이는 첫사랑 감정을 묘사. 콜로라투라 기교</td><td>약 5분</td></tr>
+              <tr><td>사중창 'Bella figlia dell'amore'</td><td>3막</td><td>4성부(공작·막달레나·질다·리골레토)가 동시에 다른 감정을 노래. 오페라 역사상 가장 유명한 앙상블. 구조가 완벽</td><td>약 4분</td></tr>
+              <tr><td>피날레 (가마니 장면)</td><td>3막</td><td>밖에서 'La donna è mobile'가 들리고, 리골레토가 가마니를 열어 딸을 발견하는 순간. 대사와 오케스트라가 공포를 표현</td><td>약 5분</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="tip"><strong>관람 팁:</strong> 'La donna è mobile'은 3막에서 처음 나올 때보다 피날레에서 배경음악으로 흘러나올 때 훨씬 소름이 돋는다. 사중창은 4명이 동시에 완전히 다른 감정을 노래하는 구조이므로 한 명씩 집중해서 들어보는 것도 방법이다.</div>
+        <p class="listen-link">▶ 영상 찾기: <a href="https://www.youtube.com/results?search_query=Rigoletto+La+donna+e+mobile" target="_blank" rel="noopener">Rigoletto 'La donna è mobile'</a> · <a href="https://www.youtube.com/results?search_query=Rigoletto+Met+Opera+full" target="_blank" rel="noopener">리골레토 전막</a></p>
+
+        <div class="disc-collection">
+          <p class="scene-h4">듣고 싶은 명반 (역대 대표 녹음)</p>
+          <ul class="disc-list">
+
+            <li class="disc-card">
+              <div class="disc-cover disc-cover--decca">
+                <img src="https://is1-ssl.mzstatic.com/image/thumb/Music128/v4/28/26/04/2826046a-7843-44c2-b510-f57c3170daee/00028947865292.rgb.jpg/400x400bb.jpg" alt="Rigoletto — Bonynge(1971, Decca) 음반 표지" loading="lazy" onerror="this.style.display='none'">
+                <span class="disc-sleeve"><span class="disc-sleeve-label">Decca</span><span class="disc-sleeve-year">1971</span></span>
+              </div>
+              <div class="disc-body">
+                <h4>보닝 · 밀네스 / 서덜랜드 / 파바로티</h4>
+                <p class="disc-credits"><strong>지휘</strong> 리처드 보닝 &middot; <strong>주역</strong> 셰릴 밀네스(리골레토), 조안 서덜랜드(질다), 루치아노 파바로티(만토바 공작) &middot; <strong>레이블/연도</strong> Decca · 1971</p>
+                <p class="disc-note">파바로티의 매혹적인 공작, 서덜랜드의 화려한 질다, 밀네스의 무게감 있는 리골레토가 어우러진 스테레오 황금기 명반.</p>
+                <p class="disc-cover-desc"><strong>표지</strong> 화려한 궁정 의상을 입은 세 주역 사진, Decca 로고.</p>
+                <p class="listen-link">▶ <a href="https://www.youtube.com/results?search_query=Verdi+Rigoletto+Bonynge+Sutherland+Pavarotti+Milnes+1971" target="_blank" rel="noopener">이 녹음 유튜브에서 찾기</a></p>
+              </div>
+            </li>
+
+            <li class="disc-card">
+              <div class="disc-cover disc-cover--emi">
+                <img src="https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/7d/38/a7/7d38a743-40ac-05df-4c80-d663854c88f5/5054197526558.jpg/400x400bb.jpg" alt="Rigoletto — Serafin(1955, EMI) 음반 표지" loading="lazy" onerror="this.style.display='none'">
+                <span class="disc-sleeve"><span class="disc-sleeve-label">EMI</span><span class="disc-sleeve-year">1955</span></span>
+              </div>
+              <div class="disc-body">
+                <h4>세라핀 · 고비 / 칼라스 / 디 스테파노</h4>
+                <p class="disc-credits"><strong>지휘</strong> 툴리오 세라핀 &middot; <strong>주역</strong> 티토 고비(리골레토), 마리아 칼라스(질다), 주세페 디 스테파노(만토바 공작) &middot; <strong>레이블/연도</strong> EMI · 1955</p>
+                <p class="disc-note">고비의 비극적인 광대 리골레토와 칼라스의 섬세한 질다가 담긴 모노 시대 최고봉으로 꼽히는 고전 명반.</p>
+                <p class="disc-cover-desc"><strong>표지</strong> 흑백 사진, 고풍스러운 EMI 레터링.</p>
+                <p class="listen-link">▶ <a href="https://www.youtube.com/results?search_query=Verdi+Rigoletto+Serafin+Callas+Gobbi+di+Stefano+1955" target="_blank" rel="noopener">이 녹음 유튜브에서 찾기</a></p>
+              </div>
+            </li>
+
+            <li class="disc-card">
+              <div class="disc-cover disc-cover--emi">
+                <img src="https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/b0/24/c4/b024c44f-5394-87f2-983e-a81dcc57bd4e/00028947964926.rgb.jpg/400x400bb.jpg" alt="Rigoletto — Giulini(1979, DG) 음반 표지" loading="lazy" onerror="this.style.display='none'">
+                <span class="disc-sleeve"><span class="disc-sleeve-label">DG</span><span class="disc-sleeve-year">1979</span></span>
+              </div>
+              <div class="disc-body">
+                <h4>줄리니 · 카푸칠리 / 코트루바스 / 도밍고</h4>
+                <p class="disc-credits"><strong>지휘</strong> 카를로 마리아 줄리니 &middot; <strong>주역</strong> 피에로 카푸칠리(리골레토), 일레아나 코트루바스(질다), 플라시도 도밍고(만토바 공작) &middot; <strong>레이블/연도</strong> DG · 1979</p>
+                <p class="disc-note">카푸칠리의 인간적인 리골레토와 코트루바스의 청순한 질다, 도밍고의 매력적인 공작이 균형 잡힌 후기 명반.</p>
+                <p class="disc-cover-desc"><strong>표지</strong> 어두운 배경에 세 주역의 근접 초상 사진, DG 로고.</p>
+                <p class="listen-link">▶ <a href="https://www.youtube.com/results?search_query=Verdi+Rigoletto+Giulini+Cappuccilli+Cotrubas+Domingo+1979" target="_blank" rel="noopener">이 녹음 유튜브에서 찾기</a></p>
+              </div>
+            </li>
+
+          </ul>
+          <p class="disc-hint">※ 음반 표지 이미지는 저작권이 있어 사이트에 기본 포함하지 않습니다(색상 슬리브로 대체 표시). 실제 표지를 넣으려면 <code>site/img/covers/</code> 폴더에 위 파일명(<code>rigoletto-1971-bonynge.jpg</code> 등)으로 이미지를 넣으면 자동으로 표시됩니다.</p>
+        </div>
+
+        <p class="links">→ <a href="composers.html#composer-verdi">베르디 작곡가 페이지</a> &nbsp;
+          <button class="log-mark" data-slug="stage-verdi-rigoletto" data-work="리골레토" data-type="opera" data-composer="Verdi">♡ 관람함</button></p>
+      </article>
+
+      <!-- stage-verdi-aida -->
+      <article class="stage-card" id="stage-verdi-aida">
+        <h3>Aida <small>아이다</small></h3>
+        <div class="stage-meta">
+          작곡가: Giuseppe Verdi (1813–1901) &nbsp;·&nbsp;
+          초연: 1871년 12월 24일, 카이로 케디비알 오페라 하우스 (수에즈 운하 개통 기념 위촉) &nbsp;·&nbsp;
+          이탈리아어 / 4막 / 약 3시간 &nbsp;·&nbsp; 입문 난이도 ★★☆
+        </div>
+        <p class="one-liner">고대 이집트를 배경으로 두 나라에 갈린 사랑—장엄한 개선 행진곡과 지하 무덤의 마지막 이중창이 대비되는 스펙터클 오페라.</p>
+        <div class="synopsis">
+          <p><strong>1막:</strong> 고대 이집트. 이집트 총사령관 라다메스는 에티오피아 공주이지만 포로로 잡혀 시녀가 된 아이다를 사랑한다. 이집트 공주 암네리스도 라다메스를 사랑한다. 라다메스가 원정 사령관으로 임명된다.</p>
+          <p><strong>2막:</strong> 이집트의 승리. 에티오피아 왕(아이다의 아버지 아모나스로)이 포로로 잡혀온다. 아이다는 신분을 숨긴다. 암네리스가 아이다의 사랑을 알아채고 질투한다.</p>
+          <p><strong>3막:</strong> 나일 강변. 아이다의 아버지가 딸에게 조국을 위해 라다메스에게서 군사 정보를 캐내라고 압박한다. 라다메스가 아이다와 도망치려다 전략 경로를 누설하고 만다.</p>
+          <p><strong>4막:</strong> 라다메스는 반역죄로 재판을 받는다. 암네리스가 배신을 부인하면 살려주겠다 하지만 라다메스는 거부한다. 살아 있는 채로 봉인된 무덤에 갇히는데, 미리 잠입해 기다리던 아이다가 있었다. 두 사람은 지하에서 함께 노래하며 평화롭게 죽는다.</p>
+        </div>
+        <p class="scene-h4">놓치면 안 될 명장면</p>
+        <div class="scene-table-wrap">
+          <table class="scene-table">
+            <thead><tr><th>장면 / 곡</th><th>막</th><th>무엇이 들리는가</th><th>길이</th></tr></thead>
+            <tbody>
+              <tr><td>'Celeste Aida'</td><td>1막</td><td>테너(라다메스)의 사랑 고백 아리아. "신성한 아이다, 아름다운 광채..." 은밀하고 서정적</td><td>약 4분</td></tr>
+              <tr><td>'Ritorna vincitor!'</td><td>1막</td><td>소프라노(아이다)의 갈등 독백. "승리하고 돌아와!를 외쳤는데 그 말이 내 조국을 죽이는 것..." 강렬한 드라마틱 소프라노</td><td>약 5분</td></tr>
+              <tr><td>개선 행진곡 (Triumphal March)</td><td>2막</td><td>이집트군 개선. 대규모 스펙터클. 오케스트라 + 무대 위 금관 앙상블</td><td>약 5분</td></tr>
+              <tr><td>'O terra addio'</td><td>4막</td><td>소프라노+테너(아이다+라다메스)의 지하 무덤 마지막 이중창. "대지여 안녕" — 고요하고 숭고한 죽음의 노래</td><td>약 5분</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="tip"><strong>관람 팁:</strong> 개선 행진곡 장면이 가장 화려해 야외극장 공연에서 특히 인상적이다. 4막의 무덤 장면은 무대 위 아래를 동시에 보여주는 분할 무대가 인상적이며, 두 사람이 지하에서 노래하는 동안 위에서 암네리스가 기도하는 구조가 영상 버전에서도 잘 살아있다.</div>
+        <p class="listen-link">▶ 영상 찾기: <a href="https://www.youtube.com/results?search_query=Aida+Verdi+Celeste+Aida" target="_blank" rel="noopener">Aida 'Celeste Aida'</a> · <a href="https://www.youtube.com/results?search_query=Aida+Verona+Arena+full" target="_blank" rel="noopener">아이다 베로나 야외극장</a></p>
+
+        <div class="disc-collection">
+          <p class="scene-h4">듣고 싶은 명반 (역대 대표 녹음)</p>
+          <ul class="disc-list">
+
+            <li class="disc-card">
+              <div class="disc-cover disc-cover--decca">
+                <img src="https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/13/8f/58/138f5866-be90-ca03-372f-5e949e39ab8e/00028948315994.rgb.jpg/400x400bb.jpg" alt="Aida — Solti(1961, Decca) 음반 표지" loading="lazy" onerror="this.style.display='none'">
+                <span class="disc-sleeve"><span class="disc-sleeve-label">Decca</span><span class="disc-sleeve-year">1961</span></span>
+              </div>
+              <div class="disc-body">
+                <h4>솔티 · 프라이스 / 빅커스 / 고르</h4>
+                <p class="disc-credits"><strong>지휘</strong> 게오르그 솔티 &middot; <strong>주역</strong> 레온타인 프라이스(아이다), 존 빅커스(라다메스), 리타 고르(암네리스) &middot; <strong>레이블/연도</strong> Decca · 1961</p>
+                <p class="disc-note">프라이스가 시그니처 롤로 삼은 아이다, 빅커스의 강인한 라다메스, 고르의 강렬한 암네리스가 어우러진 초기 스테레오 명반.</p>
+                <p class="disc-cover-desc"><strong>표지</strong> 이집트 신전을 그린 삽화 배경, Decca 로고.</p>
+                <p class="listen-link">▶ <a href="https://www.youtube.com/results?search_query=Verdi+Aida+Solti+Price+Vickers+Gorr+1961" target="_blank" rel="noopener">이 녹음 유튜브에서 찾기</a></p>
+              </div>
+            </li>
+
+            <li class="disc-card">
+              <div class="disc-cover disc-cover--decca">
+                <img src="https://is1-ssl.mzstatic.com/image/thumb/Music2/v4/23/84/2f/23842ff8-cfb9-56cc-fbc7-c2d97f028447/885150984185.jpg/400x400bb.jpg" alt="Aida — Karajan(1959, Decca) 음반 표지" loading="lazy" onerror="this.style.display='none'">
+                <span class="disc-sleeve"><span class="disc-sleeve-label">Decca</span><span class="disc-sleeve-year">1959</span></span>
+              </div>
+              <div class="disc-body">
+                <h4>카라얀 · 테발디 / 베르곤지 / 시모나토</h4>
+                <p class="disc-credits"><strong>지휘</strong> 헤르베르트 폰 카라얀 &middot; <strong>주역</strong> 레나타 테발디(아이다), 카를로 베르곤지(라다메스), 줄리에타 시모나토(암네리스) &middot; <strong>레이블/연도</strong> Decca · 1959</p>
+                <p class="disc-note">테발디의 따뜻하고 균형 잡힌 아이다와 빈 필의 화려한 관현악이 돋보이는 카라얀의 첫 스테레오 아이다.</p>
+                <p class="disc-cover-desc"><strong>표지</strong> 황금빛 이집트풍 문양 배경, Decca 로고.</p>
+                <p class="listen-link">▶ <a href="https://www.youtube.com/results?search_query=Verdi+Aida+Karajan+Tebaldi+Bergonzi+Simionato+1959" target="_blank" rel="noopener">이 녹음 유튜브에서 찾기</a></p>
+              </div>
+            </li>
+
+            <li class="disc-card">
+              <div class="disc-cover disc-cover--emi">
+                <img src="img/covers/aida-1974-muti.jpg" alt="Aida — Muti(1974, EMI) 음반 표지" loading="lazy" onerror="this.style.display='none'">
+                <span class="disc-sleeve"><span class="disc-sleeve-label">EMI</span><span class="disc-sleeve-year">1974</span></span>
+              </div>
+              <div class="disc-body">
+                <h4>무티 · 카바예 / 도밍고</h4>
+                <p class="disc-credits"><strong>지휘</strong> 리카르도 무티 &middot; <strong>주역</strong> 몬세라 카바예(아이다), 플라시도 도밍고(라다메스) &middot; <strong>레이블/연도</strong> EMI · 1974</p>
+                <p class="disc-note">카바예의 섬세한 피아니시모와 무티의 격정적인 지휘가 결합된 1970년대 대표 명반.</p>
+                <p class="disc-cover-desc"><strong>표지</strong> 어두운 사막 배경에 카바예의 초상 사진, EMI 로고.</p>
+                <p class="listen-link">▶ <a href="https://www.youtube.com/results?search_query=Verdi+Aida+Muti+Caballe+Domingo+1974" target="_blank" rel="noopener">이 녹음 유튜브에서 찾기</a></p>
+              </div>
+            </li>
+
+          </ul>
+          <p class="disc-hint">※ 음반 표지 이미지는 저작권이 있어 사이트에 기본 포함하지 않습니다(색상 슬리브로 대체 표시). 실제 표지를 넣으려면 <code>site/img/covers/</code> 폴더에 위 파일명(<code>aida-1961-solti.jpg</code> 등)으로 이미지를 넣으면 자동으로 표시됩니다.</p>
+        </div>
+
+        <p class="links">→ <a href="composers.html#composer-verdi">베르디 작곡가 페이지</a> &nbsp;
+          <button class="log-mark" data-slug="stage-verdi-aida" data-work="아이다" data-type="opera" data-composer="Verdi">♡ 관람함</button></p>
+      </article>
+
+      <!-- stage-bizet-carmen -->
+      <article class="stage-card" id="stage-bizet-carmen">
+        <h3>Carmen <small>카르멘</small></h3>
+        <div class="stage-meta">
+          작곡가: Georges Bizet (1838–1875) &nbsp;·&nbsp;
+          초연: 1875년 3월 3일, 오페라-코미크, 파리 (비제는 초연 후 33회 공연 뒤 급사, 세계적 성공을 목격하지 못함) &nbsp;·&nbsp;
+          프랑스어(대화 부분 산문 대사) / 4막 / 약 2시간 30분
+        </div>
+        <p class="one-liner">자유를 택한 여성 카르멘과 그녀에 집착하는 병사 호세의 파국—하바네라와 투우사의 노래로 오페라 입문자에게 가장 친숙한 작품.</p>
+        <div class="synopsis">
+          <p><strong>1막:</strong> 세비야의 담배 공장 앞 광장. 여공 카르멘이 병사 호세에게 꽃을 던지며 유혹한다. 공장 내 난동으로 카르멘이 체포되는데, 호세를 유혹해 탈출한다. 호세는 강등당한다.</p>
+          <p><strong>2막:</strong> 술집. 카르멘 앞에 화려한 투우사 에스카미요가 나타나 구애한다. 카르멘은 흥미를 보인다. 군대 복귀 나팔 소리에도 호세는 카르멘의 밀수업자 무리에 합류해 탈영한다.</p>
+          <p><strong>3막:</strong> 산속. 카르멘이 타로 카드로 자신의 죽음을 예언한다. 카르멘은 호세의 질투와 집착에 지쳐간다.</p>
+          <p><strong>4막:</strong> 세비야 투우장 앞. 에스카미요의 경기날. 카르멘이 에스카미요와 팔짱 끼고 등장한다. 호세가 돌아오라 애원하지만 카르멘이 거절하며 에스카미요의 반지를 호세에게 내던진다. 분노한 호세가 카르멘을 칼로 찌른다. 투우장 안에서 에스카미요의 승리 함성이 터진다.</p>
+        </div>
+        <p class="scene-h4">놓치면 안 될 명장면</p>
+        <div class="scene-table-wrap">
+          <table class="scene-table">
+            <thead><tr><th>장면 / 곡</th><th>막</th><th>무엇이 들리는가</th><th>길이</th></tr></thead>
+            <tbody>
+              <tr><td>하바네라 'L'amour est un oiseau rebelle'</td><td>1막</td><td>메조-소프라노(카르멘)의 등장 아리아. "사랑은 반항하는 새" — 쿠바에서 온 하바네라 리듬, 관능적이고 도발적</td><td>약 3분</td></tr>
+              <tr><td>투우사의 노래 'Votre toast'</td><td>2막</td><td>바리톤(에스카미요)의 화려한 입장 아리아. 투우장의 환호를 그대로 담은 장엄하고 씩씩한 노래</td><td>약 3분</td></tr>
+              <tr><td>꽃의 노래 'La fleur que tu m'avais jetée'</td><td>2막</td><td>테너(호세)가 카르멘이 던진 꽃을 간직하며 부르는 사랑의 아리아. 서정적이고 절절한 테너 독백</td><td>약 4분</td></tr>
+              <tr><td>미카엘라의 아리아 'Je dis que rien ne m'épouvante'</td><td>3막</td><td>소프라노(미카엘라)가 혼자 산속을 헤매며 부르는 용기와 사랑의 아리아. 맑고 순수한 소프라노 음색</td><td>약 4분</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="tip"><strong>관람 팁:</strong> 카르멘은 전통적으로 메조-소프라노가 맡는다. 하바네라는 카르멘이 꽃을 던지는 동시에 나오므로 시각적으로도 강렬하다. 4막의 비극적 결말이 갑작스럽게 느껴지도록 설계되어 있으니 마음 준비를 하고 갈 것.</div>
+        <p class="listen-link">▶ 영상 찾기: <a href="https://www.youtube.com/results?search_query=Carmen+opera+habanera" target="_blank" rel="noopener">Carmen 하바네라</a> · <a href="https://www.youtube.com/results?search_query=Carmen+Elina+Garanca+full" target="_blank" rel="noopener">Carmen Elīna Garanča 전막</a></p>
+
+        <div class="disc-collection">
+          <p class="scene-h4">듣고 싶은 명반 (역대 대표 녹음)</p>
+          <ul class="disc-list">
+
+            <li class="disc-card">
+              <div class="disc-cover disc-cover--emi">
+                <img src="https://is1-ssl.mzstatic.com/image/thumb/Music/03/dc/fc/mzi.bqfbqyof.jpg/400x400bb.jpg" alt="Carmen — Beecham(1959, EMI) 음반 표지" loading="lazy" onerror="this.style.display='none'">
+                <span class="disc-sleeve"><span class="disc-sleeve-label">EMI</span><span class="disc-sleeve-year">1959</span></span>
+              </div>
+              <div class="disc-body">
+                <h4>비첨 · 데 로스 앙헬레스 / 게다</h4>
+                <p class="disc-credits"><strong>지휘</strong> 토머스 비첨 경 &middot; <strong>주역</strong> 빅토리아 데 로스 앙헬레스(카르멘), 니콜라이 게다(돈 호세) &middot; <strong>레이블/연도</strong> EMI · 1959</p>
+                <p class="disc-note">데 로스 앙헬레스의 관능적이고 프랑스어 딕션이 뛰어난 카르멘, 비첨의 우아한 지휘로 "정석"으로 꼽히는 고전 명반.</p>
+                <p class="disc-cover-desc"><strong>표지</strong> 스페인풍 붉은/검정 배경 일러스트, EMI 로고.</p>
+                <p class="listen-link">▶ <a href="https://www.youtube.com/results?search_query=Bizet+Carmen+Beecham+de+los+Angeles+Gedda+1959" target="_blank" rel="noopener">이 녹음 유튜브에서 찾기</a></p>
+              </div>
+            </li>
+
+            <li class="disc-card">
+              <div class="disc-cover disc-cover--emi">
+                <img src="https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/ef/9d/72/ef9d72d6-4438-33c0-81b2-a6fd341a0a9c/884977677737.jpg/400x400bb.jpg" alt="Carmen — Karajan(1963, RCA) 음반 표지" loading="lazy" onerror="this.style.display='none'">
+                <span class="disc-sleeve"><span class="disc-sleeve-label">RCA</span><span class="disc-sleeve-year">1963</span></span>
+              </div>
+              <div class="disc-body">
+                <h4>카라얀 · 프라이스 / 코렐리</h4>
+                <p class="disc-credits"><strong>지휘</strong> 헤르베르트 폰 카라얀 &middot; <strong>주역</strong> 레온타인 프라이스(카르멘), 프랑코 코렐리(돈 호세) &middot; <strong>레이블/연도</strong> RCA · 1963</p>
+                <p class="disc-note">프라이스의 강렬한 카리스마와 코렐리의 폭발적인 하이노트가 부딪히는 드라마틱한 녹음.</p>
+                <p class="disc-cover-desc"><strong>표지</strong> 붉은 조명 아래 투우사 이미지, RCA Red Seal 로고.</p>
+                <p class="listen-link">▶ <a href="https://www.youtube.com/results?search_query=Bizet+Carmen+Karajan+Price+Corelli+1963" target="_blank" rel="noopener">이 녹음 유튜브에서 찾기</a></p>
+              </div>
+            </li>
+
+            <li class="disc-card">
+              <div class="disc-cover disc-cover--emi">
+                <img src="https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/4a/78/f8/4a78f86f-c645-5edb-6c3b-54297d86e06a/00028941008824.rgb.jpg/400x400bb.jpg" alt="Carmen — Karajan(1983, DG) 음반 표지" loading="lazy" onerror="this.style.display='none'">
+                <span class="disc-sleeve"><span class="disc-sleeve-label">DG</span><span class="disc-sleeve-year">1982-83</span></span>
+              </div>
+              <div class="disc-body">
+                <h4>카라얀 · 발트사 / 카레라스</h4>
+                <p class="disc-credits"><strong>지휘</strong> 헤르베르트 폰 카라얀 &middot; <strong>주역</strong> 아그네스 발트사(카르멘), 호세 카레라스(돈 호세) &middot; <strong>레이블/연도</strong> DG · 1982-83</p>
+                <p class="disc-note">말년의 카라얀이 베를린 필과 만든 스튜디오 명반. 발트사의 강렬하고 도발적인 카르멘, 카레라스의 열정적인 돈 호세가 인상적.</p>
+                <p class="disc-cover-desc"><strong>표지</strong> 어두운 붉은 배경, DG 로고.</p>
+                <p class="listen-link">▶ <a href="https://www.youtube.com/results?search_query=Bizet+Carmen+Karajan+Baltsa+Carreras+1983" target="_blank" rel="noopener">이 녹음 유튜브에서 찾기</a></p>
+              </div>
+            </li>
+
+          </ul>
+          <p class="disc-hint">※ 음반 표지 이미지는 저작권이 있어 사이트에 기본 포함하지 않습니다(색상 슬리브로 대체 표시). 실제 표지를 넣으려면 <code>site/img/covers/</code> 폴더에 위 파일명(<code>carmen-1959-beecham.jpg</code> 등)으로 이미지를 넣으면 자동으로 표시됩니다.</p>
+        </div>
+
+        <p class="links">→ <a href="composers.html#composer-bizet">비제 작곡가 페이지</a> &nbsp;
+          <button class="log-mark" data-slug="stage-bizet-carmen" data-work="카르멘" data-type="opera" data-composer="Bizet">♡ 관람함</button></p>
+      </article>
+
+      <!-- stage-mozart-le-nozze-di-figaro -->
+      <article class="stage-card" id="stage-mozart-le-nozze-di-figaro">
+        <h3>Le nozze di Figaro <small>피가로의 결혼</small></h3>
+        <div class="stage-meta">
+          작곡가: Wolfgang Amadeus Mozart (1756–1791) &nbsp;·&nbsp;
+          초연: 1786년 5월 1일, 부르크 극장, 빈 (K. 492) &nbsp;·&nbsp;
+          이탈리아어 / 4막 / 약 3시간 &nbsp;·&nbsp; 입문 난이도 ★★☆
+        </div>
+        <p class="one-liner">단 하루 동안 벌어지는 결혼 대소동—사랑·질투·속임수가 얽히며 모차르트의 가장 완벽한 앙상블 오페라가 탄생한다.</p>
+        <div class="synopsis">
+          <p><strong>1막:</strong> 결혼 당일 아침. 피가로와 수잔나가 신방을 꾸리는데 수잔나가 주인 알마비바 백작이 자신을 탐내고 있다고 알린다. 사랑에 들뜬 시동 케루비노가 모든 여성에게 반해 떠든다.</p>
+          <p><strong>2막:</strong> 백작 부인의 방. 수잔나와 부인이 케루비노를 여장시켜 백작을 함정에 빠뜨리려 계략을 짠다. 갖가지 혼란 끝에 피가로가 마르첼리나의 친아들임이 밝혀진다.</p>
+          <p><strong>3막:</strong> 결혼식 준비. 수잔나가 백작에게 밀회를 약속하는 편지를 쓴다(백작 부인의 지시). 피가로와 수잔나의 결혼식이 진행된다.</p>
+          <p><strong>4막:</strong> 달밤의 정원. 백작 부인과 수잔나가 역할을 바꿔 상대를 속인다. 백작이 수잔나(사실 부인)에게 추근대다 들킨다. 모든 오해가 풀리고 백작이 진심으로 용서를 빈다.</p>
+        </div>
+        <p class="scene-h4">놓치면 안 될 명장면</p>
+        <div class="scene-table-wrap">
+          <table class="scene-table">
+            <thead><tr><th>장면 / 곡</th><th>막</th><th>무엇이 들리는가</th><th>길이</th></tr></thead>
+            <tbody>
+              <tr><td>'Non più andrai'</td><td>1막</td><td>바스-바리톤(피가로)이 군대로 쫓겨나는 케루비노를 놀리는 노래. 경쾌한 행진곡 리듬, 빠른 음절. 비교적 쉽게 따라 흥얼거릴 수 있다</td><td>약 3분</td></tr>
+              <tr><td>'Voi che sapete'</td><td>2막</td><td>메조-소프라노(케루비노)의 사랑 노래. "사랑이 뭔지 아세요?" — 달콤하고 순수한 첫사랑의 설렘</td><td>약 3분</td></tr>
+              <tr><td>'Dove sono i bei momenti'</td><td>3막</td><td>소프라노(백작 부인)의 슬픈 독백. 남편의 사랑을 잃은 절망. 모차르트가 소프라노에게 준 가장 아름다운 아리아 중 하나</td><td>약 5분</td></tr>
+              <tr><td>4막 피날레 앙상블</td><td>4막</td><td>5~6명이 동시에 서로 다른 감정을 노래하는 대규모 앙상블. 코미디와 감동이 뒤엉키며 해결로 치닫는 모차르트의 앙상블 마법</td><td>약 15분</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="tip"><strong>관람 팁:</strong> 4막 구성이라 공연이 길다. 줄거리의 변장·혼동이 복잡하니 공연 전 시놉시스를 읽고 가는 것을 강력 권장. 3막 부인의 아리아부터 감정이 깊어진다.</div>
+        <p class="listen-link">▶ 영상 찾기: <a href="https://www.youtube.com/results?search_query=Le+nozze+di+Figaro+Karl+Bohm" target="_blank" rel="noopener">Le nozze di Figaro Karl Böhm</a> · <a href="https://www.youtube.com/results?search_query=Marriage+of+Figaro+Glyndebourne" target="_blank" rel="noopener">피가로의 결혼 Glyndebourne</a></p>
+
+        <div class="disc-collection">
+          <p class="scene-h4">듣고 싶은 명반 (역대 대표 녹음)</p>
+          <ul class="disc-list">
+
+            <li class="disc-card">
+              <div class="disc-cover disc-cover--decca">
+                <img src="https://is1-ssl.mzstatic.com/image/thumb/Music/a0/ac/b2/mzi.kzmzvbac.jpg/400x400bb.jpg" alt="Le nozze di Figaro — Erich Kleiber(1955, Decca) 음반 표지" loading="lazy" onerror="this.style.display='none'">
+                <span class="disc-sleeve"><span class="disc-sleeve-label">Decca</span><span class="disc-sleeve-year">1955</span></span>
+              </div>
+              <div class="disc-body">
+                <h4>클라이버 · 시에피 / 귀덴</h4>
+                <p class="disc-credits"><strong>지휘</strong> 에리히 클라이버 &middot; <strong>주역</strong> 체사레 시에피(피가로), 힐데 귀덴(수잔나) &middot; <strong>레이블/연도</strong> Decca · 1955</p>
+                <p class="disc-note">시에피의 유머러스한 피가로와 귀덴의 상큼한 수잔나, 클라이버의 우아하고 따뜻한 지휘가 담긴 초기 스테레오 고전.</p>
+                <p class="disc-cover-desc"><strong>표지</strong> 궁정 의상을 입은 인물 삽화, Decca 로고.</p>
+                <p class="listen-link">▶ <a href="https://www.youtube.com/results?search_query=Mozart+Figaro+Erich+Kleiber+Siepi+Gueden+1955" target="_blank" rel="noopener">이 녹음 유튜브에서 찾기</a></p>
+              </div>
+            </li>
+
+            <li class="disc-card">
+              <div class="disc-cover disc-cover--emi">
+                <img src="https://is1-ssl.mzstatic.com/image/thumb/Music/2e/9d/a0/mzi.boefrdkw.jpg/400x400bb.jpg" alt="Le nozze di Figaro — Giulini(1959, EMI) 음반 표지" loading="lazy" onerror="this.style.display='none'">
+                <span class="disc-sleeve"><span class="disc-sleeve-label">EMI</span><span class="disc-sleeve-year">1959</span></span>
+              </div>
+              <div class="disc-body">
+                <h4>줄리니 · 타데이 / 슈바르츠코프</h4>
+                <p class="disc-credits"><strong>지휘</strong> 카를로 마리아 줄리니 &middot; <strong>주역</strong> 주세페 타데이(피가로), 엘리자베트 슈바르츠코프(백작부인) &middot; <strong>레이블/연도</strong> EMI · 1959</p>
+                <p class="disc-note">슈바르츠코프의 기품 있는 백작부인과 타데이의 인간적인 피가로가 어우러진, "역대 최고의 피가로 결혼"으로 자주 꼽히는 명반.</p>
+                <p class="disc-cover-desc"><strong>표지</strong> 파스텔톤 궁정 배경, EMI 로고.</p>
+                <p class="listen-link">▶ <a href="https://www.youtube.com/results?search_query=Mozart+Figaro+Giulini+Schwarzkopf+Taddei+1959" target="_blank" rel="noopener">이 녹음 유튜브에서 찾기</a></p>
+              </div>
+            </li>
+
+            <li class="disc-card">
+              <div class="disc-cover disc-cover--emi">
+                <img src="https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/07/4c/c2/074cc26a-2ad7-647b-862e-019ff84e8199/22UM1IM26553.rgb.jpg/400x400bb.jpg" alt="Le nozze di Figaro — Bohm(1968, DG) 음반 표지" loading="lazy" onerror="this.style.display='none'">
+                <span class="disc-sleeve"><span class="disc-sleeve-label">DG</span><span class="disc-sleeve-year">1968</span></span>
+              </div>
+              <div class="disc-body">
+                <h4>뵘 · 프라이 / 피셔-디스카우 / 야노비츠</h4>
+                <p class="disc-credits"><strong>지휘</strong> 카를 뵘 &middot; <strong>주역</strong> 헤르만 프라이(피가로), 디트리히 피셔-디스카우(백작), 군둘라 야노비츠(백작부인) &middot; <strong>레이블/연도</strong> DG · 1968</p>
+                <p class="disc-note">피셔-디스카우의 위엄 있는 백작과 프라이의 활기찬 피가로, 야노비츠의 서정적인 백작부인이 조화를 이루는 독일식 정통 명반.</p>
+                <p class="disc-cover-desc"><strong>표지</strong> 짙은 남색 배경, DG 로고.</p>
+                <p class="listen-link">▶ <a href="https://www.youtube.com/results?search_query=Mozart+Figaro+Bohm+Fischer-Dieskau+Prey+Janowitz+1968" target="_blank" rel="noopener">이 녹음 유튜브에서 찾기</a></p>
+              </div>
+            </li>
+
+          </ul>
+          <p class="disc-hint">※ 음반 표지 이미지는 저작권이 있어 사이트에 기본 포함하지 않습니다(색상 슬리브로 대체 표시). 실제 표지를 넣으려면 <code>site/img/covers/</code> 폴더에 위 파일명(<code>figaro-1955-kleiber.jpg</code> 등)으로 이미지를 넣으면 자동으로 표시됩니다.</p>
+        </div>
+
+        <p class="links">→ <a href="composers.html#composer-mozart">모차르트 작곡가 페이지</a> &nbsp;
+          <button class="log-mark" data-slug="stage-mozart-le-nozze-di-figaro" data-work="피가로의 결혼" data-type="opera" data-composer="Mozart">♡ 관람함</button></p>
+      </article>
+
+      <!-- stage-mozart-die-zauberflote -->
+      <article class="stage-card" id="stage-mozart-die-zauberflote">
+        <h3>Die Zauberflöte <small>마술피리</small></h3>
+        <div class="stage-meta">
+          작곡가: Wolfgang Amadeus Mozart (1756–1791) &nbsp;·&nbsp;
+          초연: 1791년 9월 30일, 프라이하우스-테아터, 빈 (K. 620. 모차르트 사망 2개월 전, 대성공) &nbsp;·&nbsp;
+          독일어(Singspiel) / 2막 / 약 2시간 30분
+        </div>
+        <p class="one-liner">마법사·공주·새 인간이 등장하는 동화 같은 오페라—'밤의 여왕 아리아'의 소프라노 초고음이 전율을 준다.</p>
+        <div class="synopsis">
+          <p><strong>1막:</strong> 왕자 타미노가 뱀에 쫓기다 기절한다. 밤의 여왕의 세 시녀가 구해준다. 밤의 여왕이 딸 파미나를 사라스트로에게서 구해주면 딸과 결혼시켜 주겠다고 약속한다. 타미노에게 마술피리, 새 인간 파파게노에게 마술 종이 주어진다. 그런데 사라스트로의 왕국에 도착하자 진실이 드러난다—사라스트로는 선하고 밤의 여왕이 악하다.</p>
+          <p><strong>2막:</strong> 타미노와 파미나가 지혜와 덕의 시험(불·물의 시련)을 함께 통과해야만 결합할 수 있다. 밤의 여왕이 딸에게 사라스트로를 죽이라 명한다. 파파게노는 진지한 시험을 피하고 짝 파파게나를 만난다. 타미노와 파미나가 함께 시련을 통과해 사랑을 완성한다. 밤의 여왕 일파가 패퇴하고 태양의 왕국이 승리한다.</p>
+        </div>
+        <p class="scene-h4">놓치면 안 될 명장면</p>
+        <div class="scene-table-wrap">
+          <table class="scene-table">
+            <thead><tr><th>장면 / 곡</th><th>막</th><th>무엇이 들리는가</th><th>길이</th></tr></thead>
+            <tbody>
+              <tr><td>밤의 여왕 아리아 'Der Hölle Rache'</td><td>2막</td><td>소프라노(밤의 여왕)의 분노 아리아. F6(최고음 중 하나)까지 치솟는 콜로라투라. "지옥의 복수가 내 가슴에 불탄다!" 오페라 역사상 가장 유명한 소프라노 아리아</td><td>약 3분</td></tr>
+              <tr><td>'Dies Bildnis ist bezaubernd schön'</td><td>1막</td><td>테너(타미노)의 첫사랑 아리아. 파미나의 초상화를 보고 "이 얼마나 아름다운 그림인가" 서정적이고 맑음</td><td>약 3분</td></tr>
+              <tr><td>파파게나-파파게노 이중창 'Pa-pa-pa'</td><td>2막</td><td>바리톤+소프라노(파파게노+파파게나)의 재회. "파-파-파!" 귀엽고 유쾌. 관객 모두 미소 짓는 장면</td><td>약 2분</td></tr>
+              <tr><td>'Bei Männern, welche Liebe fühlen'</td><td>1막</td><td>소프라노+바리톤(파미나+파파게노)이 사랑의 힘을 노래하는 이중창. 단순하고 아름다운 선율</td><td>약 3분</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="tip"><strong>관람 팁:</strong> 밤의 여왕은 두 개의 아리아가 있는데 1막 아리아는 비교적 서정적이고 2막의 'Der Hölle Rache'가 초고음 폭발 구간이다. 독일어 대사 구간은 자막 집중, 노래 구간은 귀로 즐기면 된다.</div>
+        <p class="listen-link">▶ 영상 찾기: <a href="https://www.youtube.com/results?search_query=Die+Zauberflote+Der+Holle+Rache" target="_blank" rel="noopener">Die Zauberflöte 밤의 여왕 아리아</a> · <a href="https://www.youtube.com/results?search_query=Magic+Flute+Met+Opera+full" target="_blank" rel="noopener">마술피리 전막</a></p>
+
+        <div class="disc-collection">
+          <p class="scene-h4">듣고 싶은 명반 (역대 대표 녹음)</p>
+          <ul class="disc-list">
+
+            <li class="disc-card">
+              <div class="disc-cover disc-cover--emi">
+                <img src="https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/7e/d7/69/7ed769fe-caf3-d9f8-f0dc-b6e27ece69a1/00028944546422.rgb.jpg/400x400bb.jpg" alt="Die Zauberflote — Bohm(1964, DG) 음반 표지" loading="lazy" onerror="this.style.display='none'">
+                <span class="disc-sleeve"><span class="disc-sleeve-label">DG</span><span class="disc-sleeve-year">1964</span></span>
+              </div>
+              <div class="disc-body">
+                <h4>뵘 · 분덜리히 / 피셔-디스카우</h4>
+                <p class="disc-credits"><strong>지휘</strong> 카를 뵘 &middot; <strong>주역</strong> 프리츠 분덜리히(타미노), 디트리히 피셔-디스카우(파파게노) &middot; <strong>레이블/연도</strong> DG · 1964</p>
+                <p class="disc-note">분덜리히가 역사상 최고로 꼽히는 타미노를 부른 전설적 명반. 피셔-디스카우의 유쾌한 파파게노도 인상적. 분덜리히는 이 녹음 2년 뒤 요절해 더욱 소중하게 여겨진다.</p>
+                <p class="disc-cover-desc"><strong>표지</strong> 신비로운 밤하늘 배경, DG 로고.</p>
+                <p class="listen-link">▶ <a href="https://www.youtube.com/results?search_query=Mozart+Magic+Flute+Bohm+Wunderlich+Fischer-Dieskau+1964" target="_blank" rel="noopener">이 녹음 유튜브에서 찾기</a></p>
+              </div>
+            </li>
+
+            <li class="disc-card">
+              <div class="disc-cover disc-cover--emi">
+                <img src="https://is1-ssl.mzstatic.com/image/thumb/Music4/v4/c0/09/36/c0093615-f0c6-051c-3caa-0f27b0f0fb0a/724356738553.jpg/400x400bb.jpg" alt="Die Zauberflote — Klemperer(1964, EMI) 음반 표지" loading="lazy" onerror="this.style.display='none'">
+                <span class="disc-sleeve"><span class="disc-sleeve-label">EMI</span><span class="disc-sleeve-year">1964</span></span>
+              </div>
+              <div class="disc-body">
+                <h4>클렘페러 · 게다 / 야노비츠 / 포프</h4>
+                <p class="disc-credits"><strong>지휘</strong> 오토 클렘페러 &middot; <strong>주역</strong> 니콜라이 게다(타미노), 군둘라 야노비츠(파미나), 루치아 포프(밤의 여왕) &middot; <strong>레이블/연도</strong> EMI · 1964</p>
+                <p class="disc-note">낭만적이고 웅장한 템포로 "정격연주와는 다른 결"의 표준으로 불리는 명반. 포프의 밤의 여왕 아리아가 특히 눈부시다.</p>
+                <p class="disc-cover-desc"><strong>표지</strong> 별이 빛나는 짙은 배경, EMI 로고.</p>
+                <p class="listen-link">▶ <a href="https://www.youtube.com/results?search_query=Mozart+Magic+Flute+Klemperer+Gedda+Janowitz+Popp+1964" target="_blank" rel="noopener">이 녹음 유튜브에서 찾기</a></p>
+              </div>
+            </li>
+
+            <li class="disc-card">
+              <div class="disc-cover disc-cover--decca">
+                <img src="https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/8f/3e/3e/8f3e3e7d-a2a6-5ee7-4d9d-75c85a559d42/00028943321020.rgb.jpg/400x400bb.jpg" alt="Die Zauberflote — Solti(1969, Decca) 음반 표지" loading="lazy" onerror="this.style.display='none'">
+                <span class="disc-sleeve"><span class="disc-sleeve-label">Decca</span><span class="disc-sleeve-year">1969</span></span>
+              </div>
+              <div class="disc-body">
+                <h4>솔티 · 버로스 / 도이테콤</h4>
+                <p class="disc-credits"><strong>지휘</strong> 게오르그 솔티 &middot; <strong>주역</strong> 스튜어트 버로스(타미노), 크리스티나 도이테콤(밤의 여왕) &middot; <strong>레이블/연도</strong> Decca · 1969</p>
+                <p class="disc-note">도이테콤의 초절기교 콜로라투라 밤의 여왕 아리아가 압권인 스테레오 시대 대표 명반.</p>
+                <p class="disc-cover-desc"><strong>표지</strong> 화려한 색채의 무대 일러스트, Decca 로고.</p>
+                <p class="listen-link">▶ <a href="https://www.youtube.com/results?search_query=Mozart+Magic+Flute+Solti+Burrows+Deutekom+1969" target="_blank" rel="noopener">이 녹음 유튜브에서 찾기</a></p>
+              </div>
+            </li>
+
+          </ul>
+          <p class="disc-hint">※ 음반 표지 이미지는 저작권이 있어 사이트에 기본 포함하지 않습니다(색상 슬리브로 대체 표시). 실제 표지를 넣으려면 <code>site/img/covers/</code> 폴더에 위 파일명(<code>zauberflote-1964-bohm.jpg</code> 등)으로 이미지를 넣으면 자동으로 표시됩니다.</p>
+        </div>
+
+        <p class="links">→ <a href="composers.html#composer-mozart">모차르트 작곡가 페이지</a> &nbsp;
+          <button class="log-mark" data-slug="stage-mozart-die-zauberflote" data-work="마술피리" data-type="opera" data-composer="Mozart">♡ 관람함</button></p>
+      </article>
+
+      <!-- stage-rossini-il-barbiere-di-siviglia -->
+      <article class="stage-card" id="stage-rossini-il-barbiere-di-siviglia">
+        <h3>Il barbiere di Siviglia <small>세비야의 이발사</small></h3>
+        <div class="stage-meta">
+          작곡가: Gioachino Rossini (1792–1868) &nbsp;·&nbsp;
+          초연: 1816년 2월 20일, 테아트로 아르젠티나, 로마 (대실패 초연 → 두 번째 공연부터 대성공) &nbsp;·&nbsp;
+          이탈리아어 / 2막 / 약 2시간 30분
+        </div>
+        <p class="one-liner">이발사 피가로의 종횡무진 활약으로 청년 백작이 아름다운 처녀를 쟁취하는 코미디 오페라—웃음과 기교가 가득한 입문 1순위.</p>
+        <div class="synopsis">
+          <p><strong>1막:</strong> 세비야. 알마비바 백작이 자신을 '린도로'라 속이고 의사 바르톨로의 후견 아래 갇힌 처녀 로시나에게 세레나데를 부른다. 만능 이발사 피가로가 나타나 중간 역할을 자처한다. 피가로의 도움으로 백작이 군인으로 변장해 바르톨로 집에 들어간다.</p>
+          <p><strong>2막:</strong> 백작이 이번엔 음악 선생으로 변장해 로시나에게 레슨을 가장하며 접근한다. 바르톨로가 로시나에게 거짓말로 백작이 그녀를 배신할 것이라 꾀지만, 진실이 밝혀진다. 야밤에 공증인이 도착해 백작과 로시나의 결혼 서류를 완성한다. 결국 결혼이 성사된다.</p>
+        </div>
+        <p class="scene-h4">놓치면 안 될 명장면</p>
+        <div class="scene-table-wrap">
+          <table class="scene-table">
+            <thead><tr><th>장면 / 곡</th><th>막</th><th>무엇이 들리는가</th><th>길이</th></tr></thead>
+            <tbody>
+              <tr><td>'Largo al factotum'</td><td>1막</td><td>바리톤(피가로)의 등장 아리아. "길을 비켜! 마을의 만능 재주꾼 피가로!" 미친 듯이 빠른 음절과 자신의 이름 반복. 오페라 역사상 가장 에너제틱한 아리아</td><td>약 4분</td></tr>
+              <tr><td>'Una voce poco fa'</td><td>1막</td><td>메조-소프라노(로시나)의 자기소개 아리아. "방금 그의 목소리를 들었어..." 표면은 얌전한 척이지만 속은 영리하고 발랄한 캐릭터 표현</td><td>약 5분</td></tr>
+              <tr><td>'Ecco ridente in cielo'</td><td>1막</td><td>테너(백작)의 새벽 세레나데. 로시나의 창 아래 부르는 달콤한 사랑 노래</td><td>약 4분</td></tr>
+              <tr><td>'La calunnia è un venticello'</td><td>1막</td><td>베이스(바질리오)의 코미디 아리아. "소문은 미풍처럼 시작해 허리케인이 된다" — 단계별 크레셴도가 폭발적</td><td>약 4분</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="tip"><strong>관람 팁:</strong> 코미디 오페라이므로 웃어도 된다. 피가로의 등장 아리아는 박수가 저절로 나오는 구간이다. 첫 오페라 관람자에게 가장 권하는 작품 중 하나다.</div>
+        <p class="listen-link">▶ 영상 찾기: <a href="https://www.youtube.com/results?search_query=Largo+al+factotum+Barbiere+di+Siviglia" target="_blank" rel="noopener">Largo al factotum 세비야의 이발사</a> · <a href="https://www.youtube.com/results?search_query=Barber+of+Seville+Rossini+ROH+full" target="_blank" rel="noopener">세비야의 이발사 전막</a></p>
+
+        <div class="disc-collection">
+          <p class="scene-h4">듣고 싶은 명반 (역대 대표 녹음)</p>
+          <ul class="disc-list">
+
+            <li class="disc-card">
+              <div class="disc-cover disc-cover--emi">
+                <img src="https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/8b/4a/be/8b4abe08-384b-40ed-575a-b58efe36d22c/825646266852.jpg/400x400bb.jpg" alt="Il barbiere di Siviglia — Galliera(1957, EMI) 음반 표지" loading="lazy" onerror="this.style.display='none'">
+                <span class="disc-sleeve"><span class="disc-sleeve-label">EMI</span><span class="disc-sleeve-year">1957</span></span>
+              </div>
+              <div class="disc-body">
+                <h4>갈리에라 · 칼라스 / 고비 / 알바</h4>
+                <p class="disc-credits"><strong>지휘</strong> 알체오 갈리에라 &middot; <strong>주역</strong> 마리아 칼라스(로지나), 티토 고비(피가로), 루이지 알바(알마비바) &middot; <strong>레이블/연도</strong> EMI · 1957</p>
+                <p class="disc-note">칼라스가 원래 메조 음역대인 로지나를 소프라노 음색으로 소화한 개성 있는 명반. 고비의 재기발랄한 피가로가 극을 이끈다.</p>
+                <p class="disc-cover-desc"><strong>표지</strong> 흑백 프로필 사진, EMI 레터링.</p>
+                <p class="listen-link">▶ <a href="https://www.youtube.com/results?search_query=Rossini+Barber+of+Seville+Callas+Gobbi+Galliera+1957" target="_blank" rel="noopener">이 녹음 유튜브에서 찾기</a></p>
+              </div>
+            </li>
+
+            <li class="disc-card">
+              <div class="disc-cover disc-cover--emi">
+                <img src="https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/8e/53/a4/8e53a4f7-b16b-8237-ce82-42831a32cc29/18UMGIM06310.rgb.jpg/400x400bb.jpg" alt="Il barbiere di Siviglia — Abbado(1971, DG) 음반 표지" loading="lazy" onerror="this.style.display='none'">
+                <span class="disc-sleeve"><span class="disc-sleeve-label">DG</span><span class="disc-sleeve-year">1971</span></span>
+              </div>
+              <div class="disc-body">
+                <h4>아바도 · 베르간사 / 프라이 / 알바</h4>
+                <p class="disc-credits"><strong>지휘</strong> 클라우디오 아바도 &middot; <strong>주역</strong> 테레사 베르간사(로지나), 헤르만 프라이(피가로), 루이지 알바(알마비바) &middot; <strong>레이블/연도</strong> DG · 1971</p>
+                <p class="disc-note">베르간사의 정통 메조 로지나와 프라이의 유쾌한 피가로, 아바도의 경쾌한 템포가 돋보이는 원전(제다 교정판) 기반 현대 명반.</p>
+                <p class="disc-cover-desc"><strong>표지</strong> 밝은 노란색 배경, DG 로고.</p>
+                <p class="listen-link">▶ <a href="https://www.youtube.com/results?search_query=Rossini+Barber+of+Seville+Abbado+Berganza+Prey+1971" target="_blank" rel="noopener">이 녹음 유튜브에서 찾기</a></p>
+              </div>
+            </li>
+
+            <li class="disc-card">
+              <div class="disc-cover disc-cover--emi">
+                <img src="https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/69/32/b9/6932b918-59a0-6712-81bb-0e3c66b161c6/00028944644821.rgb.jpg/400x400bb.jpg" alt="Il barbiere di Siviglia — Marriner(1983, Philips) 음반 표지" loading="lazy" onerror="this.style.display='none'">
+                <span class="disc-sleeve"><span class="disc-sleeve-label">Philips</span><span class="disc-sleeve-year">1983</span></span>
+              </div>
+              <div class="disc-body">
+                <h4>마리너 · 발트사 / 알렌 / 아라이사</h4>
+                <p class="disc-credits"><strong>지휘</strong> 네빌 마리너 &middot; <strong>주역</strong> 아그네스 발트사(로지나), 토머스 알렌(피가로), 프란시스코 아라이사(알마비바) &middot; <strong>레이블/연도</strong> Philips · 1983</p>
+                <p class="disc-note">발트사의 발랄한 로지나와 알렌의 능청스러운 피가로, 마리너의 경쾌한 지휘가 돋보이는 1980년대 대표 명반. 레치타티보에 포르테피아노 반주를 사용한 것이 특징.</p>
+                <p class="disc-cover-desc"><strong>표지</strong> 파스텔톤 세비야 거리 배경 일러스트, Philips 로고.</p>
+                <p class="listen-link">▶ <a href="https://www.youtube.com/results?search_query=Rossini+Barber+of+Seville+Marriner+Baltsa+Araiza+Allen+1983" target="_blank" rel="noopener">이 녹음 유튜브에서 찾기</a></p>
+              </div>
+            </li>
+
+          </ul>
+          <p class="disc-hint">※ 음반 표지 이미지는 저작권이 있어 사이트에 기본 포함하지 않습니다(색상 슬리브로 대체 표시). 실제 표지를 넣으려면 <code>site/img/covers/</code> 폴더에 위 파일명(<code>barbiere-1957-galliera.jpg</code> 등)으로 이미지를 넣으면 자동으로 표시됩니다.</p>
+        </div>
+
+        <p class="links">→ <a href="composers.html#composer-rossini">로시니 작곡가 페이지</a> &nbsp;
+          <button class="log-mark" data-slug="stage-rossini-il-barbiere-di-siviglia" data-work="세비야의 이발사" data-type="opera" data-composer="Rossini">♡ 관람함</button></p>
+      </article>
+
+      <!-- 심화 subsection -->
+      <div style="grid-column:1/-1;"><p class="subsection-label">심화 — 오페라</p></div>
+
+      <!-- stage-wagner-ring -->
+      <article class="stage-card" id="stage-wagner-ring">
+        <h3>Der Ring des Nibelungen <small>니벨룽의 반지</small></h3>
+        <div class="stage-meta">
+          작곡가: Richard Wagner (1813–1883) &nbsp;·&nbsp;
+          초연: 개별 공연 뮌헨(1869–1870) / 4부작 완전 초연: 1876년 8월 13–17일, 바이로이트 페스트슈필하우스 &nbsp;·&nbsp;
+          독일어 / 4부작 / 총 약 15–16시간 (4일 공연)
+        </div>
+        <div class="adv-note">★★★ 심화 — 입문자보다 어느 정도 오페라 경험이 쌓인 후 도전 권장.</div>
+        <p class="one-liner">황금 반지를 둘러싼 신·영웅·난쟁이들의 이야기—세계 오페라 역사상 가장 방대한 스케일, 가장 깊은 음악적 세계.</p>
+        <p style="font-size:0.88rem;margin-bottom:0.6rem;"><strong>구성:</strong> Das Rheingold(전야제, 약 2h30m) · Die Walküre(1일, 약 4h) · Siegfried(2일, 약 4h30m) · Götterdämmerung(3일, 약 5h)</p>
+        <div class="synopsis">
+          <p><strong>줄거리 요약 (4부 전체):</strong> 난쟁이 알베리히가 라인 강 황금을 훔쳐 절대 반지를 만든다. 반지를 가진 자가 세계를 지배한다. 신들의 왕 보탄이 반지를 빼앗지만 저주가 따라온다. 영웅 지크프리트가 성장해 용을 죽이고 반지를 얻는다. 지크프리트가 배신당해 죽자 발퀴레 브륀힐데가 불 속으로 몸을 던지며 반지를 라인 강에 돌려준다. 신들의 성 발할라가 불타며 신화의 시대가 막을 내린다.</p>
+        </div>
+        <p class="scene-h4">놓치면 안 될 명장면</p>
+        <div class="scene-table-wrap">
+          <table class="scene-table">
+            <thead><tr><th>장면 / 곡</th><th>작품</th><th>무엇이 들리는가</th><th>길이</th></tr></thead>
+            <tbody>
+              <tr><td>라인의 딸들 서주</td><td>Das Rheingold</td><td>E♭ 화음의 장장 136마디. "자연의 생성"을 음악으로 표현한 바그너의 위업</td><td>약 4분</td></tr>
+              <tr><td>발퀴레의 비행 'Ritt der Walküren'</td><td>Die Walküre</td><td>8명의 발퀴레가 말을 타고 달리는 전쟁 음악. 4/4박자 금관의 폭발, 영화에서 자주 차용됨</td><td>약 3분</td></tr>
+              <tr><td>불의 마법 / 보탄의 이별</td><td>Die Walküre</td><td>브륀힐데를 불의 원 안에 잠재우는 보탄의 작별. 라이트모티프가 농축되어 울린다</td><td>약 20분</td></tr>
+              <tr><td>장례 행진곡 (Trauermarsch)</td><td>Götterdämmerung</td><td>지크프리트의 죽음을 알리는 오케스트라 행진곡. 강렬하고 장엄한 비극</td><td>약 7분</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="tip"><strong>관람 팁:</strong> 반지 전곡 도전 시 라이트모티프(동기) 목록을 미리 익혀갈 것. 각 인물·사물·감정마다 고유한 음악 모티프가 있고, 이를 알고 들으면 완전히 다른 세계가 열린다. 입문 경로 제안: 관현악 하이라이트 → Die Walküre 1막(약 1시간) → 4부작 전체.</div>
+        <p style="font-size:0.86rem;margin-bottom:0.6rem;"><strong>관련 심화 작품:</strong> <em>Tristan und Isolde</em>(1865, 3막 약 4h) — 반지보다 단독 접근이 더 쉬움. 서주(Prelude)와 이졸데의 '사랑의 죽음(Liebestod)'이 유명. 검색: <a href="https://www.youtube.com/results?search_query=Tristan+Isolde+Liebestod+Wagner" target="_blank" rel="noopener">Tristan Isolde Liebestod Wagner</a></p>
+        <p class="listen-link">▶ 영상 찾기: <a href="https://www.youtube.com/results?search_query=Walkurenritt+Wagner" target="_blank" rel="noopener">발퀴레의 비행 Wagner</a> · <a href="https://www.youtube.com/results?search_query=Ring+Cycle+Bayreuth+full" target="_blank" rel="noopener">Ring Cycle Bayreuth</a> · <a href="https://www.youtube.com/results?search_query=Das+Rheingold+Georg+Solti" target="_blank" rel="noopener">Das Rheingold Georg Solti</a></p>
+
+        <div class="disc-collection">
+          <p class="scene-h4">듣고 싶은 명반 (역대 대표 녹음)</p>
+          <ul class="disc-list">
+
+            <li class="disc-card">
+              <div class="disc-cover disc-cover--decca">
+                <img src="https://is1-ssl.mzstatic.com/image/thumb/Music118/v4/cc/54/da/cc54da58-c7ca-4cf2-1307-5f6ad8e26400/00028947878582.rgb.jpg/400x400bb.jpg" alt="Der Ring des Nibelungen — Solti(1958, Decca) 음반 표지" loading="lazy" onerror="this.style.display='none'">
+                <span class="disc-sleeve"><span class="disc-sleeve-label">Decca</span><span class="disc-sleeve-year">1958-1965</span></span>
+              </div>
+              <div class="disc-body">
+                <h4>솔티 · 호터 / 닐손</h4>
+                <p class="disc-credits"><strong>지휘</strong> 게오르그 솔티 &middot; <strong>주역</strong> 한스 호터(보탄), 비르기트 닐손(브륀힐데) &middot; <strong>레이블/연도</strong> Decca · 1958–1965</p>
+                <p class="disc-note">프로듀서 존 컬쇼의 혁신적인 스튜디오 연출과 닐손의 강철 같은 브륀힐데, 호터의 위엄 있는 보탄이 만든 사상 최초의 반지 4부작 스튜디오 전곡 녹음. "세계에서 가장 많이 팔린 오페라 음반 프로젝트"로 불린다.</p>
+                <p class="disc-cover-desc"><strong>표지</strong> 검은 배경에 반지 모티프 디자인, Decca 로고.</p>
+                <p class="listen-link">▶ <a href="https://www.youtube.com/results?search_query=Wagner+Ring+Solti+Nilsson+Hotter+Decca" target="_blank" rel="noopener">이 녹음 유튜브에서 찾기</a></p>
+              </div>
+            </li>
+
+            <li class="disc-card">
+              <div class="disc-cover disc-cover--emi">
+                <img src="https://is1-ssl.mzstatic.com/image/thumb/Music128/v4/da/2b/29/da2b2949-c8ef-a7c4-3f86-653ce9695b94/00028947973102.rgb.jpg/400x400bb.jpg" alt="Der Ring des Nibelungen — Karajan(1966, DG) 음반 표지" loading="lazy" onerror="this.style.display='none'">
+                <span class="disc-sleeve"><span class="disc-sleeve-label">DG</span><span class="disc-sleeve-year">1966-1970</span></span>
+              </div>
+              <div class="disc-body">
+                <h4>카라얀 · 스튜어트 / 데르네시</h4>
+                <p class="disc-credits"><strong>지휘</strong> 헤르베르트 폰 카라얀 &middot; <strong>주역</strong> 디트리히 피셔-디스카우 / 토머스 스튜어트(보탄), 헬가 데르네시(브륀힐데) &middot; <strong>레이블/연도</strong> DG · 1966–1970</p>
+                <p class="disc-note">카라얀 특유의 실내악적 섬세함과 유려한 관현악 처리가 돋보이는 베를린 필 녹음. 스튜어트의 인간적인 보탄이 인상적.</p>
+                <p class="disc-cover-desc"><strong>표지</strong> 짙은 녹색/검정 배경, DG 로고.</p>
+                <p class="listen-link">▶ <a href="https://www.youtube.com/results?search_query=Wagner+Ring+Karajan+Berlin+Philharmonic+Dernesch" target="_blank" rel="noopener">이 녹음 유튜브에서 찾기</a></p>
+              </div>
+            </li>
+
+            <li class="disc-card">
+              <div class="disc-cover disc-cover--emi">
+                <img src="https://is1-ssl.mzstatic.com/image/thumb/Music122/v4/09/cd/48/09cd4844-c826-82cf-c3a2-0157b4c48cd6/5054197282874.jpg/400x400bb.jpg" alt="Der Ring des Nibelungen — Furtwangler(1953, RAI(EMI)) 음반 표지" loading="lazy" onerror="this.style.display='none'">
+                <span class="disc-sleeve"><span class="disc-sleeve-label">EMI(RAI 로마 실황)</span><span class="disc-sleeve-year">1953</span></span>
+              </div>
+              <div class="disc-body">
+                <h4>푸르트벵글러 · 프란츠 / 뫼들</h4>
+                <p class="disc-credits"><strong>지휘</strong> 빌헬름 푸르트벵글러 &middot; <strong>주역</strong> 페르디난트 프란츠(보탄), 마르타 뫼들(브륀힐데) &middot; <strong>레이블/연도</strong> RAI 로마 실황(EMI 발매) · 1953</p>
+                <p class="disc-note">20세기 최고의 바그너 지휘자로 꼽히는 푸르트벵글러가 남긴 유일한 완전한 반지 실황 녹음. 모노 음질이지만 극의 서사와 긴장감에서 독보적이라는 평가가 많다.</p>
+                <p class="disc-cover-desc"><strong>표지</strong> 세피아톤 흑백 사진, 라디오 방송 시대 느낌의 레터링.</p>
+                <p class="listen-link">▶ <a href="https://www.youtube.com/results?search_query=Wagner+Ring+Furtwangler+RAI+Rome+1953+Modl+Frantz" target="_blank" rel="noopener">이 녹음 유튜브에서 찾기</a></p>
+              </div>
+            </li>
+
+          </ul>
+          <p class="disc-hint">※ 음반 표지 이미지는 저작권이 있어 사이트에 기본 포함하지 않습니다(색상 슬리브로 대체 표시). 실제 표지를 넣으려면 <code>site/img/covers/</code> 폴더에 위 파일명(<code>ring-1958-solti.jpg</code> 등)으로 이미지를 넣으면 자동으로 표시됩니다.</p>
+        </div>
+
+        <p class="links">→ <a href="composers.html#composer-wagner">바그너 작곡가 페이지</a> &nbsp;
+          <button class="log-mark" data-slug="stage-wagner-ring" data-work="니벨룽의 반지" data-type="opera" data-composer="Wagner">♡ 관람함</button></p>
+      </article>
+
+    </div><!-- /.stage-grid 오페라 -->
+
+    <!-- ===== 발레 ===== -->
+    <h2 class="section-title" id="ballet">발레</h2>
+    <div class="stage-grid">
+
+      <!-- stage-tchaikovsky-nutcracker -->
+      <article class="stage-card" id="stage-tchaikovsky-nutcracker">
+        <h3>The Nutcracker <small>호두까기인형</small></h3>
+        <div class="stage-meta">
+          작곡가: Pyotr Ilyich Tchaikovsky (1840–1893) &nbsp;·&nbsp;
+          초연: 1892년 12월 18일, 마린스키 극장, 상트페테르부르크 (안무: Marius Petipa·Lev Ivanov) &nbsp;·&nbsp;
+          발레 / 2막 / 약 1시간 30분
+        </div>
+        <p class="version-note"><strong>안무 버전:</strong> Tchaikovsky 음악 / 원안 Marius Petipa·Lev Ivanov (1892). 현재는 발레단마다 자체 버전 다수.</p>
+        <p class="one-liner">크리스마스 이브의 꿈 속 여행—아이와 어른 모두 함께 즐길 수 있는 가장 대중적인 발레.</p>
+        <div class="synopsis">
+          <p><strong>1막 (크리스마스 이브 파티):</strong> 소녀 클라라(마리)가 대부 드로셀마이어에게 호두까기 인형을 선물받는다. 한밤중에 인형들이 살아나고 쥐 왕이 이끄는 쥐 군단이 침공한다. 호두까기 인형과 장난감 병사들이 싸우는데, 클라라가 쥐 왕에게 신발을 던져 결정적인 도움을 준다. 호두까기 인형이 왕자로 변신한다.</p>
+          <p><strong>2막 (과자 나라):</strong> 왕자가 클라라를 과자 나라로 데려간다. 여러 나라를 상징하는 과자들이 춤을 춘다 — 스페인 초콜릿 댄스, 아라비아 커피 댄스, 중국 차 댄스, 러시아 트레팍, 갈대피리(프랑스). 꽃의 왈츠, 눈 송이 왈츠. 클라라와 왕자의 그랑 파드되. 꿈이 끝나고 클라라는 잠에서 깬다.</p>
+        </div>
+        <p class="scene-h4">놓치면 안 될 명장면</p>
+        <div class="scene-table-wrap">
+          <table class="scene-table">
+            <thead><tr><th>장면 / 곡</th><th>막</th><th>무엇이 들리는가</th><th>길이</th></tr></thead>
+            <tbody>
+              <tr><td>눈 송이 왈츠 (Waltz of the Snowflakes)</td><td>1막 끝</td><td>여성 발레리나 군무 + 합창. 눈이 소용돌이치는 시각적 아름다움. 하프와 스타카토 현악기</td><td>약 5분</td></tr>
+              <tr><td>꽃의 왈츠 (Waltz of the Flowers)</td><td>2막</td><td>발레 역사상 가장 유명한 군무 음악 중 하나. 하프의 화려한 카덴차 후 왈츠 폭발</td><td>약 6분</td></tr>
+              <tr><td>그랑 파드되 (Grand Pas de Deux)</td><td>2막</td><td>클라라+왕자의 2인무. 아다지오·바리아시옹·코다로 구성. 남녀 주역 발레리나의 기량 집약</td><td>약 7분</td></tr>
+              <tr><td>러시아 춤 (Trepak)</td><td>2막</td><td>남성 무용수의 활기차고 빠른 솔로. 저절로 발이 움직이는 에너제틱한 템포</td><td>약 1분 30초</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="tip"><strong>관람 팁:</strong> 1막은 어린이가 주역으로 나오는 경우가 많다. 2막 과자 나라 장면에서 각 나라 댄스는 길이가 짧으므로 집중해서 보면 모두 즐길 수 있다. 어린이 동반 관람에 가장 적합한 발레다.</div>
+        <p class="listen-link">▶ 영상 찾기: <a href="https://www.youtube.com/results?search_query=Nutcracker+Mariinsky+full" target="_blank" rel="noopener">Nutcracker Mariinsky 전막</a> · <a href="https://www.youtube.com/results?search_query=Waltz+of+the+Flowers+Bolshoi" target="_blank" rel="noopener">꽃의 왈츠 Bolshoi</a></p>
+
+        <div class="disc-collection">
+          <p class="scene-h4">듣고 싶은 명반 (역대 대표 녹음)</p>
+          <ul class="disc-list">
+
+            <li class="disc-card">
+              <div class="disc-cover disc-cover--emi">
+                <img src="img/covers/nutcracker-1993-martins.jpg" alt="The Nutcracker — Martins(1993, Film) 음반 표지" loading="lazy" onerror="this.style.display='none'">
+                <span class="disc-sleeve"><span class="disc-sleeve-label">필름</span><span class="disc-sleeve-year">1993</span></span>
+              </div>
+              <div class="disc-body">
+                <h4>마틴스 · 컬킨</h4>
+                <p class="disc-credits"><strong>지휘</strong> 피터 마틴스 연출(1954년 발란신 원안 계승) / 뉴욕시티발레 &middot; <strong>주역</strong> 매콜리 컬킨(호두까기 왕자), 다시 키슬러 등 &middot; <strong>레이블/연도</strong> 필름 · 1993</p>
+                <p class="disc-note">발란신의 미국식 표준 버전을 계승한 마틴스 프로덕션의 극장용 영화. 매콜리 컬킨 주연으로 대중적으로도 널리 알려짐.</p>
+                <p class="disc-cover-desc"><strong>표지</strong> 크리스마스 트리를 배경으로 한 극장판 포스터 이미지.</p>
+                <p class="listen-link">▶ <a href="https://www.youtube.com/results?search_query=George+Balanchine%27s+The+Nutcracker+1993+film" target="_blank" rel="noopener">이 녹음 유튜브에서 찾기</a></p>
+              </div>
+            </li>
+
+            <li class="disc-card">
+              <div class="disc-cover disc-cover--emi">
+                <img src="https://is1-ssl.mzstatic.com/image/thumb/Music4/v4/4b/3a/ad/4b3aaded-a7c0-4490-5586-dbb68217e445/5099955936453_1417x1417_300dpi.jpg/400x400bb.jpg" alt="The Nutcracker — Previn(1972, EMI) 음반 표지" loading="lazy" onerror="this.style.display='none'">
+                <span class="disc-sleeve"><span class="disc-sleeve-label">EMI</span><span class="disc-sleeve-year">1972</span></span>
+              </div>
+              <div class="disc-body">
+                <h4>프레빈 · 런던 심포니(전곡 관현악)</h4>
+                <p class="disc-credits"><strong>지휘</strong> 앙드레 프레빈 지휘 / 런던 심포니 &middot; <strong>주역</strong> (전곡 관현악, 무용수 없음) &middot; <strong>레이블/연도</strong> EMI · 1972</p>
+                <p class="disc-note">프레빈의 낭만적이고 풍성한 관현악 해석이 담긴 전곡 녹음. 발레 영상 없이도 스토리를 따라가기 좋은 구성.</p>
+                <p class="disc-cover-desc"><strong>표지</strong> 클래식한 EMI 자켓, 호두까기 인형 일러스트.</p>
+                <p class="listen-link">▶ <a href="https://www.youtube.com/results?search_query=Tchaikovsky+Nutcracker+Previn+London+Symphony+1972" target="_blank" rel="noopener">이 녹음 유튜브에서 찾기</a></p>
+              </div>
+            </li>
+
+            <li class="disc-card">
+              <div class="disc-cover disc-cover--emi">
+                <img src="https://is1-ssl.mzstatic.com/image/thumb/Music113/v4/ff/8c/1c/ff8c1c26-eb15-e3be-7585-358741b81e8f/12UMGIM14755.rgb.jpg/400x400bb.jpg" alt="The Nutcracker — Gergiev/Mariinsky(Complete Ballets) 음반 표지" loading="lazy" onerror="this.style.display='none'">
+                <span class="disc-sleeve"><span class="disc-sleeve-label">마린스키</span><span class="disc-sleeve-year">연도 미상</span></span>
+              </div>
+              <div class="disc-body">
+                <h4>게르기예프 · 마린스키 발레(전통 프로덕션)</h4>
+                <p class="disc-credits"><strong>지휘</strong> 바실리 바이노넨 원안(1934년) 계승 / 마린스키 발레(발레리 게르기예프 지휘) &middot; <strong>주역</strong> (전통 프로덕션) &middot; <strong>레이블/연도</strong> 마린스키 영상물</p>
+                <p class="disc-note">1934년 바이노넨의 표준 안무를 계승한 마린스키(구 키로프)의 정통 프로덕션. 러시아 전통 스타일의 기준점으로 자주 언급된다.</p>
+                <p class="disc-cover-desc"><strong>표지</strong> 눈 내리는 무대 장면 사진.</p>
+                <p class="listen-link">▶ <a href="https://www.youtube.com/results?search_query=Nutcracker+Mariinsky+Gergiev+ballet" target="_blank" rel="noopener">이 녹음 유튜브에서 찾기</a></p>
+              </div>
+            </li>
+
+          </ul>
+          <p class="disc-hint">※ 음반 표지 이미지는 저작권이 있어 사이트에 기본 포함하지 않습니다(색상 슬리브로 대체 표시). 실제 표지를 넣으려면 <code>site/img/covers/</code> 폴더에 위 파일명(<code>nutcracker-1993-martins.jpg</code> 등)으로 이미지를 넣으면 자동으로 표시됩니다.</p>
+        </div>
+
+        <p class="links">→ <a href="composers.html#composer-tchaikovsky">차이콥스키 작곡가 페이지</a> &nbsp;
+          <button class="log-mark" data-slug="stage-tchaikovsky-nutcracker" data-work="호두까기인형" data-type="ballet" data-composer="Tchaikovsky">♡ 관람함</button></p>
+      </article>
+
+      <!-- stage-tchaikovsky-sleeping-beauty -->
+      <article class="stage-card" id="stage-tchaikovsky-sleeping-beauty">
+        <h3>The Sleeping Beauty <small>잠자는 숲속의 미녀</small></h3>
+        <div class="stage-meta">
+          작곡가: Pyotr Ilyich Tchaikovsky (1840–1893) &nbsp;·&nbsp;
+          초연: 1890년 1월 27일(N.S.), 마린스키 극장, 상트페테르부르크 (안무: Marius Petipa) &nbsp;·&nbsp;
+          발레 / 프롤로그+3막 / 약 3시간
+        </div>
+        <p class="version-note"><strong>안무 버전:</strong> Tchaikovsky 음악 / Marius Petipa 안무 (1890년 마린스키 원전이 세계 표준). 로열발레단·마린스키·볼쇼이가 모두 이 전통을 계승.</p>
+        <p class="one-liner">차이콥스키 발레 3부작 중 가장 웅장하고 클래식—페로 동화를 발레 형식의 절정으로 승화시켰다.</p>
+        <div class="synopsis">
+          <p><strong>프롤로그:</strong> 오로라 공주의 탄생 파티. 여섯 선녀가 아름다움·용기·지혜 등의 축복을 내리는데, 초대받지 못한 악마 선녀 카라보스가 나타나 공주가 물레에 찔려 죽을 것이라 저주를 건다. 라일락 선녀가 죽음을 100년 잠으로 바꾼다.</p>
+          <p><strong>1막:</strong> 오로라의 16번째 생일 파티. 네 나라 왕자가 구혼하러 온다. 오로라가 춤추다 물레 바늘에 찔려 쓰러진다. 라일락 선녀가 성 전체를 잠에 빠뜨린다.</p>
+          <p><strong>2막:</strong> 100년 후. 왕자 데지레가 사냥 중 라일락 선녀의 도움으로 잠든 성에 이른다. 오로라에게 키스해 깨운다.</p>
+          <p><strong>3막:</strong> 성대한 결혼식. 동화 속 인물들(신데렐라·빨간 두건·장화 신은 고양이 등)이 하객으로 나타나 각자의 춤을 춘다. 파란 새와 공주의 파드되가 하이라이트.</p>
+        </div>
+        <p class="scene-h4">놓치면 안 될 명장면</p>
+        <div class="scene-table-wrap">
+          <table class="scene-table">
+            <thead><tr><th>장면 / 곡</th><th>막</th><th>무엇이 들리는가</th><th>길이</th></tr></thead>
+            <tbody>
+              <tr><td>장미 아다지오 (Rose Adagio)</td><td>1막</td><td>소프라노 주역 발레리나가 네 왕자와 번갈아 한 손 발란스를 유지하는 장면. 발레 기술의 최고봉. 차이콥스키의 우아한 현악</td><td>약 7분</td></tr>
+              <tr><td>파란 새 파드되 (Bluebird Pas de Deux)</td><td>3막</td><td>남성 무용수의 도약 기교(카브리올·앙트르샤) 하이라이트. 새가 날갯짓하는 것을 몸으로 표현</td><td>약 5분</td></tr>
+              <tr><td>프롤로그 선녀 바리아시옹들</td><td>프롤로그</td><td>각 선녀가 자신의 선물(아름다움·용기·지혜 등)을 솔로 변주곡으로 표현</td><td>약 15분</td></tr>
+              <tr><td>오로라-데지레 그랑 파드되</td><td>2막</td><td>두 주역의 꿈속 만남. 현악이 이끄는 서정적인 아다지오</td><td>약 10분</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="tip"><strong>관람 팁:</strong> 프롤로그가 길게 느껴질 수 있지만 이후 1막의 '장미 아다지오'에서 왜 이 발레가 최고로 꼽히는지 이해된다. 3막의 동화 캐릭터들 장면은 휴식 겸 유머로 즐기면 된다.</div>
+        <p class="listen-link">▶ 영상 찾기: <a href="https://www.youtube.com/results?search_query=Sleeping+Beauty+Mariinsky+full" target="_blank" rel="noopener">Sleeping Beauty Mariinsky 전막</a> · <a href="https://www.youtube.com/results?search_query=Sleeping+Beauty+Royal+Ballet" target="_blank" rel="noopener">Sleeping Beauty Royal Ballet</a></p>
+
+        <div class="disc-collection">
+          <p class="scene-h4">듣고 싶은 명반 (역대 대표 녹음)</p>
+          <ul class="disc-list">
+
+            <li class="disc-card">
+              <div class="disc-cover disc-cover--emi">
+                <img src="https://is1-ssl.mzstatic.com/image/thumb/Music7/v4/66/f8/6b/66f86beb-2327-019a-4dac-49bf83f32b29/dj.frdimzhr.jpg/400x400bb.jpg" alt="The Sleeping Beauty — Previn(1974, EMI) 음반 표지" loading="lazy" onerror="this.style.display='none'">
+                <span class="disc-sleeve"><span class="disc-sleeve-label">EMI</span><span class="disc-sleeve-year">1974</span></span>
+              </div>
+              <div class="disc-body">
+                <h4>프레빈 · 런던 심포니(전곡 관현악)</h4>
+                <p class="disc-credits"><strong>지휘</strong> 앙드레 프레빈 지휘 / 런던 심포니 &middot; <strong>주역</strong> (전곡 관현악, 무용수 없음) &middot; <strong>레이블/연도</strong> EMI · 1974</p>
+                <p class="disc-note">프레빈의 화려하고 균형 잡힌 관현악 연주로 정평난 전곡 녹음. 발레 전곡을 처음 들을 때 표준적인 선택.</p>
+                <p class="disc-cover-desc"><strong>표지</strong> 클래식한 EMI 자켓, 성과 장미 문양 일러스트.</p>
+                <p class="listen-link">▶ <a href="https://www.youtube.com/results?search_query=Tchaikovsky+Sleeping+Beauty+Previn+London+Symphony+1974" target="_blank" rel="noopener">이 녹음 유튜브에서 찾기</a></p>
+              </div>
+            </li>
+
+            <li class="disc-card">
+              <div class="disc-cover disc-cover--decca">
+                <img src="img/covers/sleepingbeauty-1999-vikharev.jpg" alt="The Sleeping Beauty — Vikharev/Mariinsky(1999, Production) 음반 표지" loading="lazy" onerror="this.style.display='none'">
+                <span class="disc-sleeve"><span class="disc-sleeve-label">프로덕션</span><span class="disc-sleeve-year">1999</span></span>
+              </div>
+              <div class="disc-body">
+                <h4>비하레프 · 마린스키 발레(1890년 원안 복원)</h4>
+                <p class="disc-credits"><strong>지휘</strong> 세르게이 비하레프 재구성 안무 / 마린스키 발레 &middot; <strong>주역</strong> 오로라 공주(1890년 페티파 원안 복원) &middot; <strong>레이블/연도</strong> 프로덕션 · 1999</p>
+                <p class="disc-note">1890년 페티파 초연 노타시옹(세르게예프 컬렉션)을 그대로 복원한 화제의 프로덕션. 원전의 의상·마임·군무를 재현해 "전통이란 무엇인가"라는 논쟁을 일으켰다.</p>
+                <p class="disc-cover-desc"><strong>표지</strong> 고전풍 궁정 의상을 입은 무용수들의 무대 사진.</p>
+                <p class="listen-link">▶ <a href="https://www.youtube.com/results?search_query=Sleeping+Beauty+Mariinsky+Vikharev+reconstruction+1999" target="_blank" rel="noopener">이 녹음 유튜브에서 찾기</a></p>
+              </div>
+            </li>
+
+          </ul>
+          <p class="disc-hint">※ 음반 표지 이미지는 저작권이 있어 사이트에 기본 포함하지 않습니다(색상 슬리브로 대체 표시). 실제 표지를 넣으려면 <code>site/img/covers/</code> 폴더에 위 파일명(<code>sleepingbeauty-1974-previn.jpg</code> 등)으로 이미지를 넣으면 자동으로 표시됩니다.</p>
+        </div>
+
+        <p class="links">→ <a href="composers.html#composer-tchaikovsky">차이콥스키 작곡가 페이지</a> &nbsp;
+          <button class="log-mark" data-slug="stage-tchaikovsky-sleeping-beauty" data-work="잠자는 숲속의 미녀" data-type="ballet" data-composer="Tchaikovsky">♡ 관람함</button></p>
+      </article>
+
+      <!-- 심화 subsection -->
+      <div style="grid-column:1/-1;"><p class="subsection-label">심화 — 발레</p></div>
+
+      <!-- stage-stravinsky-rite-of-spring -->
+      <article class="stage-card" id="stage-stravinsky-rite-of-spring">
+        <h3>The Rite of Spring <small>봄의 제전</small></h3>
+        <div class="stage-meta">
+          작곡가: Igor Stravinsky (1882–1971) &nbsp;·&nbsp;
+          초연: 1913년 5월 29일, 테아트르 데 샹젤리제, 파리 (안무: Vaslav Nijinsky — 초연 도중 청중 소란, 20세기 최대 음악 사건) &nbsp;·&nbsp;
+          발레 / 2부 / 약 35분
+        </div>
+        <div class="adv-note">★★★ 심화 — 20세기 음악 혁명의 출발점. 클래식 입문 후 도전 권장.</div>
+        <p class="version-note"><strong>안무 버전:</strong> 1913년 니진스키 원안은 복원 버전으로만 볼 수 있다. 이후 수십 가지 안무 버전이 존재. 모리스 베자르, 피나 바우쉬 버전이 특히 유명. 음악 자체로도 오케스트라 연주회에서 자주 연주된다.</p>
+        <p class="one-liner">이교적 봄 제의에서 소녀가 신에게 제물로 바쳐지는 의식—불협화음과 원시적 리듬으로 100년 후에도 도발적이다.</p>
+        <div class="synopsis">
+          <p><strong>제1부 '대지의 예찬':</strong> 이교 시대 슬라브 부족이 봄의 도래를 축하한다. 봄의 예언자 노파가 등장하고, 젊은 남녀가 제의적 춤을 춘다. 경쟁하는 두 부족이 충돌하다가 '대지에의 경배'로 절정에 달한다.</p>
+          <p><strong>제2부 '희생':</strong> 신성한 소녀들이 원을 그리며 춤추다 그 중 한 명이 봄의 제물로 선택된다. 선택된 소녀가 '희생자의 춤'을 춘다—박자가 끊임없이 바뀌는 극단적 변박 속에 죽을 때까지 멈추지 못하는 춤. 이교 장로들이 제물을 들어올리며 끝난다.</p>
+        </div>
+        <p class="scene-h4">놓치면 안 될 명장면</p>
+        <div class="scene-table-wrap">
+          <table class="scene-table">
+            <thead><tr><th>장면 / 곡</th><th>부</th><th>무엇이 들리는가</th><th>길이</th></tr></thead>
+            <tbody>
+              <tr><td>서주 + '봄의 전조 (Augurs of Spring)'</td><td>1부</td><td>바순 최고음 솔로로 시작. 이어서 8개 이상의 악기가 동시에 다른 박자를 연주하는 폴리리듬. 처음 들으면 "이게 음악인가?" 싶은 충격</td><td>약 4분</td></tr>
+              <tr><td>'희생자의 춤 (Sacrificial Dance)'</td><td>2부</td><td>소녀가 죽을 때까지 춤추는 클라이맥스. 박자 변화가 극단적(수십 번 교체). 오케스트라 전체가 폭발</td><td>약 4분 30초</td></tr>
+              <tr><td>'젊은이들의 춤 (Dance of the Young Girls)'</td><td>1부</td><td>같은 불협화 화음이 강박(sforzando)으로 200번 이상 반복. 원시적 충격을 주는 구간</td><td>약 2분</td></tr>
+              <tr><td>'대지에의 경배 (Dance of the Earth)'</td><td>1부</td><td>1부 피날레. 오케스트라 전체가 광란에 가까운 속도로 쏟아지다 갑자기 멈춤</td><td>약 1분 30초</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p style="font-size:0.84rem;color:var(--color-text-muted,#6b7280);margin-bottom:0.7rem;"><strong>1913년 초연 소동:</strong> 막이 오르기도 전에 청중이 야유를 보내고, 경찰이 출동했으며 뉴스 1면을 장식했다. 오늘날에는 20세기 음악 혁명의 출발점으로 평가받는다. ("폭동(riot)"이라는 표현은 1924년경 이후에 붙은 과장이며 당시 신문들은 "소동", "항의"로 표기했다.)</p>
+        <div class="tip"><strong>관람 팁:</strong> 멜로디보다 리듬과 음색 변화에 집중한다. 박자가 몇 번이나 바뀌는지 세어보는 게임도 재미있다. 오케스트라 콘서트로 먼저 경험하고 나서 무대 발레를 보면 두 번 즐길 수 있다.</div>
+        <p class="listen-link">▶ 영상 찾기: <a href="https://www.youtube.com/results?search_query=Rite+of+Spring+Stravinsky+BBC+Proms" target="_blank" rel="noopener">Rite of Spring BBC Proms</a> · <a href="https://www.youtube.com/results?search_query=Sacre+du+Printemps+Pina+Bausch" target="_blank" rel="noopener">봄의 제전 Pina Bausch</a> · <a href="https://www.youtube.com/results?search_query=Sacre+du+Printemps+Pierre+Boulez" target="_blank" rel="noopener">Sacre du Printemps Pierre Boulez</a></p>
+
+        <div class="disc-collection">
+          <p class="scene-h4">듣고 싶은 명반 (역대 대표 녹음)</p>
+          <ul class="disc-list">
+
+            <li class="disc-card">
+              <div class="disc-cover disc-cover--emi">
+                <img src="https://is1-ssl.mzstatic.com/image/thumb/Features/70/0a/9f/dj.dnkdzyhk.jpg/400x400bb.jpg" alt="The Rite of Spring — Stravinsky(1961, Columbia) 음반 표지" loading="lazy" onerror="this.style.display='none'">
+                <span class="disc-sleeve"><span class="disc-sleeve-label">Columbia</span><span class="disc-sleeve-year">1961</span></span>
+              </div>
+              <div class="disc-body">
+                <h4>스트라빈스키 · 컬럼비아 심포니(작곡가 자신 지휘)</h4>
+                <p class="disc-credits"><strong>지휘</strong> 이고르 스트라빈스키(작곡가 자신 지휘) / 컬럼비아 심포니 오케스트라 &middot; <strong>주역</strong> (관현악, 무용수 없음) &middot; <strong>레이블/연도</strong> Columbia · 1961</p>
+                <p class="disc-note">작곡가 자신이 직접 지휘한 유일무이한 레퍼런스 녹음. 해석 논쟁이 있을 때 늘 원전으로 언급된다.</p>
+                <p class="disc-cover-desc"><strong>표지</strong> 흑백 사진, 스트라빈스키의 초상.</p>
+                <p class="listen-link">▶ <a href="https://www.youtube.com/results?search_query=Stravinsky+Rite+of+Spring+conducts+Columbia+Symphony+1961" target="_blank" rel="noopener">이 녹음 유튜브에서 찾기</a></p>
+              </div>
+            </li>
+
+            <li class="disc-card">
+              <div class="disc-cover disc-cover--emi">
+                <img src="https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/cc/df/21/ccdf2184-f7a0-51a1-feec-0c13fc53a741/00028947917786.rgb.jpg/400x400bb.jpg" alt="The Rite of Spring — Boulez(1969, Columbia (CBS)) 음반 표지" loading="lazy" onerror="this.style.display='none'">
+                <span class="disc-sleeve"><span class="disc-sleeve-label">Columbia(CBS)</span><span class="disc-sleeve-year">1969</span></span>
+              </div>
+              <div class="disc-body">
+                <h4>불레즈 · 클리블랜드 오케스트라</h4>
+                <p class="disc-credits"><strong>지휘</strong> 피에르 불레즈 / 클리블랜드 오케스트라 &middot; <strong>주역</strong> (관현악, 무용수 없음) &middot; <strong>레이블/연도</strong> Columbia(CBS) · 1969</p>
+                <p class="disc-note">구조와 명료함을 극한까지 밀어붙인 해석으로 "역대 최고의 봄의 제전"으로 자주 꼽히는 벤치마크 명반.</p>
+                <p class="disc-cover-desc"><strong>표지</strong> 기하학적 추상 디자인의 CBS 클래식 자켓.</p>
+                <p class="listen-link">▶ <a href="https://www.youtube.com/results?search_query=Stravinsky+Rite+of+Spring+Boulez+Cleveland+Orchestra+1969" target="_blank" rel="noopener">이 녹음 유튜브에서 찾기</a></p>
+              </div>
+            </li>
+
+            <li class="disc-card">
+              <div class="disc-cover disc-cover--decca">
+                <img src="img/covers/riteofspring-1987-joffrey.jpg" alt="The Rite of Spring — Hodson/Archer/Joffrey(1987, Production) 음반 표지" loading="lazy" onerror="this.style.display='none'">
+                <span class="disc-sleeve"><span class="disc-sleeve-label">프로덕션</span><span class="disc-sleeve-year">1987</span></span>
+              </div>
+              <div class="disc-body">
+                <h4>홋슨·아처 재구성 · 조프리 발레(니진스키 원안 복원)</h4>
+                <p class="disc-credits"><strong>지휘</strong> 밀리센트 홋슨·케네스 아처 재구성 안무 / 조프리 발레 &middot; <strong>주역</strong> 니진스키 원안 복원 &middot; <strong>레이블/연도</strong> 프로덕션 · 1987</p>
+                <p class="disc-note">1913년 니진스키의 스캔들을 일으킨 원전 안무·의상·무대를 15년간의 고증(악보 주석, 스케치, 목격자 증언 등)으로 복원한 역사적 재현 프로덕션.</p>
+                <p class="disc-cover-desc"><strong>표지</strong> 원시적 문양의 의상을 입은 무용수들의 군무 사진.</p>
+                <p class="listen-link">▶ <a href="https://www.youtube.com/results?search_query=Joffrey+Ballet+Rite+of+Spring+1987+reconstruction+Nijinsky" target="_blank" rel="noopener">이 녹음 유튜브에서 찾기</a></p>
+              </div>
+            </li>
+
+          </ul>
+          <p class="disc-hint">※ 음반 표지 이미지는 저작권이 있어 사이트에 기본 포함하지 않습니다(색상 슬리브로 대체 표시). 실제 표지를 넣으려면 <code>site/img/covers/</code> 폴더에 위 파일명(<code>riteofspring-1961-stravinsky.jpg</code> 등)으로 이미지를 넣으면 자동으로 표시됩니다.</p>
+        </div>
+
+        <p class="links">→ <a href="composers.html#composer-stravinsky">스트라빈스키 작곡가 페이지</a> · <a href="eras.html">시대 페이지</a> &nbsp;
+          <button class="log-mark" data-slug="stage-stravinsky-rite-of-spring" data-work="봄의 제전" data-type="ballet" data-composer="Stravinsky">♡ 관람함</button></p>
+      </article>
+
+    </div><!-- /.stage-grid 발레 -->
+
+    <!-- 입문자 관람 팁 -->
+    <h2 class="section-title" style="margin-top:2.5rem;" id="tips">관람 팁</h2>
+    <div class="card-grid">
+      <article class="card">
+        <h3>오페라 입문 7가지 팁</h3>
+        <ol style="font-size:0.88rem;line-height:1.7;padding-left:1.2em;margin:0;">
+          <li><strong>줄거리를 미리 읽어라</strong> — 가사를 몰라도 시놉시스만 알면 음악이 10배 다르게 들린다.</li>
+          <li><strong>자막 활용</strong> — 아리아가 시작되면 자막보다 가수에게 집중한다.</li>
+          <li><strong>박수 타이밍</strong> — 아리아(독창)가 끝날 때, 막이 끝날 때. 연주 도중에는 삼간다.</li>
+          <li><strong>입문 추천 순서</strong> — 세비야의 이발사 → 라 보엠 → 카르멘 → 라 트라비아타 → 투란도트.</li>
+          <li><strong>드레스 코드</strong> — 한국 공연장은 정장이 아니어도 된다. 소리 나는 장신구와 스마트폰 진동은 무음으로.</li>
+          <li><strong>공연 시간</strong> — 오페라 2~4시간. 막간(intermission) 20~30분. 화장실 타이밍 활용.</li>
+          <li><strong>예습 영상 1개면 충분</strong> — 투란도트: 'Nessun dorma', 카르멘: 하바네라, 라 보엠: 'Che gelida manina'.</li>
+        </ol>
+      </article>
+      <article class="card">
+        <h3>발레 입문 5가지 팁</h3>
+        <ol style="font-size:0.88rem;line-height:1.7;padding-left:1.2em;margin:0;">
+          <li><strong>좌석 선택</strong> — 2층 전반부 또는 1층 중간 뒤가 군무(대형)를 보기 좋다.</li>
+          <li><strong>흑조와 백조</strong> — 백조의 호수에서 오데트(백조)와 오딜(흑조)을 같은 발레리나가 연기한다. 하얀/검정 투투로 구별.</li>
+          <li><strong>박수 타이밍</strong> — 파드되(2인무) 코다가 끝날 때, 솔로 바리아시옹이 끝날 때. 흑조의 32회 푸에테 마지막 회전 후 아낌없이.</li>
+          <li><strong>프로그램 노트 필독</strong> — 발레는 대사가 없으므로 막간에 줄거리 요약을 확인한다.</li>
+          <li><strong>입문 추천 순서</strong> — 호두까기인형 → 백조의 호수 → 잠자는 숲속의 미녀 → 봄의 제전.</li>
+        </ol>
+      </article>
+    </div>
+
+  </div><!-- /.container -->
+</main>
+
+<footer>
+  <p>콘텐츠는 학습용이며, 음원은 외부 공개 영상/스트리밍으로 연결됩니다.</p>
+  <p>텍스트·사실 정보 출처: opera-researcher 리서치 산출물 (11_research_opera.md)</p>
+</footer>
+
+<script src="log.js" defer></script>
+</body>
+</html>

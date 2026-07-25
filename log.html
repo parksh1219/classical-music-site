@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>기록 · 클래식 음악 감상과 공부</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+  <nav>
+    <a href="index.html" class="brand">클래식 감상 &amp; 공부</a>
+    <ul>
+      <li><a href="index.html">홈</a></li>
+      <li><a href="listen.html">감상</a></li>
+      <li><a href="opera.html">무대</a></li>
+      <li><a href="study.html">공부</a></li>
+      <li><a href="eras.html">시대</a></li>
+      <li><a href="composers.html">작곡가</a></li>
+      <li><a href="travel.html">여행</a></li>
+      <li><a href="log.html" class="active">기록</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <section class="hero">
+    <h1>내 감상 기록</h1>
+    <p>관람한 공연과 들은 작품을 모아둡니다. 감상·무대 페이지에서 <strong>♡ 관람함</strong>을 누르면 여기에 자동으로 쌓입니다.</p>
+    <p style="font-size:0.88rem;opacity:0.85;">※ 이 기록은 <strong>이 브라우저에만</strong> 저장됩니다(서버에 올라가지 않습니다). 다른 기기에서 보거나 백업하려면 <strong>JSON 내보내기</strong>를 사용하세요.</p>
+  </section>
+
+  <div class="container">
+
+    <div class="log-actions">
+      <button id="log-add-toggle" type="button">+ 공연 직접 추가</button>
+      <button id="log-export" type="button">JSON 내보내기</button>
+      <label class="btn" for="log-import">가져오기<input id="log-import" type="file" accept="application/json" hidden></label>
+    </div>
+
+    <form id="log-form" hidden>
+      <label>날짜<input type="date" name="date" required></label>
+      <label>시간<input type="time" name="time"></label>
+      <label>장소<input type="text" name="venue" placeholder="예술의전당"></label>
+      <label>종류
+        <select name="type">
+          <option value="orchestra">관현악</option>
+          <option value="opera">오페라</option>
+          <option value="ballet">발레</option>
+          <option value="recital">독주/독창</option>
+          <option value="chamber">실내악</option>
+          <option value="other">기타</option>
+        </select>
+      </label>
+      <label class="full">작품/프로그램<input type="text" name="work" placeholder="예: 베토벤 교향곡 7번" required></label>
+      <label>작곡가<input type="text" name="composer" placeholder="예: Beethoven"></label>
+      <label>연주/제작<input type="text" name="performer" placeholder="예: 국립심포니오케스트라"></label>
+      <label>상태
+        <select name="status">
+          <option value="attended">관람함</option>
+          <option value="planned">예정</option>
+        </select>
+      </label>
+      <label class="full">메모<textarea name="note" rows="2" placeholder="감상 메모..."></textarea></label>
+      <button type="submit">기록 추가</button>
+    </form>
+
+    <section id="log-upcoming"></section>
+    <section id="log-attended"></section>
+    <section id="log-empty" hidden>아직 기록이 없습니다. <a href="listen.html">감상</a>·<a href="opera.html">무대</a> 페이지에서 <strong>♡ 관람함</strong>을 눌러 채워보세요.</section>
+
+  </div>
+</main>
+
+<footer>
+  <p>감상 기록은 브라우저(localStorage)에 저장되는 개인 메모입니다. 캐시를 지우면 사라지므로 주기적으로 <strong>JSON 내보내기</strong>로 백업하세요.</p>
+  <p>콘텐츠는 학습용이며, 음원은 외부 공개 영상/스트리밍으로 연결됩니다.</p>
+</footer>
+
+<script src="log.js" defer></script>
+</body>
+</html>
