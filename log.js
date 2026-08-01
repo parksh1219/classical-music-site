@@ -6,7 +6,8 @@
   "use strict";
 
   var KEY = "classical-log-v1";
-  var SEEDED = "classical-log-seeded-v1";
+  // 시드 버전. 올릴 때마다 기존 브라우저에도 1회 '병합'이 실행된다(사용자 기록은 보존).
+  var SEEDED = "classical-log-seeded-v2";
 
   var TYPE_LABEL = {
     orchestra: "관현악", opera: "오페라", ballet: "발레",
@@ -42,12 +43,26 @@
   }
   function seedOnce() {
     try {
-      if (localStorage.getItem(SEEDED)) return;
+      if (localStorage.getItem(SEEDED)) return; // 이 시드 버전은 이미 반영됨
       var cur = safeGet();
-      if (cur.length === 0) {
-        SEED.forEach(function (s) { cur.push(normalize(s)); });
-        safeSet(cur);
-      }
+      var bySlug = {};
+      cur.forEach(function (x) { if (x.slug) bySlug[x.slug] = x; });
+      var changed = false;
+      SEED.forEach(function (s) {
+        var existing = s.slug ? bySlug[s.slug] : null;
+        if (!existing) {
+          // 새 공연(예: 8/12 베토벤 9번)을 다가오는/관람한 목록에 추가
+          var n = normalize(s); cur.push(n);
+          if (n.slug) bySlug[n.slug] = n; changed = true;
+        } else {
+          // 기존 항목은 사용자 편집을 덮지 않고 '빈 칸'만 보강
+          if (!existing.note && s.note) { existing.note = s.note; changed = true; }
+          if (!existing.performer && s.performer) { existing.performer = s.performer; changed = true; }
+          if (!existing.time && s.time) { existing.time = s.time; changed = true; }
+          if (existing.status === "planned" && s.status === "attended") { existing.status = "attended"; changed = true; }
+        }
+      });
+      if (changed) safeSet(cur);
       localStorage.setItem(SEEDED, "1");
     } catch (e) { /* 차단 환경: 시드 생략 */ }
   }
