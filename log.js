@@ -15,9 +15,14 @@
 
   // 사용자 관람 예정 공연 (예술의전당) — 최초 1회만 주입
   var SEED = [
+    { date:"2026-08-12", time:"19:30", venue:"예술의전당 콘서트홀", type:"orchestra",
+      work:"베토벤 교향곡 9번 '합창'", slug:"beethoven-symphony-no9-op125",
+      composer:"Beethoven", performer:"서울시향 · 얍 판 츠베덴 (유럽투어 프리뷰)", rating:0,
+      note:"함께 연주: 존 애덤스 '부상 처치사(The Wound-Dresser)' · 독창 최지은/이아경/손지훈/마티아스 괴르네 · 합창 국립합창단", status:"planned" },
     { date:"2026-07-04", time:"17:00", venue:"예술의전당", type:"orchestra",
       work:"베토벤 교향곡 7번", slug:"beethoven-symphony-no7-op92",
-      composer:"Beethoven", performer:"국립심포니오케스트라", rating:0, note:"", status:"planned" },
+      composer:"Beethoven", performer:"국립심포니오케스트라", rating:0,
+      note:"함께 연주: 멘델스존 '고요한 바다와 즐거운 항해' Op.27 · 슈만 '미뇽을 위한 레퀴엠' Op.98b", status:"attended" },
     { date:"2026-07-23", time:"19:30", venue:"예술의전당", type:"opera",
       work:"투란도트", slug:"stage-puccini-turandot",
       composer:"Puccini", performer:"", rating:0, note:"", status:"planned" },
@@ -166,9 +171,11 @@
       "</li>";
   }
 
-  // 작품 페이지 추정: stage- 슬러그 → opera.html, 그 외 → listen.html
+  // 작품 페이지 추정: stage- → opera.html, 베토벤 7/9번 → concert.html, 그 외 → listen.html
   function linkFor(entry) {
-    var page = entry.slug.indexOf("stage-") === 0 ? "opera.html" : "listen.html";
+    var concertSlugs = { "beethoven-symphony-no9-op125": 1, "beethoven-symphony-no7-op92": 1 };
+    var page = entry.slug.indexOf("stage-") === 0 ? "opera.html"
+             : (concertSlugs[entry.slug] ? "concert.html" : "listen.html");
     return page + "#" + entry.slug;
   }
 

@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>공연 예습 — 관현악·콘서트 · 클래식 음악 감상과 공부</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .concert-grid { display: grid; gap: 2rem; }
+    .concert-card { background: var(--color-surface, #fff); border: 1px solid var(--color-border, #e5e7eb); border-radius: 12px; padding: 1.5rem; }
+    .concert-card.upcoming { border-color: var(--color-accent, #c0392b); border-width: 2px; }
+    .badge { display: inline-block; background: var(--color-accent, #c0392b); color: #fff; font-size: 0.78rem; font-weight: 700; padding: 0.2em 0.75em; border-radius: 20px; margin-bottom: 0.6rem; letter-spacing: 0.02em; }
+    .badge.past { background: #6b7280; }
+    .concert-card h3 { font-size: 1.2rem; margin: 0 0 0.25rem; }
+    .concert-card h3 small { font-size: 0.82em; font-weight: 400; opacity: 0.72; display: block; margin-top: 0.1em; }
+    .concert-meta { font-size: 0.83rem; color: var(--color-text-muted, #6b7280); margin-bottom: 0.85rem; line-height: 1.75; }
+    .mv-table-wrap, .program-table-wrap { overflow-x: auto; margin: 0.5rem 0 1rem; }
+    .mv-table, .program-table { width: 100%; border-collapse: collapse; font-size: 0.82rem; min-width: 460px; }
+    .mv-table th, .program-table th { background: var(--color-surface-alt, #f9fafb); font-weight: 600; text-align: left; padding: 0.45em 0.75em; border-bottom: 2px solid var(--color-border, #e5e7eb); white-space: nowrap; }
+    .mv-table td, .program-table td { padding: 0.45em 0.75em; border-bottom: 1px solid var(--color-border, #e5e7eb); vertical-align: top; line-height: 1.55; }
+    .mv-table td:first-child, .program-table td:first-child { white-space: nowrap; font-weight: 600; }
+    .tip { background: var(--color-surface-alt, #f9fafb); border-left: 3px solid var(--color-accent, #c0392b); padding: 0.6rem 0.9rem; font-size: 0.87rem; margin-bottom: 0.9rem; border-radius: 0 6px 6px 0; line-height: 1.6; }
+    .work-block { border-top: 1px dashed var(--color-border, #e5e7eb); margin-top: 1.4rem; padding-top: 1.1rem; }
+    .work-block > h4 { font-size: 1.02rem; margin: 0 0 0.15rem; }
+    .work-block > h4 small { font-size: 0.8em; font-weight: 400; opacity: 0.72; }
+    .work-intro { font-size: 0.9rem; line-height: 1.65; margin: 0.35rem 0 0.9rem; }
+    .albums-label, .videos-label { font-size: 0.9rem; font-weight: 700; color: var(--color-text-muted, #6b7280); margin: 1rem 0 0.5rem; }
+    .albums { display: grid; gap: 0.6rem; margin-bottom: 0.4rem; }
+    @media (max-width: 480px) {
+      .concert-grid { gap: 1.25rem; }
+      .concert-card { padding: 1rem; }
+      .concert-card h3 { font-size: 1.05rem; }
+      .tip { padding: 0.5rem 0.7rem; }
+    }
+  </style>
+</head>
+<body>
+<header>
+  <nav>
+    <a href="index.html" class="brand">클래식 감상 &amp; 공부</a>
+    <ul>
+      <li><a href="index.html">홈</a></li>
+      <li><a href="listen.html">감상</a></li>
+      <li><a href="opera.html">무대</a></li>
+      <li><a href="concert.html" class="active">공연</a></li>
+      <li><a href="study.html">공부</a></li>
+      <li><a href="eras.html">시대</a></li>
+      <li><a href="composers.html">작곡가</a></li>
+      <li><a href="travel.html">여행</a></li>
+      <li><a href="log.html">기록</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <div class="page-header">
+    <h1>공연 예습 — 관현악 &amp; 콘서트</h1>
+    <p>예술의전당 등에서 관람할 관현악·콘서트 프로그램을 미리 예습합니다. 곡별 감상 포인트 · 명반 · 검증된 유튜브 실연 영상을 담았습니다. 관람 예정 공연은 상단에 표시됩니다.</p>
+  </div>
+
+  <div class="container">
+
+    <!-- ===== 관람 예정 ===== -->
+    <h2 class="section-title" id="upcoming">관람 예정</h2>
+    <div class="concert-grid">
+
+      <!-- beethoven-symphony-no9-op125 -->
+      <article class="concert-card upcoming" id="beethoven-symphony-no9-op125">
+        <span class="badge">관람 예정 · 예술의전당 콘서트홀 · 2026-08-12(수) 19:30</span>
+        <h3>2026 서울시향 유럽 투어 프리뷰 콘서트: 베토벤 '합창' <small>SPO Europe Tour Preview Concert 2026</small></h3>
+        <p class="concert-meta">지휘 <strong>얍 판 츠베덴</strong> · 소프라노 최지은 · 메조소프라노 이아경 · 테너 손지훈 · 바리톤 <strong>마티아스 괴르네</strong> · 합창 국립합창단</p>
+
+        <div class="program-table-wrap">
+          <table class="program-table">
+            <thead><tr><th>순서</th><th>작곡가</th><th>곡</th></tr></thead>
+            <tbody>
+              <tr><td>1</td><td>존 애덤스</td><td>부상 처치사 (The Wound-Dresser)</td></tr>
+              <tr><td>2</td><td>베토벤</td><td>교향곡 제9번 '합창' Op.125</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="disc-hint">※ 프로그램 및 연주자는 변경될 수 있습니다.</p>
+
+        <!-- ① 존 애덤스 -->
+        <div class="work-block" id="concert-adams-wound-dresser">
+          <h4>① 존 애덤스 — 부상 처치사 <small>John Adams, The Wound-Dresser (1988–89)</small></h4>
+          <p class="work-intro">미국 작곡가 존 애덤스가 월트 휘트먼의 남북전쟁 시 — 야전병원에서 부상병을 간호한 시인 자신의 경험 — 를 바리톤과 관현악으로 옮긴 약 19분의 작품. 절제되고 투명한 미니멀리즘 어법 위에서 바리톤이 담담하게 상처와 죽음을 노래합니다. 이 공연에선 베토벤 9번의 바리톤 독창을 맡은 마티아스 괴르네가 이 곡도 부릅니다.</p>
+          <p class="albums-label">🎧 명반</p>
+          <div class="albums">
+            <div class="album-item">
+              <strong>Sanford Sylvan, 바리톤 / Orchestra of St. Luke's · John Adams 지휘 (Nonesuch)</strong>
+              <div class="album-conductor"><a href="https://www.youtube.com/results?search_query=John+Adams+Wound+Dresser+Sanford+Sylvan+Nonesuch" target="_blank" rel="noopener" title="YouTube에서 이 명반 찾기">YouTube에서 찾기 →</a></div>
+              <div class="album-note">작곡가 자신이 지휘한 초연 계열 레퍼런스 녹음.</div>
+            </div>
+          </div>
+          <p class="videos-label">🎼 실연 영상</p>
+          <ul class="stage-video-list">
+            <li class="stage-video-card">
+              <div class="embed"><iframe src="https://www.youtube.com/embed/J6vxK6mukx8" title="John Adams Wound-Dresser Sanford Sylvan" loading="lazy" allowfullscreen></iframe></div>
+              <span class="stage-video-badge">레퍼런스</span>
+              <div class="stage-video-body">
+                <h4>Sanford Sylvan / Orchestra of St. Luke's (Nonesuch)</h4>
+                <p class="listen-link">▶ 영상이 안 보이면: <a href="https://www.youtube.com/results?search_query=John+Adams+The+Wound+Dresser+Sanford+Sylvan" target="_blank" rel="noopener">YouTube에서 찾기</a></p>
+              </div>
+            </li>
+            <li class="stage-video-card">
+              <div class="embed"><iframe src="https://www.youtube.com/embed/KO_8vx_MMlM" title="John Adams Wound-Dresser Cleveland Dohnanyi" loading="lazy" allowfullscreen></iframe></div>
+              <span class="stage-video-badge">실연 영상</span>
+              <div class="stage-video-body">
+                <h4>Cleveland Orchestra · Dohnányi (Sanford Sylvan, 1990)</h4>
+                <p class="listen-link">▶ 영상이 안 보이면: <a href="https://www.youtube.com/results?search_query=John+Adams+Wound+Dresser+Cleveland+Dohnanyi" target="_blank" rel="noopener">YouTube에서 찾기</a></p>
+              </div>
+            </li>
+          </ul>
+          <p class="disc-hint">※ 실연 영상은 저작권 사정으로 재생이 안 될 수 있습니다. 그럴 땐 각 영상의 'YouTube에서 찾기' 링크로 다른 영상을 찾아보세요.</p>
+        </div>
+
+        <!-- ② 베토벤 9번 -->
+        <div class="work-block">
+          <h4>② 베토벤 — 교향곡 9번 "합창" Op.125 <small>Symphony No.9 in D minor, "Choral" · 약 65분</small></h4>
+          <p class="work-intro">인류 역사상 가장 유명한 교향곡. 4악장 "환희의 송가"는 유럽연합의 상징(유럽 찬가)이기도 합니다.</p>
+          <p class="albums-label">악장별 감상 포인트</p>
+        <div class="mv-table-wrap">
+          <table class="mv-table">
+            <thead><tr><th>악장</th><th>표기</th><th>들을 것</th></tr></thead>
+            <tbody>
+              <tr><td>1악장</td><td>Allegro ma non troppo</td><td>공허한 5도에서 무(無)로부터 형체가 잡혀가는 도입 → 폭풍 같은 총주의 대(大)소나타</td></tr>
+              <tr><td>2악장</td><td>Molto vivace (스케르초)</td><td>팀파니가 리듬에 개입하며 질주. 교향곡 스케르초의 정점</td></tr>
+              <tr><td>3악장</td><td>Adagio molto e cantabile</td><td>두 주제가 교차하는 지극히 평온하고 아름다운 완서악장. 숨죽이게 되는 대목</td></tr>
+              <tr><td>4악장</td><td>Presto — "환희의 송가"</td><td>앞 3악장 주제를 회상·거부한 뒤 첼로·콘트라베이스가 조용히 주제를 꺼냄 → 독창·합창의 대폭발</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="tip">🎯 관람 팁: 4악장에서 <strong>바리톤 독창 "O Freunde!"</strong>가 처음 들어오는 순간과, 그 직전 <strong>첼로·베이스가 '환희의 송가' 선율을 처음 꺼내는 대목</strong>을 미리 귀에 익혀두면 현장 감동이 배가됩니다. 약 65분 대곡이니 화장실은 3악장 전에.</div>
+
+        <p class="albums-label">🎧 듣고 싶은 명반</p>
+        <div class="albums">
+          <div class="album-item">
+            <strong>Herbert von Karajan / Berliner Philharmoniker (DG, 1963)</strong>
+            <div class="album-conductor"><a href="https://www.youtube.com/results?search_query=Beethoven+Symphony+9+Karajan+Berlin+Philharmonic+1963" target="_blank" rel="noopener" title="YouTube에서 이 명반 찾기">YouTube에서 찾기 →</a></div>
+            <div class="album-note">4악장 합창의 웅장함을 최고로 구현. 카라얀 황금기 베를린 필의 완성도.</div>
+          </div>
+          <div class="album-item">
+            <strong>Wilhelm Furtwängler / Bayreuth Festival (EMI, 1951)</strong>
+            <div class="album-conductor"><a href="https://www.youtube.com/results?search_query=Furtwangler+Beethoven+9+Bayreuth+1951" target="_blank" rel="noopener" title="YouTube에서 이 명반 찾기">YouTube에서 찾기 →</a></div>
+            <div class="album-note">전후 바이로이트 재개막 실황. 격정과 긴장이 응축된 전설적 명연.</div>
+          </div>
+          <div class="album-item">
+            <strong>Leonard Bernstein / Berlin (DG, 1989)</strong>
+            <div class="album-conductor"><a href="https://www.youtube.com/results?search_query=Bernstein+Beethoven+9+Ode+to+Freedom+Berlin+1989" target="_blank" rel="noopener" title="YouTube에서 이 명반 찾기">YouTube에서 찾기 →</a></div>
+            <div class="album-note">베를린 장벽 붕괴 기념. "Freude(환희)"를 "Freiheit(자유)"로 바꿔 노래한 역사적 연주.</div>
+          </div>
+        </div>
+
+        <p class="videos-label">🎼 명연 실연 영상 (유튜브)</p>
+        <ul class="stage-video-list">
+          <li class="stage-video-card">
+            <div class="embed"><iframe src="https://www.youtube.com/embed/pSy6utXzsFc" title="Bernstein Beethoven 9 Berlin 1989" loading="lazy" allowfullscreen></iframe></div>
+            <span class="stage-video-badge">역사적 실연</span>
+            <div class="stage-video-body">
+              <h4>Bernstein · 베를린 1989 «Ode to Freedom»</h4>
+              <p class="listen-link">▶ 영상이 안 보이면: <a href="https://www.youtube.com/results?search_query=Bernstein+Beethoven+9+Ode+to+Freedom+Berlin+1989" target="_blank" rel="noopener">YouTube에서 찾기</a></p>
+            </div>
+          </li>
+          <li class="stage-video-card">
+            <div class="embed"><iframe src="https://www.youtube.com/embed/EfuBE5EPMZs" title="Beethoven 9 Karajan Berliner Philharmoniker" loading="lazy" allowfullscreen></iframe></div>
+            <span class="stage-video-badge">레퍼런스</span>
+            <div class="stage-video-body">
+              <h4>Karajan / Berliner Philharmoniker (DG 1963)</h4>
+              <p class="listen-link">▶ 영상이 안 보이면: <a href="https://www.youtube.com/results?search_query=Beethoven+Symphony+9+Karajan+Berlin+Philharmonic" target="_blank" rel="noopener">YouTube에서 찾기</a></p>
+            </div>
+          </li>
+        </ul>
+        <p class="disc-hint">※ 실연 영상은 저작권 사정으로 재생이 안 될 수 있습니다. 그럴 땐 각 영상의 'YouTube에서 찾기' 링크로 다른 영상을 찾아보세요.</p>
+
+        </div>
+
+        <p class="links">→ <a href="composers.html#composer-beethoven">루트비히 판 베토벤</a> · <a href="listen.html#beethoven-symphony-no9-op125">감상 페이지의 9번 트랙</a> · <a href="study.html#concept-symphony-structure">교향곡 4악장 구조</a> &nbsp;<button class="log-mark" data-slug="beethoven-symphony-no9-op125" data-work="베토벤 교향곡 9번 합창 (존 애덤스 '부상 처치사' 포함)" data-type="orchestra" data-composer="Beethoven">♡ 관람함</button></p>
+      </article>
+
+    </div>
+
+    <!-- ===== 지난 관람 · 복습 ===== -->
+    <h2 class="section-title" id="past" style="margin-top:2.5rem;">지난 관람 · 복습</h2>
+    <div class="concert-grid">
+
+      <!-- 2026-07-04 예술의전당 3곡 프로그램 -->
+      <article class="concert-card" id="concert-2026-07-04">
+        <span class="badge past">관람 완료 · 예술의전당 · 2026-07-04</span>
+        <h3>베토벤 교향곡 7번 외 <small>멘델스존 Op.27 · 슈만 Op.98b · 베토벤 Symphony No.7</small></h3>
+        <p class="concert-meta">실제 관람한 3곡 프로그램 전체를 복습용으로 정리했습니다.</p>
+
+        <div class="program-table-wrap">
+          <table class="program-table">
+            <thead><tr><th>순서</th><th>작곡가</th><th>곡</th><th>편성 · 길이</th></tr></thead>
+            <tbody>
+              <tr><td>1</td><td>멘델스존</td><td>고요한 바다와 즐거운 항해 Op.27</td><td>연주회용 서곡 · 약 12분</td></tr>
+              <tr><td>2</td><td>슈만</td><td>미뇽을 위한 레퀴엠 Op.98b</td><td>독창·합창·관현악 · 약 13분</td></tr>
+              <tr><td>3</td><td>베토벤</td><td>교향곡 7번 Op.92</td><td>관현악 · 약 38분</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- ① 멘델스존 -->
+        <div class="work-block" id="concert-mendelssohn-meeresstille-op27">
+          <h4>① 멘델스존 — 고요한 바다와 즐거운 항해 Op.27 <small>Meeresstille und glückliche Fahrt</small></h4>
+          <p class="work-intro">괴테의 두 편의 시(잔잔한 바다 / 순풍의 항해)에서 영감받은 연주회용 서곡. 전반부는 바람 한 점 없는 정적(느린 현), 후반부는 항해가 시작되며 활기차게 전개됩니다. 멘델스존 특유의 투명한 관현악.</p>
+          <p class="albums-label">🎧 명반</p>
+          <div class="albums">
+            <div class="album-item">
+              <strong>Claudio Abbado / London Symphony Orchestra (DG)</strong>
+              <div class="album-conductor"><a href="https://www.youtube.com/results?search_query=Mendelssohn+Meeresstille+Op+27+Abbado+LSO" target="_blank" rel="noopener" title="YouTube에서 이 명반 찾기">YouTube에서 찾기 →</a></div>
+            </div>
+          </div>
+          <p class="videos-label">🎼 실연 영상</p>
+          <ul class="stage-video-list">
+            <li class="stage-video-card">
+              <div class="embed"><iframe src="https://www.youtube.com/embed/CBh_FIkXZ_I" title="Mendelssohn Meeresstille Op.27 Abbado" loading="lazy" allowfullscreen></iframe></div>
+              <span class="stage-video-badge">연주회 서곡</span>
+              <div class="stage-video-body">
+                <h4>Abbado / London Symphony Orchestra</h4>
+                <p class="listen-link">▶ 영상이 안 보이면: <a href="https://www.youtube.com/results?search_query=Mendelssohn+Meeresstille+und+glueckliche+Fahrt+Op+27" target="_blank" rel="noopener">YouTube에서 찾기</a></p>
+              </div>
+            </li>
+          </ul>
+          <p class="links">→ <a href="composers.html#composer-mendelssohn">펠릭스 멘델스존</a></p>
+        </div>
+
+        <!-- ② 슈만 -->
+        <div class="work-block" id="concert-schumann-requiem-mignon-op98b">
+          <h4>② 슈만 — 미뇽을 위한 레퀴엠 Op.98b <small>Requiem für Mignon</small></h4>
+          <p class="work-intro">괴테 소설 '빌헬름 마이스터의 수업시대' 속 소녀 미뇽의 죽음을 애도하는 합창곡. 독창과 합창, 관현악으로 짜인 슈만 후기의 서정적·명상적 작품으로, 국내 무대에서 보기 드문 레퍼토리입니다.</p>
+          <p class="albums-label">🎧 명반</p>
+          <div class="albums">
+            <div class="album-item">
+              <strong>Michel Corboz (Erato)</strong>
+              <div class="album-conductor"><a href="https://www.youtube.com/results?search_query=Schumann+Requiem+fur+Mignon+Op+98b+Corboz" target="_blank" rel="noopener" title="YouTube에서 이 명반 찾기">YouTube에서 찾기 →</a></div>
+              <div class="album-note">참조: Bernhard Klee 녹음도 표준으로 꼽힙니다.</div>
+            </div>
+          </div>
+          <p class="videos-label">🎼 실연 영상</p>
+          <ul class="stage-video-list">
+            <li class="stage-video-card">
+              <div class="embed"><iframe src="https://www.youtube.com/embed/NUS9xC4co0g" title="Schumann Requiem fur Mignon Op.98b Corboz" loading="lazy" allowfullscreen></iframe></div>
+              <span class="stage-video-badge">합창·관현악</span>
+              <div class="stage-video-body">
+                <h4>Michel Corboz (Erato)</h4>
+                <p class="listen-link">▶ 영상이 안 보이면: <a href="https://www.youtube.com/results?search_query=Schumann+Requiem+fur+Mignon+Op+98b" target="_blank" rel="noopener">YouTube에서 찾기</a></p>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <!-- ③ 베토벤 7번 -->
+        <div class="work-block" id="beethoven-symphony-no7-op92">
+          <h4>③ 베토벤 — 교향곡 7번 Op.92 <small>Symphony No.7 in A major</small></h4>
+          <p class="work-intro">'리듬의 화신'이라 불리는 교향곡. 네 악장 모두 특징적 리듬 동기가 곡 전체를 밀고 나갑니다.</p>
+          <p class="albums-label">악장별 감상 포인트</p>
+          <div class="mv-table-wrap">
+            <table class="mv-table">
+              <thead><tr><th>악장</th><th>표기</th><th>들을 것</th></tr></thead>
+              <tbody>
+                <tr><td>1악장</td><td>Poco sostenuto–Vivace</td><td>긴 서주 뒤 점 리듬(dotted)이 춤추듯 질주</td></tr>
+                <tr><td>2악장</td><td>Allegretto</td><td>단 하나의 리듬 동기가 처음부터 끝까지 반복·누적. 느리지만 끓어오르는 긴장 (가장 유명)</td></tr>
+                <tr><td>3악장</td><td>Presto (스케르초)</td><td>활기찬 질주와 트리오의 대비</td></tr>
+                <tr><td>4악장</td><td>Allegro con brio</td><td>베토벤 교향곡 중 가장 폭발적 피날레, '리듬의 신격화'</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="albums-label">🎧 명반</p>
+          <div class="albums">
+            <div class="album-item">
+              <strong>Carlos Kleiber / Wiener Philharmoniker (DG, 1976)</strong>
+              <div class="album-conductor"><a href="https://www.youtube.com/results?search_query=Carlos+Kleiber+Beethoven+Symphony+7+Vienna" target="_blank" rel="noopener" title="YouTube에서 이 명반 찾기">YouTube에서 찾기 →</a></div>
+              <div class="album-note">리듬의 화신. 이 곡의 결정적 레퍼런스로 꼽히는 명반.</div>
+            </div>
+            <div class="album-item">
+              <strong>Herbert von Karajan / Berliner Philharmoniker (DG)</strong>
+              <div class="album-conductor"><a href="https://www.youtube.com/results?search_query=Karajan+Beethoven+Symphony+7+Berlin" target="_blank" rel="noopener" title="YouTube에서 이 명반 찾기">YouTube에서 찾기 →</a></div>
+              <div class="album-note">묵직하고 견고한 총주의 대비.</div>
+            </div>
+          </div>
+          <p class="videos-label">🎼 실연 영상</p>
+          <ul class="stage-video-list">
+            <li class="stage-video-card">
+              <div class="embed"><iframe src="https://www.youtube.com/embed/ad18xsy1Tv4" title="Carlos Kleiber Beethoven Symphony 7" loading="lazy" allowfullscreen></iframe></div>
+              <span class="stage-video-badge">레퍼런스 실연</span>
+              <div class="stage-video-body">
+                <h4>Carlos Kleiber</h4>
+                <p class="listen-link">▶ 영상이 안 보이면: <a href="https://www.youtube.com/results?search_query=Carlos+Kleiber+Beethoven+Symphony+7" target="_blank" rel="noopener">YouTube에서 찾기</a></p>
+              </div>
+            </li>
+            <li class="stage-video-card">
+              <div class="embed"><iframe src="https://www.youtube.com/embed/Rd0HnxWm5CY" title="Beethoven Symphony 7 Haitink Concertgebouw" loading="lazy" allowfullscreen></iframe></div>
+              <span class="stage-video-badge">실연 영상</span>
+              <div class="stage-video-body">
+                <h4>Bernard Haitink / Royal Concertgebouw</h4>
+                <p class="listen-link">▶ 영상이 안 보이면: <a href="https://www.youtube.com/results?search_query=Beethoven+Symphony+7+Haitink+Concertgebouw" target="_blank" rel="noopener">YouTube에서 찾기</a></p>
+              </div>
+            </li>
+          </ul>
+          <p class="disc-hint">※ 실연 영상은 저작권 사정으로 재생이 안 될 수 있습니다. 그럴 땐 각 영상의 'YouTube에서 찾기' 링크로 다른 영상을 찾아보세요.</p>
+          <p class="links">→ <a href="composers.html#composer-beethoven">루트비히 판 베토벤</a> · <a href="listen.html#beethoven-symphony-no7-op92">감상 페이지의 7번 트랙</a> · <a href="eras.html#era-classical">고전 시대</a> &nbsp;<button class="log-mark" data-slug="beethoven-symphony-no7-op92" data-work="베토벤 교향곡 7번 (멘델스존 Op.27·슈만 Op.98b 포함)" data-type="orchestra" data-composer="Beethoven">♡ 관람함</button></p>
+        </div>
+
+      </article>
+
+    </div>
+
+  </div><!-- /.container -->
+</main>
+
+<footer>
+  <p>콘텐츠는 학습용이며, 음원은 외부 공개 영상/스트리밍으로 연결됩니다. 실연 영상은 YouTube 원본으로 재생됩니다(사이트 직접 호스팅 없음).</p>
+  <p>텍스트·사실 정보 출처: 16_research_concert.md (listening 리서치 + 표준 음악사 사실). 영상은 oEmbed로 개별 검증.</p>
+</footer>
+<script src="log.js" defer></script>
+</body>
+</html>
