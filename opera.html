@@ -3,12 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>무대 — 오페라·발레 · 클래식 음악 감상과 공부</title>
+  <title>오페라·발레 · 클래식 음악 감상과 공부</title>
   <link rel="stylesheet" href="styles.css">
   <style>
     .stage-grid { display: grid; gap: 2rem; }
     .stage-card { background: var(--color-surface, #fff); border: 1px solid var(--color-border, #e5e7eb); border-radius: 12px; padding: 1.5rem; }
     .stage-card.upcoming { border-color: var(--color-accent, #c0392b); border-width: 2px; }
+    .badge.past { background: #6b7280; }
+    .work-index { background: var(--color-surface-alt, #f9fafb); border: 1px solid var(--color-border, #e5e7eb); border-radius: 12px; padding: 1rem 1.2rem; margin-bottom: 1.8rem; }
+    .work-index-title { font-size: 0.9rem; font-weight: 700; margin: 0 0 0.7rem; }
+    .work-index-group { margin-bottom: 0.7rem; }
+    .work-index-group:last-child { margin-bottom: 0; }
+    .work-index-label { display: inline-block; font-size: 0.74rem; font-weight: 700; color: var(--color-text-muted, #6b7280); border: 1px solid var(--color-border, #e5e7eb); border-radius: 6px; padding: 0.1em 0.5em; margin-bottom: 0.45rem; background: var(--color-surface, #fff); }
+    .work-index ul { list-style: none; display: flex; flex-wrap: wrap; gap: 0.4rem 0.5rem; margin: 0.3rem 0 0; padding: 0; }
+    .work-index li { margin: 0; }
+    .work-index a { display: inline-block; font-size: 0.84rem; text-decoration: none; color: var(--color-accent, #c0392b); background: var(--color-surface, #fff); border: 1px solid var(--color-border, #e5e7eb); border-radius: 16px; padding: 0.22em 0.7em; line-height: 1.4; }
+    .work-index a:hover { border-color: var(--color-accent, #c0392b); }
+    .work-index a em { font-style: normal; font-size: 0.88em; opacity: 0.7; margin-left: 0.25em; }
+    .work-index a em.up { color: var(--color-accent, #c0392b); opacity: 0.95; }
+    .work-index a em.done { color: #6b7280; }
     .badge { display: inline-block; background: var(--color-accent, #c0392b); color: #fff; font-size: 0.78rem; font-weight: 700; padding: 0.2em 0.75em; border-radius: 20px; margin-bottom: 0.6rem; letter-spacing: 0.02em; }
     .stage-card h3 { font-size: 1.2rem; margin: 0 0 0.25rem; }
     .stage-card h3 small { font-size: 0.82em; font-weight: 400; opacity: 0.72; display: block; margin-top: 0.1em; }
@@ -43,8 +56,8 @@
     <ul>
       <li><a href="index.html">홈</a></li>
       <li><a href="listen.html">감상</a></li>
-      <li><a href="opera.html" class="active">무대</a></li>
-      <li><a href="concert.html">공연</a></li>
+      <li><a href="opera.html" class="active">오페라·발레</a></li>
+      <li><a href="concert.html">콘서트</a></li>
       <li><a href="study.html">공부</a></li>
       <li><a href="eras.html">시대</a></li>
       <li><a href="composers.html">작곡가</a></li>
@@ -56,19 +69,56 @@
 
 <main>
   <div class="page-header">
-    <h1>무대 — 오페라 &amp; 발레</h1>
+    <h1>오페라 &amp; 발레</h1>
     <p>입문부터 심화까지 15편. 줄거리·명장면·관람 팁과 YouTube 검색 링크를 담았습니다. 관람 예정 공연은 상단에 표시됩니다.</p>
   </div>
 
   <div class="container">
 
-    <!-- ===== 관람 예정 ===== -->
-    <h2 class="section-title" id="upcoming">관람 예정</h2>
+    <nav class="work-index" aria-label="작품 빠른 이동">
+      <p class="work-index-title">📋 이 페이지의 작품 — 눌러서 바로가기</p>
+      <div class="work-index-group">
+        <span class="work-index-label">내 예매 공연</span>
+        <ul>
+          <li><a href="#stage-puccini-turandot">투란도트 <em class="done">완료·7/23</em></a></li>
+          <li><a href="#stage-tchaikovsky-swan-lake">백조의 호수 <em class="up">예정·8/20</em></a></li>
+          <li><a href="#stage-wagner-das-rheingold">라인의 황금 <em class="up">예정·10/29</em></a></li>
+          <li><a href="#stage-verdi-don-carlos">돈 카를로스 <em class="up">예정·12/3</em></a></li>
+        </ul>
+      </div>
+      <div class="work-index-group">
+        <span class="work-index-label">오페라</span>
+        <ul>
+          <li><a href="#stage-puccini-la-boheme">라 보엠</a></li>
+          <li><a href="#stage-puccini-madama-butterfly">나비부인</a></li>
+          <li><a href="#stage-verdi-la-traviata">라 트라비아타</a></li>
+          <li><a href="#stage-verdi-rigoletto">리골레토</a></li>
+          <li><a href="#stage-verdi-aida">아이다</a></li>
+          <li><a href="#stage-bizet-carmen">카르멘</a></li>
+          <li><a href="#stage-mozart-le-nozze-di-figaro">피가로의 결혼</a></li>
+          <li><a href="#stage-mozart-die-zauberflote">마술피리</a></li>
+          <li><a href="#stage-rossini-il-barbiere-di-siviglia">세비야의 이발사</a></li>
+          <li><a href="#stage-wagner-ring">니벨룽의 반지</a></li>
+        </ul>
+      </div>
+      <div class="work-index-group">
+        <span class="work-index-label">발레</span>
+        <ul>
+          <li><a href="#stage-tchaikovsky-nutcracker">호두까기인형</a></li>
+          <li><a href="#stage-tchaikovsky-sleeping-beauty">잠자는 숲속의 미녀</a></li>
+          <li><a href="#stage-stravinsky-rite-of-spring">봄의 제전</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- ===== 내 예매 공연 ===== -->
+    <h2 class="section-title" id="upcoming">내 예매 공연</h2>
+    <p class="section-lead">예술의전당에서 예매한 오페라·발레입니다(관람 예정 · 완료). 관현악·독창회 예매는 <a href="concert.html">콘서트</a>, 전체 예매 일정은 <a href="log.html">기록</a>에서 볼 수 있습니다.</p>
     <div class="stage-grid">
 
-      <!-- stage-puccini-turandot -->
-      <article class="stage-card upcoming" id="stage-puccini-turandot">
-        <span class="badge">관람 예정 · 예술의전당 · 2026-07-23</span>
+      <!-- stage-puccini-turandot (관람 완료 2026-07-23) -->
+      <article class="stage-card" id="stage-puccini-turandot">
+        <span class="badge past">관람 완료 · 예술의전당 오페라극장 · 2026-07-23</span>
         <h3>Turandot <small>투란도트</small></h3>
         <div class="stage-meta">
           작곡가: Giacomo Puccini (1858–1924) &nbsp;·&nbsp;
@@ -174,7 +224,7 @@
 
       <!-- stage-tchaikovsky-swan-lake -->
       <article class="stage-card upcoming" id="stage-tchaikovsky-swan-lake">
-        <span class="badge">관람 예정 · 예술의전당 · 2026-08-22</span>
+        <span class="badge">관람 예정 · 예술의전당 오페라극장 · 2026-08-20(목) 19:30</span>
         <h3>Swan Lake <small>백조의 호수</small></h3>
         <div class="stage-meta">
           작곡가: Pyotr Ilyich Tchaikovsky (1840–1893) &nbsp;·&nbsp;
@@ -278,6 +328,242 @@
 
         <p class="links">→ <a href="composers.html#composer-tchaikovsky">차이콥스키 작곡가 페이지</a> &nbsp;
           <button class="log-mark" data-slug="stage-tchaikovsky-swan-lake" data-work="백조의 호수" data-type="ballet" data-composer="Tchaikovsky">♡ 관람함</button></p>
+      </article>
+
+      <!-- stage-wagner-das-rheingold -->
+      <article class="stage-card upcoming" id="stage-wagner-das-rheingold">
+        <span class="badge">관람 예정 · 예술의전당 오페라극장 · 2026-10-29(목) 19:30</span>
+        <h3>Das Rheingold <small>라인의 황금 · 니벨룽의 반지 서야(序夜)</small></h3>
+        <div class="stage-meta">
+          작곡가: Richard Wagner (1813–1883) &nbsp;·&nbsp;
+          초연: 1869년 9월 22일, 뮌헨 궁정극장 (반지 전곡 초연: 1876년 바이로이트) &nbsp;·&nbsp;
+          독일어 / 서야 — 4장(場)의 단막, 휴식 없음 / 약 2시간 30분
+        </div>
+        <p class="one-liner">신들의 왕 보탄이 황금 반지를 손에 넣었다가 도로 빼앗기는 하루 — 〈니벨룽의 반지〉 4부작의 문을 여는 프롤로그, 휴식 없이 몰아치는 2시간 반.</p>
+        <p class="version-note"><strong>4부작 중 서야(Vorabend):</strong> 〈라인의 황금〉→〈발퀴레〉→〈지크프리트〉→〈신들의 황혼〉으로 이어지는 반지 사이클의 첫 편. 이 작품에서 등장하는 라이트모티프(반지·발할라·저주 등)가 이후 3부작 전체를 관통한다.</p>
+        <div class="synopsis">
+          <p><strong>1장 (라인강 밑바닥):</strong> 라인의 처녀들이 황금을 지키며 헤엄친다. 난쟁이 알베리히가 이들에게 구애하다 조롱당하자, 사랑을 저주하고 포기하는 자만이 황금으로 세계를 지배할 반지를 만들 수 있다는 비밀을 알고 황금을 훔쳐 달아난다.</p>
+          <p><strong>2장 (산 위, 신들의 거처):</strong> 보탄이 새로 완공된 성 발할라를 바라본다. 성을 지어준 거인 파졸트·파프너가 대가로 미의 여신 프라이아를 요구한다. 불의 신 로게가 알베리히의 황금 이야기를 전하자, 거인들은 프라이아 대신 그 황금을 받기로 하고 여신을 인질로 데려간다.</p>
+          <p><strong>3장 (니벨하임, 지하 세계):</strong> 알베리히는 반지의 힘으로 니벨룽족을 노예로 부린다. 보탄과 로게가 내려가 변신 투구 타른헬름으로 두꺼비가 된 알베리히를 속여 사로잡고, 황금과 반지를 모두 빼앗는다. 풀려나기 직전 알베리히는 반지에 저주를 건다 — 가진 자는 파멸하리라.</p>
+          <p><strong>4장 (다시 산 위):</strong> 대지의 여신 에르다가 솟아올라 반지를 포기하라 경고하고, 보탄은 마침내 반지를 거인에게 넘긴다. 곧바로 파프너가 보물을 두고 파졸트를 죽여 저주가 처음 실현된다. 신들은 무지개 다리를 건너 발할라로 입성하지만, 멀리서 라인의 처녀들이 잃어버린 황금을 슬퍼하는 소리가 들려온다.</p>
+        </div>
+        <p class="scene-h4">놓치면 안 될 명장면</p>
+        <div class="scene-table-wrap">
+          <table class="scene-table">
+            <thead><tr><th>장면 / 음악</th><th>위치</th><th>무엇이 들리는가</th><th>길이</th></tr></thead>
+            <tbody>
+              <tr><td>전주곡 (라인강의 생성)</td><td>1장 전</td><td>E♭장조 화음 하나가 136마디 동안 지속되며 오케스트라만으로 강물이 서서히 태어난다. 반지 전곡 전체의 출발점</td><td>약 4분</td></tr>
+              <tr><td>라인의 처녀들 'Weia! Waga!'</td><td>1장</td><td>소프라노 2인+메조 1인의 삼중창. 물의 찰랑임을 흉내 낸 유희적 선율과 알베리히를 놀리는 장난기</td><td>약 5분</td></tr>
+              <tr><td>니벨하임 하강 (모루 간주곡)</td><td>2→3장</td><td>무대 밖 모루 18개의 타격 리듬이 대장간 노동을 그리는 관현악 간주곡. 타른헬름 모티프 등장</td><td>약 3분</td></tr>
+              <tr><td>에르다의 경고 'Weiche, Wotan!'</td><td>4장</td><td>콘트랄토의 낮고 예언적인 음역이 신탁처럼 느리게 반지의 저주를 경고</td><td>약 3분</td></tr>
+              <tr><td>발할라 입성 (무지개 다리)</td><td>4장 끝</td><td>금관이 주도하는 장대한 팡파레와 무지개 다리 모티프. 그러나 아래 라인강의 탄식이 승리의 공허함을 드러냄</td><td>약 10분</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="tip"><strong>관람 팁:</strong> 라이트모티프(짧은 음악 동기)가 이 작품부터 등장해 4부작을 관통하니, 미리 대표 모티프 2~3개(반지·발할라·저주)만 유튜브로 들어두면 극을 따라가기 훨씬 쉽다. 정식 막 구분·휴식이 없는 단막극이라 화장실은 공연 전에 미리 다녀올 것. 원어(독일어)+한글 자막에 의존하게 되니 좌석에서 자막판 위치를 미리 확인해두면 좋다.</div>
+        <p class="listen-link">▶ 영상 찾기: <a href="https://www.youtube.com/results?search_query=Das+Rheingold+full+opera+English+subtitles" target="_blank" rel="noopener">라인의 황금 전막</a> · <a href="https://www.youtube.com/results?search_query=Wagner+leitmotif+ring+guide" target="_blank" rel="noopener">반지 라이트모티프 가이드</a></p>
+
+          <div class="disc-collection">
+          <p class="scene-h4">듣고 싶은 명반 (역대 대표 녹음)</p>
+          <ul class="disc-list">
+
+            <li class="disc-card">
+              <div class="disc-cover disc-cover--decca">
+                <img src="img/covers/rheingold-1958-solti.jpg" alt="Das Rheingold — Solti(1958, Decca) 음반 표지" loading="lazy" onerror="this.style.display='none'">
+                <span class="disc-sleeve"><span class="disc-sleeve-label">Decca</span><span class="disc-sleeve-year">1958</span></span>
+              </div>
+              <div class="disc-body">
+                <h4>숄티 · 빈 필하모닉 / 조지 런던(보탄)</h4>
+                <p class="disc-credits"><strong>지휘</strong> 게오르크 숄티 / 빈 필하모닉 &middot; <strong>주역</strong> 조지 런던(보탄), 구스타프 나이들링거(알베리히), 세트 스반홀름(로게) &middot; <strong>레이블/연도</strong> Decca · 1958</p>
+                <p class="disc-note">프로듀서 존 컬쇼의 "최초의 스튜디오 스테레오 반지" 프로젝트 첫 녹음. 모루·니벨하임 등 음향 연출이 혁신적이라는 평가가 확립된 역사적 명반.</p>
+                <p class="disc-cover-desc"><strong>표지</strong> Decca 특유의 진한 톤 슬리브에 반지 사이클 로고.</p>
+                <p class="listen-link">▶ <a href="https://www.youtube.com/results?search_query=Wagner+Das+Rheingold+Solti+Decca+1958" target="_blank" rel="noopener">이 녹음 유튜브에서 찾기</a></p>
+              </div>
+            </li>
+
+            <li class="disc-card">
+              <div class="disc-cover disc-cover--emi">
+                <img src="img/covers/rheingold-1967-karajan.jpg" alt="Das Rheingold — Karajan(1967, DG) 음반 표지" loading="lazy" onerror="this.style.display='none'">
+                <span class="disc-sleeve"><span class="disc-sleeve-label">DG</span><span class="disc-sleeve-year">1967</span></span>
+              </div>
+              <div class="disc-body">
+                <h4>카라얀 · 베를린 필하모닉 / 토마스 스튜어트(보탄)</h4>
+                <p class="disc-credits"><strong>지휘</strong> 헤르베르트 폰 카라얀 / 베를린 필하모닉 &middot; <strong>주역</strong> 토마스 스튜어트(보탄), 졸탄 켈레멘(알베리히) &middot; <strong>레이블/연도</strong> DG · 1967</p>
+                <p class="disc-note">카라얀 반지 사이클의 첫 작. 매끄럽고 교향악적인 음향으로 숄티반과 자주 비교되는 또 하나의 표준.</p>
+                <p class="disc-cover-desc"><strong>표지</strong> 어두운 배경에 DG 옐로 라벨 로고.</p>
+                <p class="listen-link">▶ <a href="https://www.youtube.com/results?search_query=Wagner+Das+Rheingold+Karajan+Berlin+1967" target="_blank" rel="noopener">이 녹음 유튜브에서 찾기</a></p>
+              </div>
+            </li>
+
+            <li class="disc-card">
+              <div class="disc-cover disc-cover--emi">
+                <img src="img/covers/rheingold-1980-boulez.jpg" alt="Das Rheingold — Boulez(1980, Bayreuth) 음반 표지" loading="lazy" onerror="this.style.display='none'">
+                <span class="disc-sleeve"><span class="disc-sleeve-label">Philips</span><span class="disc-sleeve-year">1980</span></span>
+              </div>
+              <div class="disc-body">
+                <h4>불레즈 · 바이로이트 / 셰로 연출</h4>
+                <p class="disc-credits"><strong>지휘</strong> 피에르 불레즈 / 바이로이트 축제 관현악단 &middot; <strong>주역</strong> 도널드 매킨타이어(보탄), 하인츠 체드닉(로게) &middot; <strong>레이블/연도</strong> Philips · 1980 (라이브)</p>
+                <p class="disc-note">파트리스 셰로 연출의 "세기의 반지(Jahrhundertring)" 실황. 빠른 템포와 극적 긴장감으로 유명하며 영상판도 널리 유통된다.</p>
+                <p class="disc-cover-desc"><strong>표지</strong> 셰로 프로덕션 무대 사진, Philips 로고.</p>
+                <p class="listen-link">▶ <a href="https://www.youtube.com/results?search_query=Wagner+Das+Rheingold+Boulez+Chereau+Bayreuth+1980" target="_blank" rel="noopener">이 녹음 유튜브에서 찾기</a></p>
+              </div>
+            </li>
+
+          </ul>
+          <p class="disc-hint">※ 음반 표지 이미지는 저작권이 있어 사이트에 기본 포함하지 않습니다(색상 슬리브로 대체 표시). 실제 표지를 넣으려면 <code>site/img/covers/</code> 폴더에 위 파일명(<code>rheingold-1958-solti.jpg</code> 등)으로 이미지를 넣으면 자동으로 표시됩니다.</p>
+        </div>
+        <div class="stage-videos">
+            <h3 class="stage-videos-title">🎭 명연 무대 영상 (유튜브)</h3>
+            <ul class="stage-video-list">
+              <li class="stage-video-card">
+                <div class="embed"><iframe src="https://www.youtube.com/embed/CR7S0prkpmQ" title="메트로폴리탄 오페라 2010 (르파주 연출·레바인 지휘), 전막 HD" loading="lazy" allowfullscreen></iframe></div>
+                <span class="stage-video-badge">전막</span>
+                <div class="stage-video-body">
+                  <h4>메트로폴리탄 오페라 2010 (르파주 연출 · 레바인 지휘, HD 자막)</h4>
+                  <p class="listen-link">▶ 영상이 안 보이면: <a href="https://www.youtube.com/results?search_query=Das+Rheingold+Metropolitan+Opera+Lepage+Levine+2010" target="_blank" rel="noopener">YouTube에서 찾기</a></p>
+                </div>
+              </li>
+              <li class="stage-video-card">
+                <div class="embed"><iframe src="https://www.youtube.com/embed/IHptIIbbXz4" title="바이로이트 축제 2007 (틸레만 지휘), 전막" loading="lazy" allowfullscreen></iframe></div>
+                <span class="stage-video-badge">전막</span>
+                <div class="stage-video-body">
+                  <h4>바이로이트 축제 2007 (크리스티안 틸레만 지휘)</h4>
+                  <p class="listen-link">▶ 영상이 안 보이면: <a href="https://www.youtube.com/results?search_query=Wagner+Das+Rheingold+Thielemann+Bayreuth+2007" target="_blank" rel="noopener">YouTube에서 찾기</a></p>
+                </div>
+              </li>
+              <li class="stage-video-card">
+                <div class="embed"><iframe src="https://www.youtube.com/embed/AgXFefwAVcw" title="발할라 입성 (4장 피날레)" loading="lazy" allowfullscreen></iframe></div>
+                <span class="stage-video-badge">명장면</span>
+                <div class="stage-video-body">
+                  <h4>발할라 입성 — 무지개 다리 (4장 피날레)</h4>
+                  <p class="listen-link">▶ 영상이 안 보이면: <a href="https://www.youtube.com/results?search_query=Wagner+Das+Rheingold+Entry+of+the+Gods+into+Valhalla" target="_blank" rel="noopener">YouTube에서 찾기</a></p>
+                </div>
+              </li>
+            </ul>
+            <p class="disc-hint">※ 무대 영상은 저작권 사정으로 재생이 안 될 수 있습니다. 그럴 땐 각 영상의 'YouTube에서 찾기' 링크로 다른 영상을 찾아보세요.</p>
+          </div>
+
+        <p class="links">→ <a href="composers.html#composer-wagner">바그너 작곡가 페이지</a> &nbsp;
+          <button class="log-mark" data-slug="stage-wagner-das-rheingold" data-work="라인의 황금" data-type="opera" data-composer="Wagner">♡ 관람함</button></p>
+      </article>
+
+      <!-- stage-verdi-don-carlos -->
+      <article class="stage-card upcoming" id="stage-verdi-don-carlos">
+        <span class="badge">관람 예정 · 예술의전당 오페라극장 · 2026-12-03(목) 17:00</span>
+        <h3>Don Carlo <small>돈 카를로스</small></h3>
+        <div class="stage-meta">
+          작곡가: Giuseppe Verdi (1813–1901) &nbsp;·&nbsp;
+          원작: 실러의 희곡 &nbsp;·&nbsp;
+          초연: 1867년 파리(프랑스어 5막) / 개정: 1884년 라 스칼라(이탈리아어 4막) &nbsp;·&nbsp;
+          이탈리아어 상연 표준 / 4~5막 / 약 3~4시간
+        </div>
+        <p class="one-liner">사랑했던 여인이 아버지의 왕비가 되어버린 스페인 왕자의 비극 — 정치(종교재판·플랑드르 억압)와 사랑과 우정이 뒤엉킨, 베르디 오페라 중 가장 웅장하고 어두운 정치극.</p>
+        <p class="version-note"><strong>판본 유의:</strong> 4막(이탈리아어)·5막(이탈리아어)·5막(프랑스어 원전) 등 여러 판본이 있어 1막(퐁텐블로 장면)의 유무가 다르다. 국립오페라단 공연이 어느 판본인지는 예매처 공지를 확인할 것.</p>
+        <div class="synopsis">
+          <p><strong>1막 (퐁텐블로, 5막판 한정):</strong> 스페인 왕자 돈 카를로는 프랑스 공주 엘리자베타와 사랑에 빠지지만, 화친의 조건이 바뀌어 엘리자베타는 카를로가 아니라 그의 아버지 필리페 2세의 왕비가 된다.</p>
+          <p><strong>산 유스테 수도원:</strong> 실의에 빠진 카를로에게 절친한 벗 로드리고(포사 후작)가 억압받는 플랑드르를 위해 함께 싸우자 설득한다. 카를로를 짝사랑하는 에볼리 공주는 그가 왕비를 사랑함을 눈치채고 복수를 다짐한다.</p>
+          <p><strong>아우토다페(이단자 화형식):</strong> 대규모 공개 처형식에서 카를로가 플랑드르 사절과 함께 아버지에게 자비를 청하다 칼을 뽑아 대치한다. 로드리고가 나서 카를로의 칼을 빼앗아 체포를 막는다.</p>
+          <p><strong>필리페의 서재 · 감옥:</strong> 필리페 2세가 홀로 고독을 토로한다('Ella giammai m'amò'). 종교재판소장이 찾아와 카를로와 로드리고까지 넘기라 강요한다. 에볼리는 왕비를 모함한 죄를 참회하고('O don fatale'), 감옥의 카를로를 찾아온 로드리고는 반역의 증거를 대신 뒤집어쓴 채 자객의 총에 맞아 카를로의 품에서 숨을 거둔다.</p>
+          <p><strong>결말 (카를 5세의 무덤 앞):</strong> 엘리자베타와 카를로가 마지막 이별을 고한다. 필리페와 종교재판소장이 카를로를 체포하려는 순간, 선왕 카를 5세의 망령이 나타나 카를로를 무덤 속으로 이끈다 — 죽음/구원/도피, 결말 해석은 연출마다 다르다.</p>
+        </div>
+        <p class="scene-h4">놓치면 안 될 명장면</p>
+        <div class="scene-table-wrap">
+          <table class="scene-table">
+            <thead><tr><th>장면 / 곡</th><th>막</th><th>무엇이 들리는가</th><th>길이</th></tr></thead>
+            <tbody>
+              <tr><td>'Dio, che nell'alma' (우정의 이중창)</td><td>2막</td><td>카를로(테너)와 로드리고(바리톤)의 "함께 죽자"는 맹세. 두 남성 목소리가 얽히는 베르디식 우정 테마</td><td>약 4분</td></tr>
+              <tr><td>'Ella giammai m'amò'</td><td>4막</td><td>필리페 2세(베이스)의 독백. 첼로 솔로 위로 "그녀는 날 사랑한 적 없었다"—베이스 레퍼토리 최고봉</td><td>약 8분</td></tr>
+              <tr><td>종교재판소장 장면</td><td>4막</td><td>왕과 대심문관(둘 다 베이스)의 대결 이중창. 세속권력 대 교회권력의 힘겨루기, 낮은 음역의 압박감</td><td>약 8분</td></tr>
+              <tr><td>'O don fatale'</td><td>4막</td><td>에볼리(메조소프라노)의 참회 아리아. 격정적 도입부에서 후반 카발레타로, 죄책감과 결단 사이를 오감</td><td>약 5분</td></tr>
+              <tr><td>로드리고의 죽음</td><td>4막</td><td>로드리고(바리톤)가 총에 맞은 채 카를로에게 마지막 당부를 남긴다. 서정적 선율이 서서히 잦아드는 죽음 장면의 정수</td><td>약 5분</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="tip"><strong>관람 팁:</strong> 이 작품은 소프라노·테너의 사랑 이야기보다 <strong>베이스(필리페)·바리톤(로드리고)·메조(에볼리)의 향연</strong>에 가깝다. 3~4막의 저음 성악가 장면에 특히 집중해 들으면 좋다. 정치극 성격이 강하니 관람 전 카를로-엘리자베타-필리페-에볼리-로드리고 다섯 인물의 관계를 한 번 익혀 두면 자막을 놓쳐도 흐름을 따라가기 쉽다.</div>
+        <p class="listen-link">▶ 영상 찾기: <a href="https://www.youtube.com/results?search_query=Verdi+Don+Carlo+full+opera+subtitles" target="_blank" rel="noopener">돈 카를로 전막</a> · <a href="https://www.youtube.com/results?search_query=Don+Carlo+Ella+giammai+m%27amo" target="_blank" rel="noopener">'Ella giammai m'amò'</a></p>
+
+          <div class="disc-collection">
+          <p class="scene-h4">듣고 싶은 명반 (역대 대표 녹음)</p>
+          <ul class="disc-list">
+
+            <li class="disc-card">
+              <div class="disc-cover disc-cover--decca">
+                <img src="img/covers/don-carlo-1965-solti.jpg" alt="Don Carlo — Solti(1965, Decca) 음반 표지" loading="lazy" onerror="this.style.display='none'">
+                <span class="disc-sleeve"><span class="disc-sleeve-label">Decca</span><span class="disc-sleeve-year">1965</span></span>
+              </div>
+              <div class="disc-body">
+                <h4>숄티 · 베르곤치 / 테발디 / 기아우로프</h4>
+                <p class="disc-credits"><strong>지휘</strong> 게오르크 숄티 / 코벤트가든 &middot; <strong>주역</strong> 카를로 베르곤치(카를로), 레나타 테발디(엘리자베타), 그레이스 범브리(에볼리), 니콜라이 기아우로프(필리페) &middot; <strong>레이블/연도</strong> Decca · 1965</p>
+                <p class="disc-note">1886년 5막 무삭제판을 채택한 초기 스테레오 명반. 기아우로프의 필리페가 특히 유명하다.</p>
+                <p class="disc-cover-desc"><strong>표지</strong> Decca 특유의 진한 버건디 톤 슬리브에 주역 초상.</p>
+                <p class="listen-link">▶ <a href="https://www.youtube.com/results?search_query=Verdi+Don+Carlos+Solti+Bergonzi+Tebaldi+Ghiaurov+1965" target="_blank" rel="noopener">이 녹음 유튜브에서 찾기</a></p>
+              </div>
+            </li>
+
+            <li class="disc-card">
+              <div class="disc-cover disc-cover--emi">
+                <img src="img/covers/don-carlo-1971-giulini.jpg" alt="Don Carlo — Giulini(1970-71, EMI) 음반 표지" loading="lazy" onerror="this.style.display='none'">
+                <span class="disc-sleeve"><span class="disc-sleeve-label">EMI</span><span class="disc-sleeve-year">1971</span></span>
+              </div>
+              <div class="disc-body">
+                <h4>줄리니 · 도밍고 / 카바예 / 밀른스 / 라이몬디</h4>
+                <p class="disc-credits"><strong>지휘</strong> 카를로 마리아 줄리니 / 코벤트가든 &middot; <strong>주역</strong> 플라시도 도밍고(카를로), 몬세라 카바예(엘리자베타), 셜리 베렛(에볼리), 셰릴 밀른스(로드리고), 루제로 라이몬디(필리페) &middot; <strong>레이블/연도</strong> EMI · 1970–71</p>
+                <p class="disc-note">5막 이탈리아어 무삭제판. 균형 잡힌 캐스팅과 자연스러운 음질로 "역대 최고"로 자주 꼽히는 표준 녹음.</p>
+                <p class="disc-cover-desc"><strong>표지</strong> 짙은 색조 배경에 세피아톤 성악가 사진, EMI 로고.</p>
+                <p class="listen-link">▶ <a href="https://www.youtube.com/results?search_query=Verdi+Don+Carlo+Giulini+Domingo+Caballe+Milnes+Raimondi+1971" target="_blank" rel="noopener">이 녹음 유튜브에서 찾기</a></p>
+              </div>
+            </li>
+
+            <li class="disc-card">
+              <div class="disc-cover disc-cover--emi">
+                <img src="img/covers/don-carlo-1978-karajan.jpg" alt="Don Carlo — Karajan(1978, EMI) 음반 표지" loading="lazy" onerror="this.style.display='none'">
+                <span class="disc-sleeve"><span class="disc-sleeve-label">EMI</span><span class="disc-sleeve-year">1978</span></span>
+              </div>
+              <div class="disc-body">
+                <h4>카라얀 · 카레라스 / 프레니 / 카푸칠리 / 기아우로프</h4>
+                <p class="disc-credits"><strong>지휘</strong> 헤르베르트 폰 카라얀 / 베를린 필하모닉 &middot; <strong>주역</strong> 호세 카레라스(카를로), 미렐라 프레니(엘리자베타), 아그네스 발차(에볼리), 피에로 카푸칠리(로드리고), 니콜라이 기아우로프(필리페) &middot; <strong>레이블/연도</strong> EMI · 1978</p>
+                <p class="disc-note">4막 이탈리아어판. 오케스트라를 전면에 배치한 카라얀 특유의 사운드로 호불호가 갈리나 성악 캐스팅은 화려하다.</p>
+                <p class="disc-cover-desc"><strong>표지</strong> 짙은 남색 배경에 성악가 군상 사진, EMI 로고.</p>
+                <p class="listen-link">▶ <a href="https://www.youtube.com/results?search_query=Verdi+Don+Carlo+Karajan+Carreras+Freni+Cappuccilli+1978" target="_blank" rel="noopener">이 녹음 유튜브에서 찾기</a></p>
+              </div>
+            </li>
+
+          </ul>
+          <p class="disc-hint">※ 음반 표지 이미지는 저작권이 있어 사이트에 기본 포함하지 않습니다(색상 슬리브로 대체 표시). 실제 표지를 넣으려면 <code>site/img/covers/</code> 폴더에 위 파일명(<code>don-carlo-1971-giulini.jpg</code> 등)으로 이미지를 넣으면 자동으로 표시됩니다.</p>
+        </div>
+        <div class="stage-videos">
+            <h3 class="stage-videos-title">🎭 명연 무대 영상 (유튜브)</h3>
+            <ul class="stage-video-list">
+              <li class="stage-video-card">
+                <div class="embed"><iframe src="https://www.youtube.com/embed/LtkcOz6z8Mc" title="라 스칼라 프로덕션 (네트렙코 출연)" loading="lazy" allowfullscreen></iframe></div>
+                <span class="stage-video-badge">전막</span>
+                <div class="stage-video-body">
+                  <h4>라 스칼라 프로덕션 (안나 네트렙코 출연)</h4>
+                  <p class="listen-link">▶ 영상이 안 보이면: <a href="https://www.youtube.com/results?search_query=Don+Carlo+La+Scala+Netrebko+full+opera" target="_blank" rel="noopener">YouTube에서 찾기</a></p>
+                </div>
+              </li>
+              <li class="stage-video-card">
+                <div class="embed"><iframe src="https://www.youtube.com/embed/TrkZ4fQQywI" title="'Ella giammai m'amò' — 니콜라이 기아우로프" loading="lazy" allowfullscreen></iframe></div>
+                <span class="stage-video-badge">명아리아</span>
+                <div class="stage-video-body">
+                  <h4>'Ella giammai m'amò' — 니콜라이 기아우로프 (필리페 2세)</h4>
+                  <p class="listen-link">▶ 영상이 안 보이면: <a href="https://www.youtube.com/results?search_query=Verdi+Don+Carlo+Ella+giammai+m%27amo+Ghiaurov" target="_blank" rel="noopener">YouTube에서 찾기</a></p>
+                </div>
+              </li>
+              <li class="stage-video-card">
+                <div class="embed"><iframe src="https://www.youtube.com/embed/yNPxYQbBuDI" title="'Dio, che nell'alma infondere' 우정의 이중창 — 카우프만/햄슨" loading="lazy" allowfullscreen></iframe></div>
+                <span class="stage-video-badge">명장면</span>
+                <div class="stage-video-body">
+                  <h4>'Dio, che nell'alma' 우정의 이중창 — 카우프만 &amp; 햄슨</h4>
+                  <p class="listen-link">▶ 영상이 안 보이면: <a href="https://www.youtube.com/results?search_query=Jonas+Kaufmann+Thomas+Hampson+Dio+che+nell%27alma+infondere" target="_blank" rel="noopener">YouTube에서 찾기</a></p>
+                </div>
+              </li>
+            </ul>
+            <p class="disc-hint">※ 무대 영상은 저작권 사정으로 재생이 안 될 수 있습니다. 그럴 땐 각 영상의 'YouTube에서 찾기' 링크로 다른 영상을 찾아보세요.</p>
+          </div>
+
+        <p class="links">→ <a href="composers.html#composer-verdi">베르디 작곡가 페이지</a> &nbsp;
+          <button class="log-mark" data-slug="stage-verdi-don-carlos" data-work="돈 카를로스" data-type="opera" data-composer="Verdi">♡ 관람함</button></p>
       </article>
 
     </div><!-- /.stage-grid 관람예정 -->

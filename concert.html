@@ -3,14 +3,26 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>공연 예습 — 관현악·콘서트 · 클래식 음악 감상과 공부</title>
+  <title>콘서트 — 관현악·독창회 예습 · 클래식 음악 감상과 공부</title>
   <link rel="stylesheet" href="styles.css">
   <style>
     .concert-grid { display: grid; gap: 2rem; }
-    .concert-card { background: var(--color-surface, #fff); border: 1px solid var(--color-border, #e5e7eb); border-radius: 12px; padding: 1.5rem; }
+    .concert-card { background: var(--color-surface, #fff); border: 1px solid var(--color-border, #e5e7eb); border-radius: 12px; padding: 1.5rem; scroll-margin-top: 80px; }
     .concert-card.upcoming { border-color: var(--color-accent, #c0392b); border-width: 2px; }
     .badge { display: inline-block; background: var(--color-accent, #c0392b); color: #fff; font-size: 0.78rem; font-weight: 700; padding: 0.2em 0.75em; border-radius: 20px; margin-bottom: 0.6rem; letter-spacing: 0.02em; }
     .badge.past { background: #6b7280; }
+    .work-index { background: var(--color-surface-alt, #f9fafb); border: 1px solid var(--color-border, #e5e7eb); border-radius: 12px; padding: 1rem 1.2rem; margin-bottom: 1.8rem; }
+    .work-index-title { font-size: 0.9rem; font-weight: 700; margin: 0 0 0.7rem; }
+    .work-index-group { margin-bottom: 0.7rem; }
+    .work-index-group:last-child { margin-bottom: 0; }
+    .work-index-label { display: inline-block; font-size: 0.74rem; font-weight: 700; color: var(--color-text-muted, #6b7280); border: 1px solid var(--color-border, #e5e7eb); border-radius: 6px; padding: 0.1em 0.5em; margin-bottom: 0.45rem; background: var(--color-surface, #fff); }
+    .work-index ul { list-style: none; display: flex; flex-wrap: wrap; gap: 0.4rem 0.5rem; margin: 0.3rem 0 0; padding: 0; }
+    .work-index li { margin: 0; }
+    .work-index a { display: inline-block; font-size: 0.84rem; text-decoration: none; color: var(--color-accent, #c0392b); background: var(--color-surface, #fff); border: 1px solid var(--color-border, #e5e7eb); border-radius: 16px; padding: 0.22em 0.7em; line-height: 1.4; }
+    .work-index a:hover { border-color: var(--color-accent, #c0392b); }
+    .work-index a em { font-style: normal; font-size: 0.88em; opacity: 0.7; margin-left: 0.25em; }
+    .work-index a em.up { color: var(--color-accent, #c0392b); opacity: 0.95; }
+    .work-index a em.done { color: #6b7280; }
     .concert-card h3 { font-size: 1.2rem; margin: 0 0 0.25rem; }
     .concert-card h3 small { font-size: 0.82em; font-weight: 400; opacity: 0.72; display: block; margin-top: 0.1em; }
     .concert-meta { font-size: 0.83rem; color: var(--color-text-muted, #6b7280); margin-bottom: 0.85rem; line-height: 1.75; }
@@ -41,8 +53,8 @@
     <ul>
       <li><a href="index.html">홈</a></li>
       <li><a href="listen.html">감상</a></li>
-      <li><a href="opera.html">무대</a></li>
-      <li><a href="concert.html" class="active">공연</a></li>
+      <li><a href="opera.html">오페라·발레</a></li>
+      <li><a href="concert.html" class="active">콘서트</a></li>
       <li><a href="study.html">공부</a></li>
       <li><a href="eras.html">시대</a></li>
       <li><a href="composers.html">작곡가</a></li>
@@ -54,11 +66,28 @@
 
 <main>
   <div class="page-header">
-    <h1>공연 예습 — 관현악 &amp; 콘서트</h1>
+    <h1>관현악 &amp; 독창회</h1>
     <p>예술의전당 등에서 관람할 관현악·콘서트 프로그램을 미리 예습합니다. 곡별 감상 포인트 · 명반 · 검증된 유튜브 실연 영상을 담았습니다. 관람 예정 공연은 상단에 표시됩니다.</p>
   </div>
 
   <div class="container">
+
+    <nav class="work-index" aria-label="공연 빠른 이동">
+      <p class="work-index-title">📋 이 페이지의 공연 — 눌러서 바로가기</p>
+      <div class="work-index-group">
+        <span class="work-index-label">관람 예정</span>
+        <ul>
+          <li><a href="#beethoven-symphony-no9-op125">베토벤 9번 '합창' <em class="up">예정·8/12</em></a></li>
+          <li><a href="#sumi-jo-continuum-2026">조수미 CONTINUUM <em class="up">예정·9/4</em></a></li>
+        </ul>
+      </div>
+      <div class="work-index-group">
+        <span class="work-index-label">지난 관람</span>
+        <ul>
+          <li><a href="#concert-2026-07-04">베토벤 7번 외 (멘델스존·슈만) <em class="done">완료·7/4</em></a></li>
+        </ul>
+      </div>
+    </nav>
 
     <!-- ===== 관람 예정 ===== -->
     <h2 class="section-title" id="upcoming">관람 예정</h2>
@@ -176,6 +205,82 @@
         </div>
 
         <p class="links">→ <a href="composers.html#composer-beethoven">루트비히 판 베토벤</a> · <a href="listen.html#beethoven-symphony-no9-op125">감상 페이지의 9번 트랙</a> · <a href="study.html#concept-symphony-structure">교향곡 4악장 구조</a> &nbsp;<button class="log-mark" data-slug="beethoven-symphony-no9-op125" data-work="베토벤 교향곡 9번 합창 (존 애덤스 '부상 처치사' 포함)" data-type="orchestra" data-composer="Beethoven">♡ 관람함</button></p>
+      </article>
+
+      <!-- sumi-jo-continuum-2026 -->
+      <article class="concert-card upcoming" id="sumi-jo-continuum-2026">
+        <span class="badge">관람 예정 · 예술의전당 콘서트홀 · 2026-09-04(금) 19:30</span>
+        <h3>세계무대 데뷔 40주년 기념 조수미 콘서트, CONTINUUM <small>Sumi Jo — 40th Anniversary Recital</small></h3>
+        <p class="concert-meta">소프라노 <strong>조수미</strong> (콜로라투라)</p>
+
+        <p class="work-intro">한국이 낳은 세계적 콜로라투라 소프라노 조수미의 데뷔 40주년 기념 리사이틀. 1986년 이탈리아 트리에스테에서 베르디 《리골레토》 질다 역으로 유럽 무대에 데뷔한 그는 카라얀·솔티 등과 협연했고, R. 슈트라우스 《그림자 없는 여인》 녹음으로 그래미상을 받았습니다.</p>
+        <p class="disc-hint">※ 이 공연의 정확한 프로그램(곡목)은 공개 확정 전이며 변경될 수 있습니다. 아래는 조수미가 커리어 전반에서 즐겨 부른 <strong>대표 레퍼토리(예상 감상 포인트)</strong>입니다.</p>
+
+        <p class="albums-label">🎼 대표 레퍼토리 · 시그니처 아리아</p>
+        <div class="mv-table-wrap">
+          <table class="mv-table">
+            <thead><tr><th>곡 / 아리아</th><th>작곡가 · 작품</th><th>무엇이 매력인가</th></tr></thead>
+            <tbody>
+              <tr><td>밤의 여왕 아리아 'Der Hölle Rache'</td><td>모차르트 《마술피리》</td><td>콜로라투라의 대명사. 초고음역 스타카토 연타로 '분노'를 표현—조수미의 대표 넘버</td></tr>
+              <tr><td>종의 노래 'Bell Song'</td><td>들리브 《라크메》</td><td>방울 소리를 흉내 낸 화려한 장식음. 청아하고 영롱한 고음 처리</td></tr>
+              <tr><td>봄의 소리 왈츠</td><td>요한 슈트라우스 2세</td><td>리사이틀 앙코르 단골. 왈츠의 경쾌함과 성악 기교를 동시에</td></tr>
+              <tr><td>'Caro nome'</td><td>베르디 《리골레토》 (질다)</td><td>1986년 조수미의 유럽 데뷔 배역—상징적인 곡. 여리고 서정적인 콜로라투라</td></tr>
+              <tr><td>광란의 장면 'Il dolce suono'</td><td>도니체티 《람메르무어의 루치아》</td><td>벨칸토의 정점. 플루트와 대화하듯 주고받는 장식창법과 극적 감정</td></tr>
+              <tr><td>그리운 금강산</td><td>최영섭 (한국 가곡)</td><td>국내 무대 앙코르에서 자주 부르는, 깊은 울림의 대표 가곡</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="tip">🎯 관람 팁: 콜로라투라 감상의 핵심은 초고음역에서의 <strong>유연함과 스타카토의 명료함</strong>입니다. 밤의 여왕 아리아처럼 초고음까지 치솟는 대목에서 소리가 갈라지지 않고 얼마나 깨끗하게 끊어지는지 들어보세요. 벨칸토(루치아·라크메)는 선율보다 <strong>장식음(트릴·카덴차)</strong>이 감상 포인트입니다. 리사이틀은 본 프로그램 뒤 앙코르가 이어지니 마지막까지 자리를 지키세요.</div>
+
+        <p class="albums-label">🎧 추천 음반</p>
+        <div class="albums">
+          <div class="album-item">
+            <strong>Carnaval! — French Coloratura Arias (Richard Bonynge 지휘, 1994)</strong>
+            <div class="album-conductor"><a href="https://www.youtube.com/results?search_query=Sumi+Jo+Carnaval+French+Coloratura+Arias" target="_blank" rel="noopener" title="YouTube에서 이 음반 찾기">YouTube에서 찾기 →</a></div>
+            <div class="album-note">잘 알려지지 않은 프랑스 오페레타 콜로라투라 아리아 모음. 조수미의 화려한 프랑스 레퍼토리.</div>
+          </div>
+          <div class="album-item">
+            <strong>R. 슈트라우스 《그림자 없는 여인》 — Solti / 빈 필하모닉 (Decca, 1992)</strong>
+            <div class="album-conductor"><a href="https://www.youtube.com/results?search_query=Sumi+Jo+Solti+Die+Frau+ohne+Schatten+1992" target="_blank" rel="noopener" title="YouTube에서 이 음반 찾기">YouTube에서 찾기 →</a></div>
+            <div class="album-note">조수미가 '매의 목소리'로 참여한 그래미상 수상 음반. 앙상블 속 조수미의 목소리.</div>
+          </div>
+          <div class="album-item">
+            <strong>Only Love (2000)</strong>
+            <div class="album-conductor"><a href="https://www.youtube.com/results?search_query=Sumi+Jo+Only+Love+album" target="_blank" rel="noopener" title="YouTube에서 이 음반 찾기">YouTube에서 찾기 →</a></div>
+            <div class="album-note">'Send in the Clowns' 등 대중적 크로스오버 넘버 모음집.</div>
+          </div>
+        </div>
+
+        <p class="videos-label">🎼 조수미 명연 영상 (유튜브)</p>
+        <ul class="stage-video-list">
+          <li class="stage-video-card">
+            <div class="embed"><iframe src="https://www.youtube.com/embed/UrAdbyNUN8U" title="Sumi Jo — Queen of the Night aria" loading="lazy" allowfullscreen></iframe></div>
+            <span class="stage-video-badge">대표 아리아</span>
+            <div class="stage-video-body">
+              <h4>밤의 여왕 아리아 'Der Hölle Rache' (모차르트 《마술피리》)</h4>
+              <p class="listen-link">▶ 영상이 안 보이면: <a href="https://www.youtube.com/results?search_query=Sumi+Jo+Queen+of+the+Night+aria" target="_blank" rel="noopener">YouTube에서 찾기</a></p>
+            </div>
+          </li>
+          <li class="stage-video-card">
+            <div class="embed"><iframe src="https://www.youtube.com/embed/Qic9O3PwXsk" title="Sumi Jo — Delibes Lakmé Bell Song" loading="lazy" allowfullscreen></iframe></div>
+            <span class="stage-video-badge">벨칸토</span>
+            <div class="stage-video-body">
+              <h4>종의 노래 'Bell Song' (들리브 《라크메》)</h4>
+              <p class="listen-link">▶ 영상이 안 보이면: <a href="https://www.youtube.com/results?search_query=Sumi+Jo+Delibes+Lakme+Bell+Song" target="_blank" rel="noopener">YouTube에서 찾기</a></p>
+            </div>
+          </li>
+          <li class="stage-video-card">
+            <div class="embed"><iframe src="https://www.youtube.com/embed/deJfdZ1QbYI" title="조수미 그리운 금강산 앙코르 2017" loading="lazy" allowfullscreen></iframe></div>
+            <span class="stage-video-badge">한국 가곡</span>
+            <div class="stage-video-body">
+              <h4>그리운 금강산 (2017 앙코르, 직접 피아노 반주)</h4>
+              <p class="listen-link">▶ 영상이 안 보이면: <a href="https://www.youtube.com/results?search_query=조수미+그리운+금강산+앙코르" target="_blank" rel="noopener">YouTube에서 찾기</a></p>
+            </div>
+          </li>
+        </ul>
+        <p class="disc-hint">※ 실연 영상은 저작권 사정으로 재생이 안 될 수 있습니다. 그럴 땐 각 영상의 'YouTube에서 찾기' 링크로 다른 영상을 찾아보세요.</p>
+
+        <p class="links">→ <a href="listen.html">감상 페이지</a> · <a href="log.html">내 예매 일정(기록)</a> &nbsp;<button class="log-mark" data-slug="sumi-jo-continuum-2026" data-work="조수미 콘서트 CONTINUUM (데뷔 40주년)" data-type="recital" data-composer="">♡ 관람함</button></p>
       </article>
 
     </div>

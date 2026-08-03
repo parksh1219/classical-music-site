@@ -7,29 +7,40 @@
 
   var KEY = "classical-log-v1";
   // 시드 버전. 올릴 때마다 기존 브라우저에도 1회 '병합'이 실행된다(사용자 기록은 보존).
-  var SEEDED = "classical-log-seeded-v2";
+  var SEEDED = "classical-log-seeded-v3";
 
   var TYPE_LABEL = {
     orchestra: "관현악", opera: "오페라", ballet: "발레",
     recital: "독주/독창", chamber: "실내악", other: "기타"
   };
 
-  // 사용자 관람 예정 공연 (예술의전당) — 최초 1회만 주입
+  // 사용자 실제 예매 내역 (예술의전당) — 최초 1회만 주입. 관람 지난 공연은 attended.
   var SEED = [
+    // ── 관람 예정 ──
     { date:"2026-08-12", time:"19:30", venue:"예술의전당 콘서트홀", type:"orchestra",
       work:"베토벤 교향곡 9번 '합창'", slug:"beethoven-symphony-no9-op125",
       composer:"Beethoven", performer:"서울시향 · 얍 판 츠베덴 (유럽투어 프리뷰)", rating:0,
       note:"함께 연주: 존 애덤스 '부상 처치사(The Wound-Dresser)' · 독창 최지은/이아경/손지훈/마티아스 괴르네 · 합창 국립합창단", status:"planned" },
+    { date:"2026-08-20", time:"19:30", venue:"예술의전당 오페라극장", type:"ballet",
+      work:"백조의 호수", slug:"stage-tchaikovsky-swan-lake",
+      composer:"Tchaikovsky", performer:"예술의전당 & 유니버설발레단", rating:0, note:"", status:"planned" },
+    { date:"2026-09-04", time:"19:30", venue:"예술의전당 콘서트홀", type:"recital",
+      work:"조수미 콘서트 CONTINUUM (데뷔 40주년 기념)", slug:"sumi-jo-continuum-2026",
+      composer:"", performer:"소프라노 조수미", rating:0, note:"세계무대 데뷔 40주년 기념 리사이틀", status:"planned" },
+    { date:"2026-10-29", time:"19:30", venue:"예술의전당 오페라극장", type:"opera",
+      work:"라인의 황금 (니벨룽의 반지 서야)", slug:"stage-wagner-das-rheingold",
+      composer:"Wagner", performer:"국립오페라단 정기공연", rating:0, note:"", status:"planned" },
+    { date:"2026-12-03", time:"17:00", venue:"예술의전당 오페라극장", type:"opera",
+      work:"돈 카를로스", slug:"stage-verdi-don-carlos",
+      composer:"Verdi", performer:"국립오페라단 정기공연", rating:0, note:"", status:"planned" },
+    // ── 지난 관람 ──
+    { date:"2026-07-23", time:"19:30", venue:"예술의전당 오페라극장", type:"opera",
+      work:"투란도트", slug:"stage-puccini-turandot",
+      composer:"Puccini", performer:"예술의전당 오페라", rating:0, note:"", status:"attended" },
     { date:"2026-07-04", time:"17:00", venue:"예술의전당", type:"orchestra",
       work:"베토벤 교향곡 7번", slug:"beethoven-symphony-no7-op92",
       composer:"Beethoven", performer:"국립심포니오케스트라", rating:0,
-      note:"함께 연주: 멘델스존 '고요한 바다와 즐거운 항해' Op.27 · 슈만 '미뇽을 위한 레퀴엠' Op.98b", status:"attended" },
-    { date:"2026-07-23", time:"19:30", venue:"예술의전당", type:"opera",
-      work:"투란도트", slug:"stage-puccini-turandot",
-      composer:"Puccini", performer:"", rating:0, note:"", status:"planned" },
-    { date:"2026-08-22", time:"19:00", venue:"예술의전당", type:"ballet",
-      work:"백조의 호수", slug:"stage-tchaikovsky-swan-lake",
-      composer:"Tchaikovsky", performer:"유니버설발레단", rating:0, note:"", status:"planned" }
+      note:"함께 연주: 멘델스존 '고요한 바다와 즐거운 항해' Op.27 · 슈만 '미뇽을 위한 레퀴엠' Op.98b", status:"attended" }
   ];
 
   /* ---------- 저장소 (localStorage 차단 환경 안전) ---------- */
@@ -60,6 +71,14 @@
           if (!existing.performer && s.performer) { existing.performer = s.performer; changed = true; }
           if (!existing.time && s.time) { existing.time = s.time; changed = true; }
           if (existing.status === "planned" && s.status === "attended") { existing.status = "attended"; changed = true; }
+          // 사용자가 손대지 않은(별점 0·메모 없음) 시드 항목은 실제 예매와 일정 동기화
+          //   예) 백조의 호수 8/22(취소) → 8/20 재예매 반영
+          var untouched = (Number(existing.rating) || 0) === 0 && !(existing.note || "").trim();
+          if (untouched) {
+            if (s.date && existing.date !== s.date) { existing.date = s.date; changed = true; }
+            if (s.time && existing.time !== s.time) { existing.time = s.time; changed = true; }
+            if (s.venue && existing.venue !== s.venue) { existing.venue = s.venue; changed = true; }
+          }
         }
       });
       if (changed) safeSet(cur);
@@ -188,7 +207,7 @@
 
   // 작품 페이지 추정: stage- → opera.html, 베토벤 7/9번 → concert.html, 그 외 → listen.html
   function linkFor(entry) {
-    var concertSlugs = { "beethoven-symphony-no9-op125": 1, "beethoven-symphony-no7-op92": 1 };
+    var concertSlugs = { "beethoven-symphony-no9-op125": 1, "beethoven-symphony-no7-op92": 1, "sumi-jo-continuum-2026": 1 };
     var page = entry.slug.indexOf("stage-") === 0 ? "opera.html"
              : (concertSlugs[entry.slug] ? "concert.html" : "listen.html");
     return page + "#" + entry.slug;
