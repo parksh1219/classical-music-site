@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>연주자 · 클래식 음악 감상과 공부</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .artist-grid { display: grid; gap: 1.5rem; grid-template-columns: repeat(auto-fill, minmax(330px, 1fr)); }
+    .artist-card { background: var(--color-surface, #fff); border: 1px solid var(--color-border, #e5e7eb); border-radius: 12px; padding: 1.3rem; scroll-margin-top: 80px; }
+    .artist-role { display: inline-block; background: var(--color-accent, #c0392b); color: #fff; font-size: 0.72rem; font-weight: 700; padding: 0.15em 0.7em; border-radius: 20px; margin-bottom: 0.5rem; letter-spacing: 0.02em; }
+    .artist-role.intl { background: #2563eb; }
+    .artist-card h3 { font-size: 1.12rem; margin: 0 0 0.15rem; }
+    .artist-card h3 small { font-size: 0.8em; font-weight: 400; opacity: 0.7; }
+    .artist-tagline { font-size: 0.9rem; font-weight: 600; color: var(--color-accent, #c0392b); margin: 0 0 0.55rem; line-height: 1.5; }
+    .artist-current { font-size: 0.82rem; color: var(--color-text-muted, #6b7280); background: var(--color-surface-alt, #f9fafb); border-radius: 6px; padding: 0.5rem 0.7rem; margin: 0 0 0.6rem; line-height: 1.6; }
+    .artist-point { font-size: 0.88rem; line-height: 1.65; margin: 0 0 0.7rem; }
+    .artist-card .videos-label { font-size: 0.85rem; font-weight: 700; color: var(--color-text-muted, #6b7280); margin: 0.6rem 0 0.4rem; }
+    .artist-card .links { font-size: 0.83rem; margin-top: 0.6rem; }
+    .artist-figure { float: right; width: 104px; margin: 0 0 0.5rem 0.85rem; }
+    .artist-figure img { width: 104px; height: 130px; object-fit: cover; border-radius: 8px; border: 1px solid var(--color-border, #e5e7eb); background: var(--color-surface-alt, #f3f4f6); display: block; }
+    .artist-figure figcaption { font-size: 0.6rem; line-height: 1.35; color: var(--color-text-muted, #9ca3af); margin-top: 3px; }
+    .artist-figure figcaption a { color: var(--color-text-muted, #9ca3af); }
+    .video-thumb { position: relative; display: block; border-radius: 8px; overflow: hidden; background: #000; aspect-ratio: 16 / 9; }
+    .video-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .video-thumb .video-play { position: absolute; inset: 0; margin: auto; width: 2.9rem; height: 2.9rem; display: flex; align-items: center; justify-content: center; background: rgba(192,57,43,0.92); color: #fff; border-radius: 50%; font-size: 1.05rem; padding-left: 0.15em; }
+    .video-thumb:hover .video-play { background: rgba(192,57,43,1); }
+    .caveat { background: #fffbeb; border: 1px solid #fde68a; border-radius: 8px; padding: 0.8rem 1rem; font-size: 0.86rem; line-height: 1.6; margin-bottom: 1.6rem; color: #78350f; }
+    .work-index { background: var(--color-surface-alt, #f9fafb); border: 1px solid var(--color-border, #e5e7eb); border-radius: 12px; padding: 1rem 1.2rem; margin-bottom: 1.8rem; }
+    .work-index-title { font-size: 0.9rem; font-weight: 700; margin: 0 0 0.7rem; }
+    .work-index-group { margin-bottom: 0.7rem; }
+    .work-index-group:last-child { margin-bottom: 0; }
+    .work-index-label { display: inline-block; font-size: 0.74rem; font-weight: 700; color: var(--color-text-muted, #6b7280); border: 1px solid var(--color-border, #e5e7eb); border-radius: 6px; padding: 0.1em 0.5em; margin-bottom: 0.45rem; background: var(--color-surface, #fff); }
+    .work-index ul { list-style: none; display: flex; flex-wrap: wrap; gap: 0.4rem 0.5rem; margin: 0.3rem 0 0; padding: 0; }
+    .work-index li { margin: 0; }
+    .work-index a { display: inline-block; font-size: 0.84rem; text-decoration: none; color: var(--color-accent, #c0392b); background: var(--color-surface, #fff); border: 1px solid var(--color-border, #e5e7eb); border-radius: 16px; padding: 0.22em 0.7em; line-height: 1.4; }
+    .work-index a:hover { border-color: var(--color-accent, #c0392b); }
+    .work-index a em { font-style: normal; font-size: 0.82em; opacity: 0.6; margin-left: 0.2em; }
+    @media (max-width: 480px) {
+      .artist-grid { grid-template-columns: 1fr; gap: 1.1rem; }
+      .artist-card { padding: 1rem; }
+    }
+  </style>
+</head>
+<body>
+<header>
+  <nav>
+    <a href="index.html" class="brand">클래식 감상 &amp; 공부</a>
+    <ul>
+      <li><a href="index.html">홈</a></li>
+      <li><a href="listen.html">감상</a></li>
+      <li><a href="opera.html">오페라·발레</a></li>
+      <li><a href="concert.html">콘서트</a></li>
+      <li><a href="study.html">공부</a></li>
+      <li><a href="eras.html">시대</a></li>
+      <li><a href="composers.html">작곡가</a></li>
+      <li><a href="artists.html" class="active">연주자</a></li>
+      <li><a href="travel.html">여행</a></li>
+      <li><a href="log.html">기록</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <div class="page-header">
+    <h1>연주자 · 아티스트</h1>
+    <p>지금 활동 중인 지휘자·오케스트라·성악가·기악 연주자 가이드. "이 사람 공연이면 예매해 보자"를 고를 때 참고하는 선별 목록입니다. 역사적 작곡가는 <a href="composers.html">작곡가</a> 페이지를 보세요.</p>
+  </div>
+
+  <div class="container">
+
+    <div class="caveat">⚠️ <strong>생존 인물의 직함·소속·공연 일정은 계속 바뀝니다.</strong> 이 페이지의 "현재 활동"은 2026년 8월 시점 조사 결과이며 확정 일정이 아닙니다. 관람 전 반드시 해당 오케스트라·공연장·에이전시 <strong>공식 채널에서 재확인</strong>하세요.</div>
+
+    <nav class="work-index" aria-label="연주자 빠른 이동">
+      <p class="work-index-title">🎭 이 페이지의 연주자 — 눌러서 바로가기</p>
+      <div class="work-index-group">
+        <span class="work-index-label">지휘자</span>
+        <ul>
+          <li><a href="#artist-chung-myung-whun">정명훈</a></li>
+          <li><a href="#artist-chang-han-na">장한나</a></li>
+          <li><a href="#artist-kim-eun-sun">김은선</a></li>
+          <li><a href="#artist-dudamel">두다멜 <em>해외</em></a></li>
+        </ul>
+      </div>
+      <div class="work-index-group">
+        <span class="work-index-label">오케스트라</span>
+        <ul>
+          <li><a href="#artist-seoul-philharmonic">서울시립교향악단</a></li>
+          <li><a href="#artist-knso">국립심포니오케스트라</a></li>
+          <li><a href="#artist-berliner-philharmoniker">베를린 필하모닉 <em>해외</em></a></li>
+        </ul>
+      </div>
+      <div class="work-index-group">
+        <span class="work-index-label">성악가</span>
+        <ul>
+          <li><a href="#artist-youn-kwangchul">연광철 <em>Bass</em></a></li>
+          <li><a href="#artist-youn-samuel">사무엘 윤 <em>B-Bar</em></a></li>
+          <li><a href="#artist-kaufmann">카우프만 <em>해외</em></a></li>
+        </ul>
+      </div>
+      <div class="work-index-group">
+        <span class="work-index-label">기악</span>
+        <ul>
+          <li><a href="#artist-cho-seong-jin">조성진 <em>Pf</em></a></li>
+          <li><a href="#artist-lim-yunchan">임윤찬 <em>Pf</em></a></li>
+          <li><a href="#artist-kang-clara-jumi">클라라 주미 강 <em>Vn</em></a></li>
+          <li><a href="#artist-hahn-hilary">힐러리 한 <em>해외·Vn</em></a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- ===== 지휘자 ===== -->
+    <h2 class="section-title" id="conductors">지휘자</h2>
+    <div class="artist-grid">
+
+      <article class="artist-card" id="artist-chung-myung-whun">
+        <span class="artist-role">지휘자 · 한국</span>
+        <h3>정명훈 <small>Myung-Whun Chung</small></h3>
+        <p class="artist-tagline">한국 클래식 지휘의 산증인 — 서울시향을 세계 수준으로 끌어올린 인물</p>
+        <p class="artist-current"><strong>현재</strong> 2026-27 시즌부터 밀라노 라 스칼라 음악감독 취임 예정으로 보도(정식 취임 시점은 공식 확인 필요). 아시아 필하모닉·KBS교향악단 객원 지휘로 국내 무대에 자주 선다. 2005~2015년 서울시향 예술감독을 역임했으나 <em>현재 서울시향 상임 직함은 아님</em>(혼동 주의).</p>
+        <p class="artist-point">브람스·말러·베토벤 등 독일 낭만 레퍼토리에서 깊은 호흡과 유려한 프레이징이 특징. 서울시향 시절 오케스트라의 국제적 위상을 끌어올린 상징적 인물입니다.</p>
+        <p class="videos-label">🎼 대표 영상</p>
+        <ul class="stage-video-list">
+          <li class="stage-video-card">
+            <a class="video-thumb" href="https://www.youtube.com/watch?v=CstLcf8_pUA" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/CstLcf8_pUA/hqdefault.jpg" alt="정명훈 지휘 말러 교향곡 5번 KBS교향악단 2026" loading="lazy" onerror="this.style.display='none'"><span class="video-play">▶</span></a>
+            <span class="stage-video-badge">말러 5번</span>
+            <div class="stage-video-body">
+              <h4>말러 교향곡 5번 · KBS교향악단 (2026.3)</h4>
+              <p class="listen-link">▶ 영상이 안 보이면: <a href="https://www.youtube.com/results?search_query=정명훈+지휘+말러+KBS교향악단" target="_blank" rel="noopener">YouTube에서 찾기</a></p>
+            </div>
+          </li>
+          <li class="stage-video-card">
+            <a class="video-thumb" href="https://www.youtube.com/watch?v=QPir5IXq-d4" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/QPir5IXq-d4/hqdefault.jpg" alt="정명훈 지휘 브람스 교향곡 4번 2025" loading="lazy" onerror="this.style.display='none'"><span class="video-play">▶</span></a>
+            <span class="stage-video-badge">브람스 4번</span>
+            <div class="stage-video-body">
+              <h4>브람스 교향곡 4번 (2025.6)</h4>
+              <p class="listen-link">▶ 영상이 안 보이면: <a href="https://www.youtube.com/results?search_query=정명훈+브람스+교향곡+4번" target="_blank" rel="noopener">YouTube에서 찾기</a></p>
+            </div>
+          </li>
+        </ul>
+        <p class="links">→ <a href="#artist-seoul-philharmonic">서울시립교향악단</a> · <a href="travel.html#venue-la-scala">라 스칼라</a></p>
+      </article>
+
+      <article class="artist-card" id="artist-chang-han-na">
+        <span class="artist-role">지휘자 · 한국</span>
+        <h3>장한나 <small>Han-Na Chang</small></h3>
+        <p class="artist-tagline">11세에 로스트로포비치 콩쿠르 우승한 첼로 신동 출신 지휘자</p>
+        <p class="artist-current"><strong>현재</strong> 2026년 4월 <strong>예술의전당 사장</strong>으로 임명(여성 최초·최연소로 보도). 첼리스트로 데뷔해 2007년 지휘로 전향했고, 현재는 공연장 기관장 역할이 주업무라 순수 지휘 일정은 조정되는 추세(2026년 말 KBS '합창' 지휘가 조너선 노트로 변경된 사례). "정기 지휘 활동 중"으로 단정하지 않습니다.</p>
+        <p class="artist-point">첼리스트 시절의 서정적이고 깊은 저음 표현, 지휘 전향 후에도 현악 파트의 노래하는 프레이징이 강점. 첼로 시절 녹음(생상스·쇼스타코비치)과 지휘자 시절 교향곡(드보르작 9번)을 비교해 듣는 재미가 있습니다.</p>
+        <p class="videos-label">🎼 대표 영상</p>
+        <ul class="stage-video-list">
+          <li class="stage-video-card">
+            <a class="video-thumb" href="https://www.youtube.com/watch?v=gBzk7Y_zjqE" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/gBzk7Y_zjqE/hqdefault.jpg" alt="장한나 지휘 드보르자크 신세계로부터" loading="lazy" onerror="this.style.display='none'"><span class="video-play">▶</span></a>
+            <span class="stage-video-badge">지휘</span>
+            <div class="stage-video-body">
+              <h4>드보르자크 교향곡 9번 '신세계로부터' (지휘)</h4>
+              <p class="listen-link">▶ 영상이 안 보이면: <a href="https://www.youtube.com/results?search_query=장한나+지휘+드보르자크+신세계로부터" target="_blank" rel="noopener">YouTube에서 찾기</a></p>
+            </div>
+          </li>
+          <li class="stage-video-card">
+            <a class="video-thumb" href="https://www.youtube.com/watch?v=yiiP54Eg_GE" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/yiiP54Eg_GE/hqdefault.jpg" alt="지휘자로 전향한 천재 첼리스트 장한나" loading="lazy" onerror="this.style.display='none'"><span class="video-play">▶</span></a>
+            <span class="stage-video-badge">인터뷰</span>
+            <div class="stage-video-body">
+              <h4>첼로 대신 지휘봉 — 지휘자 장한나</h4>
+              <p class="listen-link">▶ 영상이 안 보이면: <a href="https://www.youtube.com/results?search_query=장한나+예술의전당+사장" target="_blank" rel="noopener">YouTube에서 찾기</a></p>
+            </div>
+          </li>
+        </ul>
+        <p class="links">→ <a href="travel.html#venue-sac-seoul">예술의전당</a> · <a href="composers.html#composer-dvorak">드보르자크</a></p>
+      </article>
+
+      <article class="artist-card" id="artist-kim-eun-sun">
+        <span class="artist-role">지휘자 · 한국</span>
+        <h3>김은선 <small>Eun Sun Kim</small></h3>
+        <p class="artist-tagline">샌프란시스코 오페라 음악감독 — 북미 메이저 오페라단을 이끄는 최초의 아시아 여성 지휘자</p>
+        <p class="artist-current"><strong>현재</strong> 샌프란시스코 오페라 "Caroline H. Hume Music Director"로 2021년 취임, 2030-31 시즌까지 계약 연장 확정. 메트·빈 슈타츠오퍼·라 스칼라 등 세계 주요 오페라하우스에 객원으로 정기 초청됩니다.</p>
+        <p class="artist-point">바그너·베르디 등 대형 오페라에서 가수와 오케스트라의 균형을 정교하게 조율하는 능력으로 평가받습니다. "피트의 지휘자가 어떻게 극 전체를 설계하는가"를 보여주는 오페라 지휘의 세계로 안내하는 인물.</p>
+        <p class="videos-label">🎼 대표 영상</p>
+        <ul class="stage-video-list">
+          <li class="stage-video-card">
+            <a class="video-thumb" href="https://www.youtube.com/watch?v=SXRQEpUKyuk" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/SXRQEpUKyuk/hqdefault.jpg" alt="Eun Sun Kim: A Journey into Lohengrin" loading="lazy" onerror="this.style.display='none'"><span class="video-play">▶</span></a>
+            <span class="stage-video-badge">다큐멘터리</span>
+            <div class="stage-video-body">
+              <h4>바그너 '로엔그린'으로의 여정 (San Francisco Opera)</h4>
+              <p class="listen-link">▶ 영상이 안 보이면: <a href="https://www.youtube.com/results?search_query=Eun+Sun+Kim+San+Francisco+Opera+conductor" target="_blank" rel="noopener">YouTube에서 찾기</a></p>
+            </div>
+          </li>
+        </ul>
+        <p class="links">→ <a href="opera.html">오페라·발레</a> · <a href="composers.html#composer-wagner">바그너</a></p>
+      </article>
+
+      <article class="artist-card" id="artist-dudamel">
+        <span class="artist-role intl">지휘자 · 해외(베네수엘라)</span>
+        <h3>구스타보 두다멜 <small>Gustavo Dudamel</small></h3>
+        <figure class="artist-figure"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Gustavo_Dudamel.jpeg?width=240" alt="구스타보 두다멜" loading="lazy" onerror="this.parentNode.style.display='none'"><figcaption>ⓒ <a href="https://commons.wikimedia.org/wiki/File:Gustavo_Dudamel.jpeg" target="_blank" rel="noopener">G. Dudamel</a> · CC BY-SA 3.0</figcaption></figure>
+        <p class="artist-tagline">엘 시스테마가 배출한 스타 지휘자, 2026년 가을 뉴욕 필하모닉 음악감독 취임</p>
+        <p class="artist-current"><strong>현재</strong> LA 필하모닉 음악감독(2009~2025/26 종료)을 마치고 2026년 가을부터 뉴욕 필하모닉 음악감독으로 취임(180년 역사상 첫 히스패닉 음악감독). 시몬 볼리바르 심포니와의 인연도 지속.</p>
+        <p class="artist-point">폭발적 에너지와 극적인 다이내믹, 특히 말러 교향곡의 강렬한 클라이맥스 설계가 특징. 엘 시스테마(무상 음악교육) 출신이라는 배경 자체가 "누구나 클래식을 시작할 수 있다"는 메시지와 맞닿습니다.</p>
+        <p class="videos-label">🎼 대표 영상</p>
+        <ul class="stage-video-list">
+          <li class="stage-video-card">
+            <a class="video-thumb" href="https://www.youtube.com/watch?v=xktDLxjJryY" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/xktDLxjJryY/hqdefault.jpg" alt="Dudamel Mahler Symphony No.4" loading="lazy" onerror="this.style.display='none'"><span class="video-play">▶</span></a>
+            <span class="stage-video-badge">말러 4번</span>
+            <div class="stage-video-body">
+              <h4>말러 교향곡 4번 (Camilla Tilling)</h4>
+              <p class="listen-link">▶ 영상이 안 보이면: <a href="https://www.youtube.com/results?search_query=Gustavo+Dudamel+Mahler+Symphony+4" target="_blank" rel="noopener">YouTube에서 찾기</a></p>
+            </div>
+          </li>
+          <li class="stage-video-card">
+            <a class="video-thumb" href="https://www.youtube.com/watch?v=qZ5f7NIWmAs" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/qZ5f7NIWmAs/hqdefault.jpg" alt="Dudamel Mahler Symphony No.3" loading="lazy" onerror="this.style.display='none'"><span class="video-play">▶</span></a>
+            <span class="stage-video-badge">말러 3번</span>
+            <div class="stage-video-body">
+              <h4>말러 교향곡 3번 (Marianne Crebassa)</h4>
+              <p class="listen-link">▶ 영상이 안 보이면: <a href="https://www.youtube.com/results?search_query=Dudamel+Mahler+Symphony+3" target="_blank" rel="noopener">YouTube에서 찾기</a></p>
+            </div>
+          </li>
+        </ul>
+      </article>
+
+    </div>
+
+    <!-- ===== 오케스트라 ===== -->
+    <h2 class="section-title" id="orchestras" style="margin-top:2.5rem;">오케스트라</h2>
+    <div class="artist-grid">
+
+      <article class="artist-card" id="artist-seoul-philharmonic">
+        <span class="artist-role">오케스트라 · 서울</span>
+        <h3>서울시립교향악단 <small>Seoul Philharmonic Orchestra</small></h3>
+        <p class="artist-tagline">정명훈 시대(2005~2015)를 거쳐 국제적 명성을 얻은 한국 대표 오케스트라</p>
+        <p class="artist-current"><strong>현재</strong> 음악감독 얍 판 츠베덴(Jaap van Zweden), 2024년 1월~2028년 12월 계약. 예술의전당·롯데콘서트홀을 중심으로 정기연주회를 갖습니다.</p>
+        <p class="artist-point">국내 오케스트라 중 해외 투어·음반 이력이 가장 풍부한 편. 조성진·임윤찬·클라라 주미 강 등 스타 협연자와의 무대가 잦아, 협연자와 오케스트라를 함께 검색해 예매하면 좋은 공연을 만나기 쉽습니다.</p>
+        <p class="videos-label">🎼 대표 영상</p>
+        <ul class="stage-video-list">
+          <li class="stage-video-card">
+            <a class="video-thumb" href="https://www.youtube.com/watch?v=xhXoiQDloV8" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/xhXoiQDloV8/hqdefault.jpg" alt="서울시립교향악단 다시 만난 세계 오케스트라 버전" loading="lazy" onerror="this.style.display='none'"><span class="video-play">▶</span></a>
+            <span class="stage-video-badge">SM Classics</span>
+            <div class="stage-video-body">
+              <h4>다시 만난 세계 (Orchestra Ver.)</h4>
+              <p class="listen-link">▶ 영상이 안 보이면: <a href="https://www.youtube.com/results?search_query=서울시립교향악단+정기연주회" target="_blank" rel="noopener">YouTube에서 찾기</a></p>
+            </div>
+          </li>
+          <li class="stage-video-card">
+            <a class="video-thumb" href="https://www.youtube.com/watch?v=eOJyrIPVFdw" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/eOJyrIPVFdw/hqdefault.jpg" alt="SM CLASSICS LIVE 2025 서울시립교향악단" loading="lazy" onerror="this.style.display='none'"><span class="video-play">▶</span></a>
+            <span class="stage-video-badge">라이브</span>
+            <div class="stage-video-body">
+              <h4>SM CLASSICS LIVE 2025 (Recap)</h4>
+              <p class="listen-link">▶ 영상이 안 보이면: <a href="https://www.youtube.com/results?search_query=Seoul+Philharmonic+Jaap+van+Zweden" target="_blank" rel="noopener">YouTube에서 찾기</a></p>
+            </div>
+          </li>
+        </ul>
+        <p class="links">→ <a href="concert.html#beethoven-symphony-no9-op125">2026 유럽투어 프리뷰(베토벤 '합창')</a> · <a href="travel.html#venue-lotte-concert-hall">롯데콘서트홀</a></p>
+      </article>
+
+      <article class="artist-card" id="artist-knso">
+        <span class="artist-role">오케스트라 · 서울</span>
+        <h3>국립심포니오케스트라 <small>Korean National Symphony</small></h3>
+        <p class="artist-tagline">1985년 창단, 40주년을 지난 국내 대표 국립 오케스트라</p>
+        <p class="artist-current"><strong>현재</strong> 제8대 예술감독 로베르토 아바도(Roberto Abbado — 거장 클라우디오 아바도의 조카)가 2026년 1월부터 3년 임기 시작. 예술의전당을 주 무대로 합니다.</p>
+        <p class="artist-point">국립 오케스트라답게 대중적 접근성이 높은 공공 협업 기획이 많아 입문자가 가볍게 접하기 좋습니다. 신임 예술감독 부임 이후 이탈리아 오페라·관현악 레퍼토리 확대가 기대됩니다.</p>
+        <p class="videos-label">🎼 대표 영상</p>
+        <ul class="stage-video-list">
+          <li class="stage-video-card">
+            <a class="video-thumb" href="https://www.youtube.com/watch?v=5vHQ-W3aN2A" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/5vHQ-W3aN2A/hqdefault.jpg" alt="국립심포니 창단 40주년 미니 다큐" loading="lazy" onerror="this.style.display='none'"><span class="video-play">▶</span></a>
+            <span class="stage-video-badge">40주년</span>
+            <div class="stage-video-body">
+              <h4>국립심포니가 걸어온 40년</h4>
+              <p class="listen-link">▶ 영상이 안 보이면: <a href="https://www.youtube.com/results?search_query=국립심포니오케스트라+로베르토+아바도" target="_blank" rel="noopener">YouTube에서 찾기</a></p>
+            </div>
+          </li>
+          <li class="stage-video-card">
+            <a class="video-thumb" href="https://www.youtube.com/watch?v=TWCAvsi3f_4" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/TWCAvsi3f_4/hqdefault.jpg" alt="국립심포니오케스트라 SEASON 2024" loading="lazy" onerror="this.style.display='none'"><span class="video-play">▶</span></a>
+            <span class="stage-video-badge">시즌</span>
+            <div class="stage-video-body">
+              <h4>SEASON 2024 — 음악의 얼굴</h4>
+              <p class="listen-link">▶ 영상이 안 보이면: <a href="https://www.youtube.com/results?search_query=KNSO+Roberto+Abbado" target="_blank" rel="noopener">YouTube에서 찾기</a></p>
+            </div>
+          </li>
+        </ul>
+        <p class="links">→ <a href="travel.html#venue-sac-seoul">예술의전당</a></p>
+      </article>
+
+      <article class="artist-card" id="artist-berliner-philharmoniker">
+        <span class="artist-role intl">오케스트라 · 해외(독일)</span>
+        <h3>베를린 필하모닉 <small>Berliner Philharmoniker</small></h3>
+        <figure class="artist-figure"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Berlin_Philharmonie_asv2018-05_img2.jpg?width=240" alt="베를린 필하모니 홀 내부" loading="lazy" onerror="this.parentNode.style.display='none'"><figcaption>베를린 필하모니 홀 · ⓒ <a href="https://commons.wikimedia.org/wiki/File:Berlin_Philharmonie_asv2018-05_img2.jpg" target="_blank" rel="noopener">A.Savin</a> · FAL</figcaption></figure>
+        <p class="artist-tagline">세계 최정상 오케스트라의 대명사, 자체 스트리밍 '디지털 콘서트홀' 운영</p>
+        <p class="artist-current"><strong>현재</strong> 상임지휘자 겸 예술감독 키릴 페트렌코(Kirill Petrenko), 2019/20 시즌부터 재임. 자체 플랫폼 '디지털 콘서트홀'에서 900편 이상의 실황을 유료 제공합니다.</p>
+        <p class="artist-point">압도적으로 정교한 합주력과 관·현의 균형이 세계 최고 수준으로 평가받습니다. 무료로 풀리는 유로파콘서트 실황이나 유튜브 하이라이트로 먼저 접하고, 이후 디지털 콘서트홀로 넘어가는 동선을 추천합니다.</p>
+        <p class="videos-label">🎼 대표 영상</p>
+        <ul class="stage-video-list">
+          <li class="stage-video-card">
+            <a class="video-thumb" href="https://www.youtube.com/watch?v=WqMq_bzl01A" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/WqMq_bzl01A/hqdefault.jpg" alt="Petrenko 2026 Europakonzert" loading="lazy" onerror="this.style.display='none'"><span class="video-play">▶</span></a>
+            <span class="stage-video-badge">유로파콘서트</span>
+            <div class="stage-video-body">
+              <h4>2026 유로파콘서트 (키릴 페트렌코)</h4>
+              <p class="listen-link">▶ 영상이 안 보이면: <a href="https://www.youtube.com/results?search_query=Berliner+Philharmoniker+Kirill+Petrenko" target="_blank" rel="noopener">YouTube에서 찾기</a></p>
+            </div>
+          </li>
+          <li class="stage-video-card">
+            <a class="video-thumb" href="https://www.youtube.com/watch?v=9fZyEnWPn1Q" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/9fZyEnWPn1Q/hqdefault.jpg" alt="Berliner Philharmoniker Digital Concert Hall" loading="lazy" onerror="this.style.display='none'"><span class="video-play">▶</span></a>
+            <span class="stage-video-badge">디지털 콘서트홀</span>
+            <div class="stage-video-body">
+              <h4>Digital Concert Hall 소개 (23/24)</h4>
+              <p class="listen-link">▶ 영상이 안 보이면: <a href="https://www.youtube.com/results?search_query=베를린+필하모닉+내한공연" target="_blank" rel="noopener">YouTube에서 찾기</a></p>
+            </div>
+          </li>
+        </ul>
+      </article>
+
+    </div>
+
+    <!-- ===== 성악가 ===== -->
+    <h2 class="section-title" id="singers" style="margin-top:2.5rem;">성악가</h2>
+    <div class="artist-grid">
+
+      <article class="artist-card" id="artist-youn-kwangchul">
+        <span class="artist-role">성악가 · 한국 · 베이스</span>
+        <h3>연광철 <small>Kwangchul Youn</small></h3>
+        <p class="artist-tagline">"세계 최고의 베이스"로 불리는 한국 성악가, 바이로이트·베를린 슈타츠오퍼 경력</p>
+        <p class="artist-current"><strong>현재</strong> 1994~2004년 베를린 슈타츠오퍼 전속, 2018년 독일 궁정가수 칭호 '캄머쟁어' 수훈. 현재는 특정 오페라하우스 전속이 아니라 세계 주요 무대를 오가는 객원(프리랜서, 현 소속은 확인 필요). 2025년 8월 예술의전당 가곡 리사이틀.</p>
+        <p class="artist-point">깊고 어두운 저음역의 정통 베이스로, 바그너 오페라의 왕·현자 역할에서 특히 강점. 입문자는 오페라 아리아보다 한국·독일 가곡 리사이틀 영상으로 그의 음색을 먼저 느껴보길 권합니다.</p>
+        <p class="videos-label">🎼 대표 영상</p>
+        <ul class="stage-video-list">
+          <li class="stage-video-card">
+            <a class="video-thumb" href="https://www.youtube.com/watch?v=DnK-7W9I59Y" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/DnK-7W9I59Y/hqdefault.jpg" alt="베이스 연광철 Take 1 경기필하모닉" loading="lazy" onerror="this.style.display='none'"><span class="video-play">▶</span></a>
+            <span class="stage-video-badge">리사이틀</span>
+            <div class="stage-video-body">
+              <h4>베이스 연광철의 Take (경기필하모닉)</h4>
+              <p class="listen-link">▶ 영상이 안 보이면: <a href="https://www.youtube.com/results?search_query=연광철+베이스+리사이틀" target="_blank" rel="noopener">YouTube에서 찾기</a></p>
+            </div>
+          </li>
+        </ul>
+        <p class="links">→ <a href="composers.html#composer-wagner">바그너</a> · <a href="opera.html#stage-wagner-das-rheingold">라인의 황금</a></p>
+      </article>
+
+      <article class="artist-card" id="artist-youn-samuel">
+        <span class="artist-role">성악가 · 한국 · 베이스바리톤</span>
+        <h3>사무엘 윤 <small>Samuel Youn</small></h3>
+        <p class="artist-tagline">바이로이트 페스티벌 단골 주역, 23년간 쾰른 오페라 전속으로 활동하다 2022년 한국 복귀</p>
+        <p class="artist-current"><strong>현재</strong> 2022년까지 23년간 쾰른 오페라 전속으로 활동한 뒤 귀국, 2022년 3월부터 서울대 성악과 교수로 재직. 2026년 예술의전당에서 '방랑자, 영웅의 여정'(독일 가곡·오페라 아리아) 공연.</p>
+        <p class="artist-point">오페라 속 "악역·복잡한 인물"(스카르피아, 이아고, 방랑자/보탄 변장역 등)을 다수 소화한 극적 표현력이 강점. 그가 캐릭터를 어떻게 해석하는지 인터뷰·마스터클래스로 접하면 오페라 감상이 쉬워집니다.</p>
+        <p class="videos-label">🎼 대표 영상</p>
+        <ul class="stage-video-list">
+          <li class="stage-video-card">
+            <a class="video-thumb" href="https://www.youtube.com/watch?v=KT8o3gur7zs" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/KT8o3gur7zs/hqdefault.jpg" alt="베이스바리톤 사무엘 윤 Ich liebe dich" loading="lazy" onerror="this.style.display='none'"><span class="video-play">▶</span></a>
+            <span class="stage-video-badge">가곡</span>
+            <div class="stage-video-body">
+              <h4>Ich liebe dich (베토벤)</h4>
+              <p class="listen-link">▶ 영상이 안 보이면: <a href="https://www.youtube.com/results?search_query=사무엘+윤+바이로이트" target="_blank" rel="noopener">YouTube에서 찾기</a></p>
+            </div>
+          </li>
+          <li class="stage-video-card">
+            <a class="video-thumb" href="https://www.youtube.com/watch?v=bDze4Qc0tu4" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/bDze4Qc0tu4/hqdefault.jpg" alt="사무엘 윤 마스터클래스 한경arteTV" loading="lazy" onerror="this.style.display='none'"><span class="video-play">▶</span></a>
+            <span class="stage-video-badge">마스터클래스</span>
+            <div class="stage-video-body">
+              <h4>마스터클래스 (한경arteTV)</h4>
+              <p class="listen-link">▶ 영상이 안 보이면: <a href="https://www.youtube.com/results?search_query=Samuel+Youn+bass-baritone+Bayreuth" target="_blank" rel="noopener">YouTube에서 찾기</a></p>
+            </div>
+          </li>
+        </ul>
+        <p class="links">→ <a href="opera.html">오페라·발레</a></p>
+      </article>
+
+      <article class="artist-card" id="artist-kaufmann">
+        <span class="artist-role intl">성악가 · 해외(독일) · 테너</span>
+        <h3>요나스 카우프만 <small>Jonas Kaufmann</small></h3>
+        <figure class="artist-figure"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Jonas_Kaufmann_9_May_2008_London.jpg?width=240" alt="요나스 카우프만" loading="lazy" onerror="this.parentNode.style.display='none'"><figcaption>ⓒ <a href="https://commons.wikimedia.org/wiki/File:Jonas_Kaufmann_9_May_2008_London.jpg" target="_blank" rel="noopener">Voceditenore</a> · CC BY-SA 3.0</figcaption></figure>
+        <p class="artist-tagline">21세기를 대표하는 스타 테너, 짙은 음색의 '드라마틱 테너'</p>
+        <p class="artist-current"><strong>현재</strong> 특정 전속 없이 메트·빈 슈타츠오퍼 등 세계 주요 무대에 지속 초청되는 프리랜서. 2026년 구체적 일정은 공식 채널 확인 필요.</p>
+        <p class="artist-point">밝은 테너와 달리 어둡고 바리톤에 가까운 음색이 특징. 푸치니와 바그너 양쪽에서 정상급 평가를 받는 드문 레퍼토리 폭. 입문자는 익숙한 '네순 도르마'로 시작하길 권합니다.</p>
+        <p class="videos-label">🎼 대표 영상</p>
+        <ul class="stage-video-list">
+          <li class="stage-video-card">
+            <a class="video-thumb" href="https://www.youtube.com/watch?v=xN-JCdM4or0" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/xN-JCdM4or0/hqdefault.jpg" alt="Jonas Kaufmann Nessun Dorma Turandot" loading="lazy" onerror="this.style.display='none'"><span class="video-play">▶</span></a>
+            <span class="stage-video-badge">네순 도르마</span>
+            <div class="stage-video-body">
+              <h4>Nessun Dorma (푸치니 《투란도트》)</h4>
+              <p class="listen-link">▶ 영상이 안 보이면: <a href="https://www.youtube.com/results?search_query=Jonas+Kaufmann+Nessun+Dorma" target="_blank" rel="noopener">YouTube에서 찾기</a></p>
+            </div>
+          </li>
+          <li class="stage-video-card">
+            <a class="video-thumb" href="https://www.youtube.com/watch?v=8A_Tnw53Vqs" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/8A_Tnw53Vqs/hqdefault.jpg" alt="Jonas Kaufmann Nessun Dorma Waldbühne" loading="lazy" onerror="this.style.display='none'"><span class="video-play">▶</span></a>
+            <span class="stage-video-badge">야외 실황</span>
+            <div class="stage-video-body">
+              <h4>Nessun Dorma — 베를린 발트뷔네 실황</h4>
+              <p class="listen-link">▶ 영상이 안 보이면: <a href="https://www.youtube.com/results?search_query=요나스+카우프만+내한" target="_blank" rel="noopener">YouTube에서 찾기</a></p>
+            </div>
+          </li>
+        </ul>
+        <p class="links">→ <a href="opera.html#stage-puccini-turandot">투란도트</a></p>
+      </article>
+
+    </div>
+
+    <!-- ===== 기악 ===== -->
+    <h2 class="section-title" id="instrumentalists" style="margin-top:2.5rem;">기악 연주자</h2>
+    <div class="artist-grid">
+
+      <article class="artist-card" id="artist-cho-seong-jin">
+        <span class="artist-role">기악 · 한국 · 피아노</span>
+        <h3>조성진 <small>Seong-Jin Cho</small></h3>
+        <figure class="artist-figure"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Seong-Jin_Cho_20161116_05_(cropped).png?width=240" alt="조성진" loading="lazy" onerror="this.parentNode.style.display='none'"><figcaption>ⓒ <a href="https://commons.wikimedia.org/wiki/File:Seong-Jin_Cho_20161116_05_(cropped).png" target="_blank" rel="noopener">KBS News</a> · CC BY 3.0</figcaption></figure>
+        <p class="artist-tagline">2015년 쇼팽 국제 콩쿠르 한국인 최초 우승, 도이치 그라모폰 전속</p>
+        <p class="artist-current"><strong>현재</strong> 2016년부터 DG 전속 아티스트. 2026년 런던 심포니 '아티스트 포트레이트'와 <strong>롯데콘서트홀 개관 10주년 상주 음악가</strong>로 동시 선정되어 런던·서울에서 활발히 활동. 2025년 라벨 피아노 협주곡 신보 발매.</p>
+        <p class="artist-point">쇼팽 스페셜리스트로 출발했지만 바흐·쇤베르크·슈만으로 레퍼토리를 확장 중. 절제된 미감과 투명한 음색이 특징 — 화려한 기교보다 프레이징의 논리를 따라 듣는 것이 감상 포인트입니다.</p>
+        <p class="videos-label">🎼 대표 영상</p>
+        <ul class="stage-video-list">
+          <li class="stage-video-card">
+            <a class="video-thumb" href="https://www.youtube.com/watch?v=_SFIfQxOShU" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/_SFIfQxOShU/hqdefault.jpg" alt="조성진 쇼팽 스케르초 4번 DG" loading="lazy" onerror="this.style.display='none'"><span class="video-play">▶</span></a>
+            <span class="stage-video-badge">쇼팽</span>
+            <div class="stage-video-body">
+              <h4>쇼팽: 스케르초 4번 Op.54 (DG)</h4>
+              <p class="listen-link">▶ 영상이 안 보이면: <a href="https://www.youtube.com/results?search_query=Seong-Jin+Cho+Deutsche+Grammophon" target="_blank" rel="noopener">YouTube에서 찾기</a></p>
+            </div>
+          </li>
+          <li class="stage-video-card">
+            <a class="video-thumb" href="https://www.youtube.com/watch?v=OCUSalQf-jY" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/OCUSalQf-jY/hqdefault.jpg" alt="조성진 쇼팽 스케르초 2번 DG" loading="lazy" onerror="this.style.display='none'"><span class="video-play">▶</span></a>
+            <span class="stage-video-badge">쇼팽</span>
+            <div class="stage-video-body">
+              <h4>쇼팽: 스케르초 2번 Op.31 (DG)</h4>
+              <p class="listen-link">▶ 영상이 안 보이면: <a href="https://www.youtube.com/results?search_query=조성진+롯데콘서트홀+상주음악가" target="_blank" rel="noopener">YouTube에서 찾기</a></p>
+            </div>
+          </li>
+        </ul>
+        <p class="links">→ <a href="composers.html#composer-chopin">쇼팽</a> · <a href="travel.html#venue-lotte-concert-hall">롯데콘서트홀</a></p>
+      </article>
+
+      <article class="artist-card" id="artist-lim-yunchan">
+        <span class="artist-role">기악 · 한국 · 피아노</span>
+        <h3>임윤찬 <small>Yunchan Lim</small></h3>
+        <figure class="artist-figure"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Yunchan_Lim_Sofrolimsky.jpg?width=240" alt="임윤찬" loading="lazy" onerror="this.parentNode.style.display='none'"><figcaption>ⓒ <a href="https://commons.wikimedia.org/wiki/File:Yunchan_Lim_Sofrolimsky.jpg" target="_blank" rel="noopener">Parisgirl562</a> · CC0(PD)</figcaption></figure>
+        <p class="artist-tagline">2022년 반 클라이번 콩쿠르 60년 역사상 최연소 우승자</p>
+        <p class="artist-current"><strong>현재</strong> 2022년 반 클라이번 콩쿠르 금메달·특별상 수상으로 최연소 우승 기록. 2026년 1월 로열 콘세르트헤바우 협연, 4월 <strong>카네기홀 리사이틀</strong>, 이후 아시아 투어 일정.</p>
+        <p class="artist-point">결선의 라흐마니노프 협주곡 3번이 해당 곡 유튜브 최다 조회가 될 만큼 압도적 몰입감과 서사적 해석이 특징. 나이에 비해 깊은 사유가 담긴 느린 악장 표현이 특히 호평받습니다.</p>
+        <p class="videos-label">🎼 대표 영상</p>
+        <ul class="stage-video-list">
+          <li class="stage-video-card">
+            <a class="video-thumb" href="https://www.youtube.com/watch?v=DPJL488cfRw" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/DPJL488cfRw/hqdefault.jpg" alt="임윤찬 라흐마니노프 협주곡 3번 반 클라이번" loading="lazy" onerror="this.style.display='none'"><span class="video-play">▶</span></a>
+            <span class="stage-video-badge">반 클라이번</span>
+            <div class="stage-video-body">
+              <h4>라흐마니노프 피아노 협주곡 3번 (2022 결선)</h4>
+              <p class="listen-link">▶ 영상이 안 보이면: <a href="https://www.youtube.com/results?search_query=Yunchan+Lim+Van+Cliburn+2022" target="_blank" rel="noopener">YouTube에서 찾기</a></p>
+            </div>
+          </li>
+          <li class="stage-video-card">
+            <a class="video-thumb" href="https://www.youtube.com/watch?v=LmrB0sjynoI" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/LmrB0sjynoI/hqdefault.jpg" alt="임윤찬 라흐마니노프 3번 엔딩 라비니아 CSO" loading="lazy" onerror="this.style.display='none'"><span class="video-play">▶</span></a>
+            <span class="stage-video-badge">라비니아</span>
+            <div class="stage-video-body">
+              <h4>라흐마니노프 3번 엔딩 (Ravinia · CSO)</h4>
+              <p class="listen-link">▶ 영상이 안 보이면: <a href="https://www.youtube.com/results?search_query=임윤찬+카네기홀+2026" target="_blank" rel="noopener">YouTube에서 찾기</a></p>
+            </div>
+          </li>
+        </ul>
+        <p class="links">→ <a href="travel.html#venue-carnegie-hall">카네기 홀</a></p>
+      </article>
+
+      <article class="artist-card" id="artist-kang-clara-jumi">
+        <span class="artist-role">기악 · 한국 · 바이올린</span>
+        <h3>클라라 주미 강 <small>Clara-Jumi Kang</small></h3>
+        <figure class="artist-figure"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/CLARA-JUMI_KANG_(Violinist)_-_55254365511_(cropped).jpg?width=240" alt="클라라 주미 강" loading="lazy" onerror="this.parentNode.style.display='none'"><figcaption>ⓒ <a href="https://commons.wikimedia.org/wiki/File:CLARA-JUMI_KANG_(Violinist)_-_55254365511_(cropped).jpg" target="_blank" rel="noopener">문체부(Rep. of Korea)</a> · CC BY-SA 4.0</figcaption></figure>
+        <p class="artist-tagline">2010년 인디애나폴리스 국제 콩쿠르 우승, 로열 스톡홀름 필하모닉 상주 아티스트</p>
+        <p class="artist-current"><strong>현재</strong> 2025-26 시즌 로열 스톡홀름 필하모닉 상주 아티스트로 랄로·쇼스타코비치·번스타인 협주곡 연주. 2026년 5월 피아니스트 김선욱과 국내 11개 도시 듀오 리사이틀 투어.</p>
+        <p class="artist-point">정교한 기교와 따뜻한 음색의 균형이 강점이며 브람스·브루흐 낭만 협주곡에서 특히 호평. 서울시향(정명훈 지휘)과의 브루흐 1번 협연 영상은 국내 오케스트라와의 앙상블을 함께 즐길 수 있어 추천합니다.</p>
+        <p class="videos-label">🎼 대표 영상</p>
+        <ul class="stage-video-list">
+          <li class="stage-video-card">
+            <a class="video-thumb" href="https://www.youtube.com/watch?v=EmlmbleF6Ow" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/EmlmbleF6Ow/hqdefault.jpg" alt="클라라 주미 강 브루흐 바이올린 협주곡 1번" loading="lazy" onerror="this.style.display='none'"><span class="video-play">▶</span></a>
+            <span class="stage-video-badge">브루흐</span>
+            <div class="stage-video-body">
+              <h4>브루흐 바이올린 협주곡 1번 g단조</h4>
+              <p class="listen-link">▶ 영상이 안 보이면: <a href="https://www.youtube.com/results?search_query=Clara-Jumi+Kang+violin" target="_blank" rel="noopener">YouTube에서 찾기</a></p>
+            </div>
+          </li>
+          <li class="stage-video-card">
+            <a class="video-thumb" href="https://www.youtube.com/watch?v=AgY3DMGBF2g" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/AgY3DMGBF2g/hqdefault.jpg" alt="클라라 주미 강 모차르트 바이올린 협주곡 5번 터키" loading="lazy" onerror="this.style.display='none'"><span class="video-play">▶</span></a>
+            <span class="stage-video-badge">모차르트</span>
+            <div class="stage-video-body">
+              <h4>모차르트 바이올린 협주곡 5번 '터키'</h4>
+              <p class="listen-link">▶ 영상이 안 보이면: <a href="https://www.youtube.com/results?search_query=클라라+주미+강+김선욱+듀오" target="_blank" rel="noopener">YouTube에서 찾기</a></p>
+            </div>
+          </li>
+        </ul>
+        <p class="links">→ <a href="#artist-seoul-philharmonic">서울시립교향악단</a></p>
+      </article>
+
+      <article class="artist-card" id="artist-hahn-hilary">
+        <span class="artist-role intl">기악 · 해외(미국) · 바이올린</span>
+        <h3>힐러리 한 <small>Hilary Hahn</small></h3>
+        <figure class="artist-figure"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Bremen-_Hahn21_(cropped).jpg?width=240" alt="힐러리 한" loading="lazy" onerror="this.parentNode.style.display='none'"><figcaption>ⓒ <a href="https://commons.wikimedia.org/wiki/File:Bremen-_Hahn21_(cropped).jpg" target="_blank" rel="noopener">Iñigo Ibáñez</a> · CC BY 2.0</figcaption></figure>
+        <p class="artist-tagline">그래미상 3회 수상, 바흐 해석의 표준으로 꼽히는 바이올리니스트</p>
+        <p class="artist-current"><strong>현재</strong> 2025년 줄리아드 현악 교수진 합류. 2026년 2월 경추 디스크 수술 후 무대 복귀 소식과 북미·유럽 투어 일정이 공개됨 — <em>건강 회복에 따라 일정이 유동적이므로 관람 전 공식 투어 페이지 확인이 특히 중요.</em></p>
+        <p class="artist-point">바흐 무반주 소나타·파르티타 해석이 이 곡의 기준으로 자주 언급될 만큼 정교하고 사색적. 입문자는 화려한 협주곡보다 무반주 바흐로 그의 음색과 구조 해석을 먼저 들어보길 권합니다.</p>
+        <p class="videos-label">🎼 대표 영상</p>
+        <ul class="stage-video-list">
+          <li class="stage-video-card">
+            <a class="video-thumb" href="https://www.youtube.com/watch?v=c3mwVaQIZ1c" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/c3mwVaQIZ1c/hqdefault.jpg" alt="Hilary Hahn Bach Sonata No.1 Adagio" loading="lazy" onerror="this.style.display='none'"><span class="video-play">▶</span></a>
+            <span class="stage-video-badge">바흐 무반주</span>
+            <div class="stage-video-body">
+              <h4>바흐 무반주 소나타 1번 BWV 1001 — Adagio</h4>
+              <p class="listen-link">▶ 영상이 안 보이면: <a href="https://www.youtube.com/results?search_query=Hilary+Hahn+Bach+Sonata+BWV+1001" target="_blank" rel="noopener">YouTube에서 찾기</a></p>
+            </div>
+          </li>
+          <li class="stage-video-card">
+            <a class="video-thumb" href="https://www.youtube.com/watch?v=PZoaEmxrsZQ" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/PZoaEmxrsZQ/hqdefault.jpg" alt="Hilary Hahn Bach Sonata No.1 Presto" loading="lazy" onerror="this.style.display='none'"><span class="video-play">▶</span></a>
+            <span class="stage-video-badge">바흐 무반주</span>
+            <div class="stage-video-body">
+              <h4>바흐 무반주 소나타 1번 BWV 1001 — Presto</h4>
+              <p class="listen-link">▶ 영상이 안 보이면: <a href="https://www.youtube.com/results?search_query=Hilary+Hahn+tour+2026" target="_blank" rel="noopener">YouTube에서 찾기</a></p>
+            </div>
+          </li>
+        </ul>
+        <p class="links">→ <a href="composers.html#composer-bach">바흐</a></p>
+      </article>
+
+    </div>
+
+  </div><!-- /.container -->
+</main>
+
+<footer>
+  <p>콘텐츠는 학습용이며, 음원·영상은 외부 공개 YouTube로 연결됩니다(사이트 직접 호스팅 없음).</p>
+  <p>생존 인물의 직함·소속·일정은 2026년 8월 조사 시점 기준이며 변동됩니다. 텍스트·사실 출처: 17_research_artists.md(공식 사이트·언론 보도 교차 확인). 영상은 oEmbed로 개별 검증.</p>
+</footer>
+<script src="log.js" defer></script>
+</body>
+</html>

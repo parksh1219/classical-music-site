@@ -642,6 +642,15 @@ header nav ul li a.active {
   line-height: 1.55;
 }
 
+.venue-body .venue-tip {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  background: var(--color-bg-alt, rgba(0,0,0,0.03));
+  border-radius: 6px;
+  padding: 0.45rem 0.6rem;
+  margin-top: 0.5rem;
+}
+
 /* --- 여행 코스 카드 --- */
 .course-card {
   background: var(--color-bg-card);

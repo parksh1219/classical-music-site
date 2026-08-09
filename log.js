@@ -7,7 +7,7 @@
 
   var KEY = "classical-log-v1";
   // 시드 버전. 올릴 때마다 기존 브라우저에도 1회 '병합'이 실행된다(사용자 기록은 보존).
-  var SEEDED = "classical-log-seeded-v3";
+  var SEEDED = "classical-log-seeded-v4";
 
   var TYPE_LABEL = {
     orchestra: "관현악", opera: "오페라", ballet: "발레",
@@ -30,6 +30,10 @@
     { date:"2026-10-29", time:"19:30", venue:"예술의전당 오페라극장", type:"opera",
       work:"라인의 황금 (니벨룽의 반지 서야)", slug:"stage-wagner-das-rheingold",
       composer:"Wagner", performer:"국립오페라단 정기공연", rating:0, note:"", status:"planned" },
+    { date:"2026-11-14", time:"17:00", venue:"예술의전당 콘서트홀", type:"opera",
+      work:"베르디 콘서트 오페라 (리골레토·아이다·라 트라비아타)", slug:"verdi-opera-gala-2026",
+      composer:"Verdi", performer:"밀레니엄필하모닉 · 최영선 지휘 · 임세경/김순영/양준모 외", rating:0,
+      note:"콘서트 오페라 갈라 — 세 오페라 하이라이트 아리아 (스크린 무대)", status:"planned" },
     { date:"2026-12-03", time:"17:00", venue:"예술의전당 오페라극장", type:"opera",
       work:"돈 카를로스", slug:"stage-verdi-don-carlos",
       composer:"Verdi", performer:"국립오페라단 정기공연", rating:0, note:"", status:"planned" },
@@ -207,7 +211,7 @@
 
   // 작품 페이지 추정: stage- → opera.html, 베토벤 7/9번 → concert.html, 그 외 → listen.html
   function linkFor(entry) {
-    var concertSlugs = { "beethoven-symphony-no9-op125": 1, "beethoven-symphony-no7-op92": 1, "sumi-jo-continuum-2026": 1 };
+    var concertSlugs = { "beethoven-symphony-no9-op125": 1, "beethoven-symphony-no7-op92": 1, "sumi-jo-continuum-2026": 1, "verdi-opera-gala-2026": 1 };
     var page = entry.slug.indexOf("stage-") === 0 ? "opera.html"
              : (concertSlugs[entry.slug] ? "concert.html" : "listen.html");
     return page + "#" + entry.slug;

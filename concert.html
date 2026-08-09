@@ -38,11 +38,22 @@
     .work-intro { font-size: 0.9rem; line-height: 1.65; margin: 0.35rem 0 0.9rem; }
     .albums-label, .videos-label { font-size: 0.9rem; font-weight: 700; color: var(--color-text-muted, #6b7280); margin: 1rem 0 0.5rem; }
     .albums { display: grid; gap: 0.6rem; margin-bottom: 0.4rem; }
+    .opera-study { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.8rem; margin: 0.4rem 0 1rem; }
+    .opera-study .os-card { background: var(--color-surface-alt, #f9fafb); border: 1px solid var(--color-border, #e5e7eb); border-radius: 10px; padding: 0.85rem 0.95rem; display: flex; flex-direction: column; }
+    .opera-study .os-card h4 { font-size: 0.98rem; margin: 0 0 0.35rem; }
+    .opera-study .os-card h4 small { font-size: 0.78em; font-weight: 400; opacity: 0.7; }
+    .opera-study .os-story { font-size: 0.82rem; line-height: 1.55; margin: 0 0 0.5rem; }
+    .opera-study .os-meta { font-size: 0.78rem; color: var(--color-text-muted, #6b7280); line-height: 1.5; margin: 0 0 0.3rem; }
+    .opera-study .os-meta strong { color: var(--color-text, #1f2937); font-weight: 600; }
+    .opera-study .os-link { margin-top: auto; padding-top: 0.35rem; }
+    .opera-study .os-link a { font-size: 0.82rem; font-weight: 600; text-decoration: none; color: var(--color-accent, #c0392b); }
+    .opera-study .os-link a:hover { text-decoration: underline; }
     @media (max-width: 480px) {
       .concert-grid { gap: 1.25rem; }
       .concert-card { padding: 1rem; }
       .concert-card h3 { font-size: 1.05rem; }
       .tip { padding: 0.5rem 0.7rem; }
+      .opera-study { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -58,6 +69,7 @@
       <li><a href="study.html">공부</a></li>
       <li><a href="eras.html">시대</a></li>
       <li><a href="composers.html">작곡가</a></li>
+      <li><a href="artists.html">연주자</a></li>
       <li><a href="travel.html">여행</a></li>
       <li><a href="log.html">기록</a></li>
     </ul>
@@ -79,6 +91,7 @@
         <ul>
           <li><a href="#beethoven-symphony-no9-op125">베토벤 9번 '합창' <em class="up">예정·8/12</em></a></li>
           <li><a href="#sumi-jo-continuum-2026">조수미 CONTINUUM <em class="up">예정·9/4</em></a></li>
+          <li><a href="#verdi-opera-gala-2026">베르디 콘서트 오페라 갈라 <em class="up">예정·11/14</em></a></li>
         </ul>
       </div>
       <div class="work-index-group">
@@ -281,6 +294,129 @@
         <p class="disc-hint">※ 실연 영상은 저작권 사정으로 재생이 안 될 수 있습니다. 그럴 땐 각 영상의 'YouTube에서 찾기' 링크로 다른 영상을 찾아보세요.</p>
 
         <p class="links">→ <a href="listen.html">감상 페이지</a> · <a href="log.html">내 예매 일정(기록)</a> &nbsp;<button class="log-mark" data-slug="sumi-jo-continuum-2026" data-work="조수미 콘서트 CONTINUUM (데뷔 40주년)" data-type="recital" data-composer="">♡ 관람함</button></p>
+      </article>
+
+      <!-- verdi-opera-gala-2026 -->
+      <article class="concert-card upcoming" id="verdi-opera-gala-2026">
+        <span class="badge">관람 예정 · 예술의전당 콘서트홀 · 2026-11-14(토) 17:00</span>
+        <h3>베르디 콘서트 오페라 〈리골레토 &amp; 아이다 &amp; 라 트라비아타〉 <small>Verdi Concert Opera Gala — La Traviata · Rigoletto · Aida</small></h3>
+        <p class="concert-meta">지휘 <strong>최영선</strong> · <strong>밀레니엄필하모닉오케스트라</strong> · 소프라노 임세경/김순영/오신영 · 메조소프라노 김순희 · 테너 이범주/이명현 · 바리톤 양준모 &nbsp;|&nbsp; 관람시간 약 150분 · 주최 두남재엔터테인먼트</p>
+
+        <p class="work-intro">콘서트 오페라 갈라는 무대 연출·의상·세트 없이 오케스트라와 성악가가 콘서트홀 무대에 나란히 서서 부르고, 스크린에 자막과 장면 이미지를 띄워 줄거리를 보조하는 형식입니다. 이번 공연은 베르디 최고 인기작 세 편 — 〈라 트라비아타〉·〈리골레토〉·〈아이다〉 — 의 하이라이트 아리아만 골라 이어 붙인 "명장면 모음"으로, 전곡 관람이 부담스러운 입문자가 베르디의 대표 선율을 한 자리에서 압축 체험하기에 좋습니다.</p>
+        <p class="disc-hint">※ 예당 안내에 근거한 곡목이며, 실제 연주 곡목·순서·배역은 변경될 수 있습니다. (표시 곡 일부는 갈라 편성 관례상 흔히 포함되는 대표곡을 보강한 것입니다.)</p>
+
+        <p class="albums-label">📚 세 오페라 먼저 공부하기</p>
+        <p class="work-intro" style="margin-top:0;">콘서트 오페라는 하이라이트 아리아만 이어 부르므로, 각 오페라의 <strong>한 줄 줄거리와 핵심 인물</strong>만 미리 알아두면 곡마다 감정이 바로 이해됩니다. 아래 세 작품을 순서대로 훑고, 더 깊이 볼 작품은 "전곡 공부" 링크에서 막별 줄거리·명장면표·명반·전막 영상까지 이어집니다.</p>
+        <div class="opera-study">
+          <div class="os-card">
+            <h4>① 라 트라비아타 <small>La traviata</small></h4>
+            <p class="os-story">파리 사교계의 화류계 여성 비올레타가 진정한 사랑을 만나지만, 연인 아버지의 압박에 사랑을 포기하고 폐결핵으로 죽는다. 베르디 오페라 입문에 가장 좋은 작품.</p>
+            <p class="os-meta"><strong>핵심 인물</strong> 비올레타(소프라노) · 알프레도(테너) · 제르몽(알프레도의 아버지, 바리톤)</p>
+            <p class="os-meta"><strong>이 갈라의 대표곡</strong> 축배의 노래 · Sempre libera · Addio del passato</p>
+            <p class="os-link"><a href="opera.html#stage-verdi-la-traviata">→ 막별 줄거리·명장면·명반 전곡 공부</a></p>
+          </div>
+          <div class="os-card">
+            <h4>② 리골레토 <small>Rigoletto</small></h4>
+            <p class="os-story">바람둥이 공작을 섬기는 저주받은 광대 리골레토가 복수를 꾀하지만, 그 복수가 사랑하는 딸 질다의 죽음으로 되돌아오는 비극. 베르디 최강의 드라마 구조.</p>
+            <p class="os-meta"><strong>핵심 인물</strong> 리골레토(광대, 바리톤) · 질다(딸, 소프라노) · 만토바 공작(테너)</p>
+            <p class="os-meta"><strong>이 갈라의 대표곡</strong> Caro nome · La donna è mobile · 4중창 Bella figlia</p>
+            <p class="os-link"><a href="opera.html#stage-verdi-rigoletto">→ 막별 줄거리·명장면·명반 전곡 공부</a></p>
+          </div>
+          <div class="os-card">
+            <h4>③ 아이다 <small>Aida</small></h4>
+            <p class="os-story">고대 이집트. 노예가 된 에티오피아 공주 아이다와 이집트 총사령관 라다메스의 금지된 사랑이, 장엄한 개선 행진과 지하 무덤의 생매장 결말로 이어지는 스펙터클.</p>
+            <p class="os-meta"><strong>핵심 인물</strong> 아이다(소프라노) · 라다메스(테너) · 암네리스(이집트 공주, 메조소프라노)</p>
+            <p class="os-meta"><strong>이 갈라의 대표곡</strong> Celeste Aida · Ritorna vincitor! · 개선행진곡</p>
+            <p class="os-link"><a href="opera.html#stage-verdi-aida">→ 막별 줄거리·명장면·명반 전곡 공부</a></p>
+          </div>
+        </div>
+
+        <p class="albums-label">🎼 예상 프로그램 · 하이라이트 아리아</p>
+        <div class="program-table-wrap">
+          <table class="program-table">
+            <thead><tr><th>오페라</th><th>곡 / 아리아</th><th>배역 · 성부</th><th>들을 것</th></tr></thead>
+            <tbody>
+              <tr><td>라 트라비아타</td><td>Libiamo ne' lieti calici (축배의 노래)</td><td>비올레타·알프레도 — 소프라노·테너(+합창)</td><td>1막 파티 장면, 오페라 전체에서 가장 유명한 선율. 흥겨워 입문자가 가장 먼저 알아듣는 곡</td></tr>
+              <tr><td>라 트라비아타</td><td>Sempre libera (셈프레 리베라)</td><td>비올레타 — 소프라노</td><td>1막 끝, "자유롭게 살겠다"는 결심을 담은 초고난도 콜로라투라. 화려한 트릴과 고음이 몰아친다</td></tr>
+              <tr><td>라 트라비아타</td><td>Addio del passato (안녕, 지난날이여)</td><td>비올레타 — 소프라노</td><td>3막, 죽음을 앞둔 비올레타가 지난 행복을 회상하는 애상적 아리아. 힘을 뺀 가녀린 톤이 포인트</td></tr>
+              <tr><td>라 트라비아타</td><td>Parigi o cara (파리를 떠나, 그대와 함께)</td><td>비올레타·알프레도 — 이중창</td><td>3막, 재회한 두 연인이 파리를 떠나자 약속하는 서정적 듀엣 — 이미 늦었다는 비극적 아이러니</td></tr>
+              <tr><td>리골레토</td><td>Caro nome (그리운 그 이름)</td><td>질다 — 소프라노</td><td>1막, 사랑에 빠진 질다가 청년의 이름을 되뇌는 아리아. 가볍고 투명한 고음의 콜로라투라</td></tr>
+              <tr><td>리골레토</td><td>La donna è mobile (여자의 마음)</td><td>만토바 공작 — 테너</td><td>3막, "여자 마음은 갈대". 오페라 사상 가장 유명한 테너 아리아 중 하나 — 즉각 따라 부르고 싶어진다</td></tr>
+              <tr><td>리골레토</td><td>Bella figlia dell'amore (아름다운 사랑의 딸)</td><td>4중창 — 테너·메조·소프라노·바리톤</td><td>3막, 네 인물이 동시에 다른 감정(유혹·조롱·절망·복수)을 노래하는 베르디 최고의 앙상블</td></tr>
+              <tr><td>아이다</td><td>Celeste Aida (하늘의 아이다)</td><td>라다메스 — 테너</td><td>1막, 노예 아이다를 향한 사랑 고백. 이른 등장에도 고음을 여리게(피아니시모) 끝내야 하는 난곡</td></tr>
+              <tr><td>아이다</td><td>Ritorna vincitor! (승리자여 돌아오라)</td><td>아이다 — 소프라노</td><td>1막, 조국과 사랑 사이에서 찢어지는 아이다의 내적 갈등을 폭발적으로 담은 드라마틱 소프라노</td></tr>
+              <tr><td>아이다</td><td>Gloria all'Egitto (개선행진곡)</td><td>합창 · 관현악</td><td>2막, 트럼펫 팡파르로 유명한 "개선행진곡". 갈라의 관현악 하이라이트</td></tr>
+              <tr><td>아이다</td><td>La fatal pietra (숙명의 돌)</td><td>라다메스·아이다 — 이중창</td><td>4막 끝, 산 채로 갇힌 무덤 속 두 연인이 함께 죽음을 맞는 장면. 오페라 전체의 클라이맥스</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="tip">🎯 관람 팁: 콘서트 오페라는 세트·연기 없이 성악가가 정면을 보고 노래하므로 줄거리 맥락은 스크린 자막에 의존합니다. 세 오페라의 한 줄 줄거리만 알아두면 곡마다 감정이 바로 이해됩니다 — 〈라 트라비아타〉는 사교계 여인 비올레타의 사랑과 죽음, 〈리골레토〉는 저주받은 광대의 복수극, 〈아이다〉는 노예와 장군의 금지된 사랑과 생매장 결말. 아리아 위주로 짧게 끊어 구성되니 곡이 끝날 때마다 박수를 쳐도 됩니다.</div>
+
+        <p class="albums-label">🎧 세 오페라 전곡 명반</p>
+        <div class="albums">
+          <div class="album-item">
+            <strong>라 트라비아타 — Solti / Gheorghiu · Lopardo · Nucci, London Symphony Orchestra (Decca, 1994)</strong>
+            <div class="album-conductor"><a href="https://www.youtube.com/results?search_query=Verdi+La+Traviata+Solti+Gheorghiu+1994+Decca" target="_blank" rel="noopener" title="YouTube에서 이 명반 찾기">YouTube에서 찾기 →</a></div>
+            <div class="album-note">게오르규의 데뷔 음반으로 유명한 현대 표준 명반. 비평가들의 극찬을 받았다.</div>
+          </div>
+          <div class="album-item">
+            <strong>리골레토 — Bonynge / Sutherland · Pavarotti · Milnes, London Symphony Orchestra (Decca, 1971)</strong>
+            <div class="album-conductor"><a href="https://www.youtube.com/results?search_query=Verdi+Rigoletto+Bonynge+Sutherland+Pavarotti+1971+Decca" target="_blank" rel="noopener" title="YouTube에서 이 명반 찾기">YouTube에서 찾기 →</a></div>
+            <div class="album-note">파바로티·서덜랜드 황금 콤비의 스튜디오 전곡반. 오랫동안 리골레토의 기준점.</div>
+          </div>
+          <div class="album-item">
+            <strong>아이다 — Solti / Price · Vickers · Gorr, Rome Opera / Santa Cecilia (Decca, 1961–62)</strong>
+            <div class="album-conductor"><a href="https://www.youtube.com/results?search_query=Verdi+Aida+Solti+Leontyne+Price+1962+Decca" target="_blank" rel="noopener" title="YouTube에서 이 명반 찾기">YouTube에서 찾기 →</a></div>
+            <div class="album-note">프라이스가 평생 대표작으로 삼은 아이다 배역의 결정판 스튜디오 녹음.</div>
+          </div>
+        </div>
+
+        <p class="videos-label">🎼 하이라이트 아리아 명연 (유튜브)</p>
+        <ul class="stage-video-list">
+          <li class="stage-video-card">
+            <div class="embed"><iframe src="https://www.youtube.com/embed/xj9a57YIUyM" title="Callas — Sempre libera (La Traviata)" loading="lazy" allowfullscreen></iframe></div>
+            <span class="stage-video-badge">전설의 아리아</span>
+            <div class="stage-video-body">
+              <h4>Sempre libera — 마리아 칼라스 (La Scala, 1955)</h4>
+              <p class="listen-link">▶ 영상이 안 보이면: <a href="https://www.youtube.com/results?search_query=Maria+Callas+Sempre+libera+La+Traviata+1955" target="_blank" rel="noopener">YouTube에서 찾기</a></p>
+            </div>
+          </li>
+          <li class="stage-video-card">
+            <div class="embed"><iframe src="https://www.youtube.com/embed/k8UerodV2n0" title="Pavarotti — La donna è mobile (Rigoletto)" loading="lazy" allowfullscreen></iframe></div>
+            <span class="stage-video-badge">명연</span>
+            <div class="stage-video-body">
+              <h4>La donna è mobile — 루치아노 파바로티 (Live, 1981)</h4>
+              <p class="listen-link">▶ 영상이 안 보이면: <a href="https://www.youtube.com/results?search_query=Pavarotti+La+donna+e+mobile+live+1981" target="_blank" rel="noopener">YouTube에서 찾기</a></p>
+            </div>
+          </li>
+          <li class="stage-video-card">
+            <div class="embed"><iframe src="https://www.youtube.com/embed/dWJLnGEP0H4" title="Pavarotti — Celeste Aida (Aida)" loading="lazy" allowfullscreen></iframe></div>
+            <span class="stage-video-badge">명연</span>
+            <div class="stage-video-body">
+              <h4>Celeste Aida — 루치아노 파바로티 (Teatro alla Scala, 1986)</h4>
+              <p class="listen-link">▶ 영상이 안 보이면: <a href="https://www.youtube.com/results?search_query=Pavarotti+Celeste+Aida+La+Scala+1986" target="_blank" rel="noopener">YouTube에서 찾기</a></p>
+            </div>
+          </li>
+          <li class="stage-video-card">
+            <div class="embed"><iframe src="https://www.youtube.com/embed/VBZS7vDnXGA" title="Leontyne Price — Ritorna vincitor! (Aida)" loading="lazy" allowfullscreen></iframe></div>
+            <span class="stage-video-badge">전설의 아리아</span>
+            <div class="stage-video-body">
+              <h4>Ritorna vincitor! — 레온타인 프라이스</h4>
+              <p class="listen-link">▶ 영상이 안 보이면: <a href="https://www.youtube.com/results?search_query=Leontyne+Price+Ritorna+vincitor+Aida" target="_blank" rel="noopener">YouTube에서 찾기</a></p>
+            </div>
+          </li>
+          <li class="stage-video-card">
+            <div class="embed"><iframe src="https://www.youtube.com/embed/EVbO1dGzqFg" title="Bella figlia dell'amore quartet (Rigoletto)" loading="lazy" allowfullscreen></iframe></div>
+            <span class="stage-video-badge">앙상블 명연</span>
+            <div class="stage-video-body">
+              <h4>Bella figlia dell'amore (4중창) — 서덜랜드 · 파바로티 · 존스 · 누치</h4>
+              <p class="listen-link">▶ 영상이 안 보이면: <a href="https://www.youtube.com/results?search_query=Bella+figlia+dell+amore+Sutherland+Pavarotti+quartet" target="_blank" rel="noopener">YouTube에서 찾기</a></p>
+            </div>
+          </li>
+        </ul>
+        <p class="disc-hint">※ 실연 영상은 저작권 사정으로 재생이 안 될 수 있습니다. 그럴 땐 각 영상의 'YouTube에서 찾기' 링크로 다른 영상을 찾아보세요.</p>
+
+        <p class="links">→ <a href="composers.html#composer-verdi">주세페 베르디</a> · 오페라 전곡 정보: <a href="opera.html#stage-verdi-la-traviata">라 트라비아타</a> · <a href="opera.html#stage-verdi-rigoletto">리골레토</a> · <a href="opera.html#stage-verdi-aida">아이다</a> · <a href="log.html">내 예매 일정(기록)</a> &nbsp;<button class="log-mark" data-slug="verdi-opera-gala-2026" data-work="베르디 콘서트 오페라 (리골레토·아이다·라 트라비아타)" data-type="opera" data-composer="Verdi">♡ 관람함</button></p>
       </article>
 
     </div>
