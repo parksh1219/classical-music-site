@@ -7,7 +7,7 @@
 
   var KEY = "classical-log-v1";
   // 시드 버전. 올릴 때마다 기존 브라우저에도 1회 '병합'이 실행된다(사용자 기록은 보존).
-  var SEEDED = "classical-log-seeded-v4";
+  var SEEDED = "classical-log-seeded-v5";
 
   var TYPE_LABEL = {
     orchestra: "관현악", opera: "오페라", ballet: "발레",
@@ -20,10 +20,10 @@
     { date:"2026-08-12", time:"19:30", venue:"예술의전당 콘서트홀", type:"orchestra",
       work:"베토벤 교향곡 9번 '합창'", slug:"beethoven-symphony-no9-op125",
       composer:"Beethoven", performer:"서울시향 · 얍 판 츠베덴 (유럽투어 프리뷰)", rating:0,
-      note:"함께 연주: 존 애덤스 '부상 처치사(The Wound-Dresser)' · 독창 최지은/이아경/손지훈/마티아스 괴르네 · 합창 국립합창단", status:"planned" },
+      note:"함께 연주: 존 애덤스 '부상 처치사(The Wound-Dresser)' · 독창 최지은/이아경/손지훈/마티아스 괴르네 · 합창 국립합창단", status:"attended" },
     { date:"2026-08-20", time:"19:30", venue:"예술의전당 오페라극장", type:"ballet",
       work:"백조의 호수", slug:"stage-tchaikovsky-swan-lake",
-      composer:"Tchaikovsky", performer:"예술의전당 & 유니버설발레단", rating:0, note:"", status:"planned" },
+      composer:"Tchaikovsky", performer:"예술의전당 & 유니버설발레단", rating:0, note:"", status:"attended" },
     { date:"2026-09-04", time:"19:30", venue:"예술의전당 콘서트홀", type:"recital",
       work:"조수미 콘서트 CONTINUUM (데뷔 40주년 기념)", slug:"sumi-jo-continuum-2026",
       composer:"", performer:"소프라노 조수미", rating:0, note:"세계무대 데뷔 40주년 기념 리사이틀", status:"planned" },
@@ -37,7 +37,25 @@
     { date:"2026-12-03", time:"17:00", venue:"예술의전당 오페라극장", type:"opera",
       work:"돈 카를로스", slug:"stage-verdi-don-carlos",
       composer:"Verdi", performer:"국립오페라단 정기공연", rating:0, note:"", status:"planned" },
+    { date:"2026-09-12", time:"17:00", venue:"예술의전당 콘서트홀", type:"orchestra",
+      work:"2026 예술의전당 회원음악회", slug:"sac-members-concert-2026",
+      composer:"", performer:"예술의전당 회원 초청 음악회", rating:0, note:"2매 예매(동반 1인) · 프로그램 확정 시 갱신", status:"planned" },
+    { date:"2026-09-16", time:"19:30", venue:"예술의전당 콘서트홀", type:"orchestra",
+      work:"프랑스 메스 그랑테스트 국립 오케스트라 내한", slug:"metz-grand-est-2026",
+      composer:"", performer:"다비트 라일란트 지휘 · 피아노 신창용", rating:0, note:"한·불 수교 140주년 · 드뷔시 목신/바다 · 라흐마니노프 3번 · 라벨 라 발스", status:"planned" },
+    { date:"2026-10-03", time:"17:00", venue:"예술의전당 오페라극장", type:"ballet",
+      work:"잠자는 숲속의 미녀", slug:"stage-tchaikovsky-sleeping-beauty",
+      composer:"Tchaikovsky", performer:"유니버설발레단", rating:0, note:"", status:"planned" },
+    { date:"2026-10-18", time:"17:00", venue:"예술의전당 콘서트홀", type:"recital",
+      work:"손열음 피아노 리사이틀", slug:"son-yeoleum-recital-2026",
+      composer:"", performer:"피아노 손열음", rating:0, note:"전설적 피아니스트들이 작곡·편곡한 소품 모음 프로그램", status:"planned" },
+    { date:"2026-12-17", time:"19:30", venue:"예술의전당 콘서트홀", type:"orchestra",
+      work:"서울시향 얍 판 츠베덴의 '환희의 송가' (베토벤 9번)", slug:"spo-ode-to-joy-2026",
+      composer:"Beethoven", performer:"서울시향 · 얍 판 츠베덴 · 홍혜란/양송미/김성호/심기환", rating:0, note:"연말 제9 · 슈만 4대 호른 콘체르트슈튀크 Op.86 포함", status:"planned" },
     // ── 지난 관람 ──
+    { date:"2026-08-27", time:"20:00", venue:"예술의전당 콘서트홀", type:"orchestra",
+      work:"KBS교향악단 제829회 '순수한 사랑'", slug:"kbso-829-2026",
+      composer:"", performer:"정명훈 지휘 · 피아노 김세현", rating:0, note:"라흐마니노프 피협 2번 · 프로코피예프 로미오와 줄리엣 모음곡", status:"attended" },
     { date:"2026-07-23", time:"19:30", venue:"예술의전당 오페라극장", type:"opera",
       work:"투란도트", slug:"stage-puccini-turandot",
       composer:"Puccini", performer:"예술의전당 오페라", rating:0, note:"", status:"attended" },
@@ -211,7 +229,8 @@
 
   // 작품 페이지 추정: stage- → opera.html, 베토벤 7/9번 → concert.html, 그 외 → listen.html
   function linkFor(entry) {
-    var concertSlugs = { "beethoven-symphony-no9-op125": 1, "beethoven-symphony-no7-op92": 1, "sumi-jo-continuum-2026": 1, "verdi-opera-gala-2026": 1 };
+    var concertSlugs = { "beethoven-symphony-no9-op125": 1, "beethoven-symphony-no7-op92": 1, "sumi-jo-continuum-2026": 1, "verdi-opera-gala-2026": 1,
+      "metz-grand-est-2026": 1, "spo-ode-to-joy-2026": 1, "son-yeoleum-recital-2026": 1, "sac-members-concert-2026": 1, "kbso-829-2026": 1 };
     var page = entry.slug.indexOf("stage-") === 0 ? "opera.html"
              : (concertSlugs[entry.slug] ? "concert.html" : "listen.html");
     return page + "#" + entry.slug;
