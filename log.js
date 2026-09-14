@@ -7,7 +7,7 @@
 
   var KEY = "classical-log-v1";
   // 시드 버전. 올릴 때마다 기존 브라우저에도 1회 '병합'이 실행된다(사용자 기록은 보존).
-  var SEEDED = "classical-log-seeded-v6";
+  var SEEDED = "classical-log-seeded-v7";
 
   var TYPE_LABEL = {
     orchestra: "관현악", opera: "오페라", ballet: "발레",
@@ -39,7 +39,7 @@
       composer:"Verdi", performer:"국립오페라단 정기공연", rating:0, note:"", status:"planned" },
     { date:"2026-09-12", time:"17:00", venue:"예술의전당 콘서트홀", type:"opera",
       work:"2026 예술의전당 회원음악회 — 비제 《카르멘》 하이라이트", slug:"sac-members-concert-2026",
-      composer:"Bizet", performer:"데이비드 이 지휘 · 경기필 · 백재은/박성규/김종표/홍주영", rating:0, note:"오페라 카르멘 1~4막 하이라이트(콘서트 오페라)", status:"planned" },
+      composer:"Bizet", performer:"데이비드 이 지휘 · 경기필 · 백재은/박성규/김종표/홍주영", rating:0, note:"오페라 카르멘 1~4막 하이라이트(콘서트 오페라)", status:"attended" },
     { date:"2026-09-16", time:"19:30", venue:"예술의전당 콘서트홀", type:"orchestra",
       work:"프랑스 메스 그랑테스트 국립 오케스트라 내한", slug:"metz-grand-est-2026",
       composer:"", performer:"다비트 라일란트 지휘 · 피아노 신창용", rating:0, note:"한·불 수교 140주년 · 드뷔시 목신/바다 · 라흐마니노프 3번 · 라벨 라 발스", status:"planned" },
