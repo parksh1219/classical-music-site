@@ -7,7 +7,7 @@
 
   var KEY = "classical-log-v1";
   // 시드 버전. 올릴 때마다 기존 브라우저에도 1회 '병합'이 실행된다(사용자 기록은 보존).
-  var SEEDED = "classical-log-seeded-v5";
+  var SEEDED = "classical-log-seeded-v6";
 
   var TYPE_LABEL = {
     orchestra: "관현악", opera: "오페라", ballet: "발레",
@@ -43,9 +43,15 @@
     { date:"2026-09-16", time:"19:30", venue:"예술의전당 콘서트홀", type:"orchestra",
       work:"프랑스 메스 그랑테스트 국립 오케스트라 내한", slug:"metz-grand-est-2026",
       composer:"", performer:"다비트 라일란트 지휘 · 피아노 신창용", rating:0, note:"한·불 수교 140주년 · 드뷔시 목신/바다 · 라흐마니노프 3번 · 라벨 라 발스", status:"planned" },
-    { date:"2026-10-03", time:"17:00", venue:"예술의전당 오페라극장", type:"ballet",
+    { date:"2026-10-03", time:"19:00", venue:"예술의전당 오페라극장", type:"ballet",
       work:"잠자는 숲속의 미녀", slug:"stage-tchaikovsky-sleeping-beauty",
       composer:"Tchaikovsky", performer:"유니버설발레단", rating:0, note:"", status:"planned" },
+    { date:"2026-11-28", time:"17:00", venue:"예술의전당 콘서트홀", type:"orchestra",
+      work:"KBS교향악단 제832회 정기연주회", slug:"kbso-832-2026",
+      composer:"", performer:"로버트 스파노 지휘 · 첼로 스티븐 이설리스", rating:0, note:"바버 현을 위한 아다지오 · 슈만 첼로 협주곡 Op.129 · 림스키-코르사코프 셰에라자데", status:"planned" },
+    { date:"2026-12-12", time:"17:00", venue:"예술의전당 콘서트홀", type:"orchestra",
+      work:"욘 스토르고르스 & BBC 필하모닉", slug:"bbc-philharmonic-2026",
+      composer:"", performer:"BBC 필하모닉 · 욘 스토르고르스 지휘 · 바이올린 김봄소리", rating:0, note:"11년 만의 내한 · 파니 멘델스존 서곡 다장조 · 차이콥스키 바이올린 협주곡 · 베토벤 7번", status:"planned" },
     { date:"2026-10-18", time:"17:00", venue:"예술의전당 콘서트홀", type:"recital",
       work:"손열음 피아노 리사이틀", slug:"son-yeoleum-recital-2026",
       composer:"", performer:"피아노 손열음", rating:0, note:"전설적 피아니스트들이 작곡·편곡한 소품 모음 프로그램", status:"planned" },
@@ -230,7 +236,8 @@
   // 작품 페이지 추정: stage- → opera.html, 베토벤 7/9번 → concert.html, 그 외 → listen.html
   function linkFor(entry) {
     var concertSlugs = { "beethoven-symphony-no9-op125": 1, "beethoven-symphony-no7-op92": 1, "sumi-jo-continuum-2026": 1, "verdi-opera-gala-2026": 1,
-      "metz-grand-est-2026": 1, "spo-ode-to-joy-2026": 1, "son-yeoleum-recital-2026": 1, "sac-members-concert-2026": 1, "kbso-829-2026": 1 };
+      "metz-grand-est-2026": 1, "spo-ode-to-joy-2026": 1, "son-yeoleum-recital-2026": 1, "sac-members-concert-2026": 1, "kbso-829-2026": 1,
+      "kbso-832-2026": 1, "bbc-philharmonic-2026": 1 };
     var page = entry.slug.indexOf("stage-") === 0 ? "opera.html"
              : (concertSlugs[entry.slug] ? "concert.html" : "listen.html");
     return page + "#" + entry.slug;
