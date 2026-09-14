@@ -7,7 +7,7 @@
 
   var KEY = "classical-log-v1";
   // 시드 버전. 올릴 때마다 기존 브라우저에도 1회 '병합'이 실행된다(사용자 기록은 보존).
-  var SEEDED = "classical-log-seeded-v7";
+  var SEEDED = "classical-log-seeded-v8";
 
   var TYPE_LABEL = {
     orchestra: "관현악", opera: "오페라", ballet: "발레",
@@ -26,7 +26,7 @@
       composer:"Tchaikovsky", performer:"예술의전당 & 유니버설발레단", rating:0, note:"", status:"attended" },
     { date:"2026-09-04", time:"19:30", venue:"예술의전당 콘서트홀", type:"recital",
       work:"조수미 콘서트 CONTINUUM (데뷔 40주년 기념)", slug:"sumi-jo-continuum-2026",
-      composer:"", performer:"소프라노 조수미", rating:0, note:"세계무대 데뷔 40주년 기념 리사이틀", status:"planned" },
+      composer:"", performer:"소프라노 조수미", rating:0, note:"세계무대 데뷔 40주년 기념 리사이틀", status:"attended" },
     { date:"2026-10-29", time:"19:30", venue:"예술의전당 오페라극장", type:"opera",
       work:"라인의 황금 (니벨룽의 반지 서야)", slug:"stage-wagner-das-rheingold",
       composer:"Wagner", performer:"국립오페라단 정기공연", rating:0, note:"", status:"planned" },
