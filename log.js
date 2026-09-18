@@ -7,7 +7,7 @@
 
   var KEY = "classical-log-v1";
   // 시드 버전. 올릴 때마다 기존 브라우저에도 1회 '병합'이 실행된다(사용자 기록은 보존).
-  var SEEDED = "classical-log-seeded-v8";
+  var SEEDED = "classical-log-seeded-v9";
 
   var TYPE_LABEL = {
     orchestra: "관현악", opera: "오페라", ballet: "발레",
@@ -42,7 +42,10 @@
       composer:"Bizet", performer:"데이비드 이 지휘 · 경기필 · 백재은/박성규/김종표/홍주영", rating:0, note:"오페라 카르멘 1~4막 하이라이트(콘서트 오페라)", status:"attended" },
     { date:"2026-09-16", time:"19:30", venue:"예술의전당 콘서트홀", type:"orchestra",
       work:"프랑스 메스 그랑테스트 국립 오케스트라 내한", slug:"metz-grand-est-2026",
-      composer:"", performer:"다비트 라일란트 지휘 · 피아노 신창용", rating:0, note:"한·불 수교 140주년 · 드뷔시 목신/바다 · 라흐마니노프 3번 · 라벨 라 발스", status:"planned" },
+      composer:"", performer:"다비트 라일란트 지휘 · 피아노 신창용", rating:0, note:"한·불 수교 140주년 · 드뷔시 목신/바다 · 라흐마니노프 3번 · 라벨 라 발스", status:"attended" },
+    { date:"2026-10-02", time:"20:00", venue:"예술의전당 콘서트홀", type:"orchestra",
+      work:"KBS교향악단 × 정명훈의 말러 교향곡 4번", slug:"kbso-mahler4-2026",
+      composer:"Mahler", performer:"정명훈 지휘 · 소프라노 크리스티아네 카르크", rating:0, note:"말러 뤼케르트 가곡 · 교향곡 4번 G장조", status:"planned" },
     { date:"2026-10-03", time:"19:00", venue:"예술의전당 오페라극장", type:"ballet",
       work:"잠자는 숲속의 미녀", slug:"stage-tchaikovsky-sleeping-beauty",
       composer:"Tchaikovsky", performer:"유니버설발레단", rating:0, note:"", status:"planned" },
@@ -237,7 +240,7 @@
   function linkFor(entry) {
     var concertSlugs = { "beethoven-symphony-no9-op125": 1, "beethoven-symphony-no7-op92": 1, "sumi-jo-continuum-2026": 1, "verdi-opera-gala-2026": 1,
       "metz-grand-est-2026": 1, "spo-ode-to-joy-2026": 1, "son-yeoleum-recital-2026": 1, "sac-members-concert-2026": 1, "kbso-829-2026": 1,
-      "kbso-832-2026": 1, "bbc-philharmonic-2026": 1 };
+      "kbso-832-2026": 1, "bbc-philharmonic-2026": 1, "kbso-mahler4-2026": 1 };
     var page = entry.slug.indexOf("stage-") === 0 ? "opera.html"
              : (concertSlugs[entry.slug] ? "concert.html" : "listen.html");
     return page + "#" + entry.slug;
