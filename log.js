@@ -7,7 +7,7 @@
 
   var KEY = "classical-log-v1";
   // 시드 버전. 올릴 때마다 기존 브라우저에도 1회 '병합'이 실행된다(사용자 기록은 보존).
-  var SEEDED = "classical-log-seeded-v9";
+  var SEEDED = "classical-log-seeded-v10";
 
   var TYPE_LABEL = {
     orchestra: "관현악", opera: "오페라", ballet: "발레",
@@ -45,10 +45,10 @@
       composer:"", performer:"다비트 라일란트 지휘 · 피아노 신창용", rating:0, note:"한·불 수교 140주년 · 드뷔시 목신/바다 · 라흐마니노프 3번 · 라벨 라 발스", status:"attended" },
     { date:"2026-10-02", time:"20:00", venue:"예술의전당 콘서트홀", type:"orchestra",
       work:"KBS교향악단 × 정명훈의 말러 교향곡 4번", slug:"kbso-mahler4-2026",
-      composer:"Mahler", performer:"정명훈 지휘 · 소프라노 크리스티아네 카르크", rating:0, note:"말러 뤼케르트 가곡 · 교향곡 4번 G장조", status:"planned" },
+      composer:"Mahler", performer:"정명훈 지휘 · 소프라노 크리스티아네 카르크", rating:0, note:"말러 뤼케르트 가곡 · 교향곡 4번 G장조", status:"attended" },
     { date:"2026-10-03", time:"19:00", venue:"예술의전당 오페라극장", type:"ballet",
       work:"잠자는 숲속의 미녀", slug:"stage-tchaikovsky-sleeping-beauty",
-      composer:"Tchaikovsky", performer:"유니버설발레단", rating:0, note:"", status:"planned" },
+      composer:"Tchaikovsky", performer:"유니버설발레단", rating:0, note:"", status:"attended" },
     { date:"2026-11-28", time:"17:00", venue:"예술의전당 콘서트홀", type:"orchestra",
       work:"KBS교향악단 제832회 정기연주회", slug:"kbso-832-2026",
       composer:"", performer:"로버트 스파노 지휘 · 첼로 스티븐 이설리스", rating:0, note:"바버 현을 위한 아다지오 · 슈만 첼로 협주곡 Op.129 · 림스키-코르사코프 셰에라자데", status:"planned" },
