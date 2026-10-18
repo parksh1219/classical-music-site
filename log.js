@@ -7,7 +7,7 @@
 
   var KEY = "classical-log-v1";
   // 시드 버전. 올릴 때마다 기존 브라우저에도 1회 '병합'이 실행된다(사용자 기록은 보존).
-  var SEEDED = "classical-log-seeded-v14";
+  var SEEDED = "classical-log-seeded-v15";
 
   var TYPE_LABEL = {
     orchestra: "관현악", opera: "오페라", ballet: "발레",
@@ -15,7 +15,7 @@
   };
 
   // 예매 취소된 공연 — 시드 버전이 오르면 기존 브라우저에서도 1회 제거된다(사용자가 손댄 항목은 보존).
-  var SEED_REMOVE = ["verdi-opera-gala-2026"];
+  var SEED_REMOVE = ["verdi-opera-gala-2026", "spo-mozart-requiem-2026"];
 
   // 사용자 실제 예매 내역 (예술의전당) — 최초 1회만 주입. 관람 지난 공연은 attended.
   var SEED = [
@@ -33,9 +33,6 @@
     { date:"2026-10-13", time:"19:30", venue:"예술의전당 오페라극장", type:"ballet",
       work:"지젤", slug:"stage-adam-giselle",
       composer:"Adam", performer:"국립발레단 제211회 정기공연 · 박슬기/박종석(보도 기준)", rating:0, note:"파트리스 바르 안무 · 필립 엘리스 지휘 · 국립심포니오케스트라", status:"attended" },
-    { date:"2026-10-24", time:"17:00", venue:"예술의전당 콘서트홀", type:"orchestra",
-      work:"서울시향 얍 판 츠베덴의 모차르트 레퀴엠 ②", slug:"spo-mozart-requiem-2026",
-      composer:"Mozart", performer:"얍 판 츠베덴 지휘 · 피아노 루카스·아르투르 유센 · 홍주영/이아경/손지훈/이동환", rating:0, note:"모차르트 두 대의 피아노를 위한 협주곡 K.365 · 레퀴엠 K.626(쥐스마이어 판본)", status:"planned" },
     { date:"2026-10-29", time:"19:30", venue:"예술의전당 오페라극장", type:"opera",
       work:"라인의 황금 (니벨룽의 반지 서야)", slug:"stage-wagner-das-rheingold",
       composer:"Wagner", performer:"국립오페라단 정기공연", rating:0, note:"", status:"planned" },
@@ -62,7 +59,7 @@
       composer:"", performer:"BBC 필하모닉 · 욘 스토르고르스 지휘 · 바이올린 김봄소리", rating:0, note:"11년 만의 내한 · 파니 멘델스존 서곡 다장조 · 차이콥스키 바이올린 협주곡 · 베토벤 7번", status:"planned" },
     { date:"2026-10-18", time:"17:00", venue:"예술의전당 콘서트홀", type:"recital",
       work:"손열음 피아노 리사이틀", slug:"son-yeoleum-recital-2026",
-      composer:"", performer:"피아노 손열음", rating:0, note:"전설적 피아니스트들이 작곡·편곡한 소품 모음 프로그램", status:"planned" },
+      composer:"", performer:"피아노 손열음", rating:0, note:"전설적 피아니스트들이 작곡·편곡한 소품 22곡 + 앙코르 11곡", status:"attended" },
     { date:"2026-12-17", time:"19:30", venue:"예술의전당 콘서트홀", type:"orchestra",
       work:"서울시향 얍 판 츠베덴의 '환희의 송가' (베토벤 9번)", slug:"spo-ode-to-joy-2026",
       composer:"Beethoven", performer:"서울시향 · 얍 판 츠베덴 · 홍혜란/양송미/김성호/심기환", rating:0, note:"연말 제9 · 슈만 4대 호른 콘체르트슈튀크 Op.86 포함", status:"planned" },
