@@ -1,0 +1,5 @@
+# bkit 플러그인이 만드는 상태 파일 — 배포 금지
+docs/.bkit-*
+docs/.pdca-*
+.bkit/
+.claude/
