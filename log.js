@@ -7,7 +7,7 @@
 
   var KEY = "classical-log-v1";
   // 시드 버전. 올릴 때마다 기존 브라우저에도 1회 '병합'이 실행된다(사용자 기록은 보존).
-  var SEEDED = "classical-log-seeded-v15";
+  var SEEDED = "classical-log-seeded-v16";
 
   var TYPE_LABEL = {
     orchestra: "관현악", opera: "오페라", ballet: "발레",
@@ -17,7 +17,7 @@
   // 예매 취소된 공연 — 시드 버전이 오르면 기존 브라우저에서도 1회 제거된다(사용자가 손댄 항목은 보존).
   var SEED_REMOVE = ["verdi-opera-gala-2026", "spo-mozart-requiem-2026"];
 
-  // 사용자 실제 예매 내역 (예술의전당) — 최초 1회만 주입. 관람 지난 공연은 attended.
+  // 사용자 실제 예매 내역 (예술의전당·세종문화회관) — 최초 1회만 주입. 관람 지난 공연은 attended.
   var SEED = [
     // ── 관람 예정 ──
     { date:"2026-08-12", time:"19:30", venue:"예술의전당 콘서트홀", type:"orchestra",
@@ -36,6 +36,9 @@
     { date:"2026-10-29", time:"19:30", venue:"예술의전당 오페라극장", type:"opera",
       work:"라인의 황금 (니벨룽의 반지 서야)", slug:"stage-wagner-das-rheingold",
       composer:"Wagner", performer:"국립오페라단 정기공연", rating:0, note:"", status:"planned" },
+    { date:"2026-11-07", time:"17:00", venue:"세종문화회관 대극장", type:"opera",
+      work:"라 보엠", slug:"stage-puccini-la-boheme",
+      composer:"Puccini", performer:"서울시오페라단 · 김광현 지휘 · 황수미/김건우(보도 기준)", rating:0, note:"엄숙정 연출 · 2024년 초연 재공연", status:"planned" },
     { date:"2026-12-03", time:"17:00", venue:"예술의전당 오페라극장", type:"opera",
       work:"돈 카를로스", slug:"stage-verdi-don-carlos",
       composer:"Verdi", performer:"국립오페라단 정기공연", rating:0, note:"", status:"planned" },
