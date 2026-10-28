@@ -7,7 +7,7 @@
 
   var KEY = "classical-log-v1";
   // 시드 버전. 올릴 때마다 기존 브라우저에도 1회 '병합'이 실행된다(사용자 기록은 보존).
-  var SEEDED = "classical-log-seeded-v16";
+  var SEEDED = "classical-log-seeded-v18";
 
   var TYPE_LABEL = {
     orchestra: "관현악", opera: "오페라", ballet: "발레",
@@ -39,6 +39,9 @@
     { date:"2026-11-07", time:"17:00", venue:"세종문화회관 대극장", type:"opera",
       work:"라 보엠", slug:"stage-puccini-la-boheme",
       composer:"Puccini", performer:"서울시오페라단 · 김광현 지휘 · 황수미/김건우(보도 기준)", rating:0, note:"엄숙정 연출 · 2024년 초연 재공연", status:"planned" },
+    { date:"2026-11-13", time:"19:30", venue:"예술의전당 오페라극장", type:"ballet",
+      work:"카멜리아 레이디", slug:"stage-chopin-lady-of-the-camellias",
+      composer:"Chopin", performer:"국립발레단 제211회 정기공연 · 알리나 코조카루/양준영", rating:0, note:"존 노이마이어 안무 · 쇼팽 음악 · 원작 뒤마 피스 『춘희』", status:"planned" },
     { date:"2026-12-03", time:"17:00", venue:"예술의전당 오페라극장", type:"opera",
       work:"돈 카를로스", slug:"stage-verdi-don-carlos",
       composer:"Verdi", performer:"국립오페라단 정기공연", rating:0, note:"", status:"planned" },
