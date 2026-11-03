@@ -7,7 +7,7 @@
 
   var KEY = "classical-log-v1";
   // 시드 버전. 올릴 때마다 기존 브라우저에도 1회 '병합'이 실행된다(사용자 기록은 보존).
-  var SEEDED = "classical-log-seeded-v19";
+  var SEEDED = "classical-log-seeded-v20";
 
   var TYPE_LABEL = {
     orchestra: "관현악", opera: "오페라", ballet: "발레",
@@ -45,6 +45,9 @@
     { date:"2026-12-03", time:"17:00", venue:"예술의전당 오페라극장", type:"opera",
       work:"돈 카를로스", slug:"stage-verdi-don-carlos",
       composer:"Verdi", performer:"국립오페라단 정기공연", rating:0, note:"", status:"planned" },
+    { date:"2026-12-20", time:"18:30", venue:"예술의전당 오페라극장", type:"ballet",
+      work:"호두까기인형", slug:"stage-tchaikovsky-nutcracker",
+      composer:"Tchaikovsky", performer:"국립발레단 · 박슬기/허서명", rating:0, note:"유리 그리고로비치 안무 · 필립 엘리스 지휘 · 국립심포니오케스트라", status:"planned" },
     { date:"2026-09-12", time:"17:00", venue:"예술의전당 콘서트홀", type:"opera",
       work:"2026 예술의전당 회원음악회 — 비제 《카르멘》 하이라이트", slug:"sac-members-concert-2026",
       composer:"Bizet", performer:"데이비드 이 지휘 · 경기필 · 백재은/박성규/김종표/홍주영", rating:0, note:"오페라 카르멘 1~4막 하이라이트(콘서트 오페라)", status:"attended" },
