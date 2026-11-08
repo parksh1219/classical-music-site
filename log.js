@@ -7,7 +7,7 @@
 
   var KEY = "classical-log-v1";
   // 시드 버전. 올릴 때마다 기존 브라우저에도 1회 '병합'이 실행된다(사용자 기록은 보존).
-  var SEEDED = "classical-log-seeded-v20";
+  var SEEDED = "classical-log-seeded-v21";
 
   var TYPE_LABEL = {
     orchestra: "관현악", opera: "오페라", ballet: "발레",
@@ -38,7 +38,7 @@
       composer:"Wagner", performer:"국립오페라단 정기공연", rating:0, note:"", status:"attended" },
     { date:"2026-11-07", time:"17:00", venue:"세종문화회관 대극장", type:"opera",
       work:"라 보엠", slug:"stage-puccini-la-boheme",
-      composer:"Puccini", performer:"서울시오페라단 · 김광현 지휘 · 황수미/김건우(보도 기준)", rating:0, note:"엄숙정 연출 · 2024년 초연 재공연", status:"planned" },
+      composer:"Puccini", performer:"서울시오페라단 · 김광현 지휘 · 황수미/김건우(보도 기준)", rating:0, note:"엄숙정 연출 · 2024년 초연 재공연", status:"attended" },
     { date:"2026-11-13", time:"19:30", venue:"예술의전당 오페라극장", type:"ballet",
       work:"카멜리아 레이디", slug:"stage-chopin-lady-of-the-camellias",
       composer:"Chopin", performer:"국립발레단 제211회 정기공연 · 알리나 코조카루/양준영", rating:0, note:"존 노이마이어 안무 · 쇼팽 음악 · 원작 뒤마 피스 『춘희』", status:"planned" },
@@ -62,7 +62,7 @@
       composer:"Tchaikovsky", performer:"유니버설발레단", rating:0, note:"", status:"attended" },
     { date:"2026-11-28", time:"17:00", venue:"예술의전당 콘서트홀", type:"orchestra",
       work:"KBS교향악단 제832회 정기연주회", slug:"kbso-832-2026",
-      composer:"", performer:"로버트 스파노 지휘 · 첼로 스티븐 이설리스", rating:0, note:"바버 현을 위한 아다지오 · 슈만 첼로 협주곡 Op.129 · 림스키-코르사코프 셰에라자데", status:"planned" },
+      composer:"", performer:"잔카를로 게레로 지휘 · 첼로 스티븐 이설리스", rating:0, note:"바버 현을 위한 아다지오 · 슈만 첼로 협주곡 Op.129 · 림스키-코르사코프 셰에라자데", status:"planned" },
     { date:"2026-12-12", time:"17:00", venue:"예술의전당 콘서트홀", type:"orchestra",
       work:"욘 스토르고르스 & BBC 필하모닉", slug:"bbc-philharmonic-2026",
       composer:"", performer:"BBC 필하모닉 · 욘 스토르고르스 지휘 · 바이올린 김봄소리", rating:0, note:"11년 만의 내한 · 파니 멘델스존 서곡 다장조 · 차이콥스키 바이올린 협주곡 · 베토벤 7번", status:"planned" },
