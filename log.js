@@ -7,7 +7,7 @@
 
   var KEY = "classical-log-v1";
   // 시드 버전. 올릴 때마다 기존 브라우저에도 1회 '병합'이 실행된다(사용자 기록은 보존).
-  var SEEDED = "classical-log-seeded-v21";
+  var SEEDED = "classical-log-seeded-v22";
 
   var TYPE_LABEL = {
     orchestra: "관현악", opera: "오페라", ballet: "발레",
@@ -41,7 +41,7 @@
       composer:"Puccini", performer:"서울시오페라단 · 김광현 지휘 · 황수미/김건우(보도 기준)", rating:0, note:"엄숙정 연출 · 2024년 초연 재공연", status:"attended" },
     { date:"2026-11-13", time:"19:30", venue:"예술의전당 오페라극장", type:"ballet",
       work:"카멜리아 레이디", slug:"stage-chopin-lady-of-the-camellias",
-      composer:"Chopin", performer:"국립발레단 제211회 정기공연 · 알리나 코조카루/양준영", rating:0, note:"존 노이마이어 안무 · 쇼팽 음악 · 원작 뒤마 피스 『춘희』", status:"planned" },
+      composer:"Chopin", performer:"국립발레단 제212회 정기공연 · 한나래/곽동현(코조카루 부상으로 변경)", rating:0, note:"존 노이마이어 안무 · 쇼팽 음악 · 원작 뒤마 피스 『춘희』", status:"planned" },
     { date:"2026-12-03", time:"17:00", venue:"예술의전당 오페라극장", type:"opera",
       work:"돈 카를로스", slug:"stage-verdi-don-carlos",
       composer:"Verdi", performer:"국립오페라단 정기공연", rating:0, note:"", status:"planned" },
@@ -115,11 +115,12 @@
           if (existing.status === "planned" && s.status === "attended") { existing.status = "attended"; changed = true; }
           // 사용자가 손대지 않은(별점 0·메모 없음) 시드 항목은 실제 예매와 일정 동기화
           //   예) 백조의 호수 8/22(취소) → 8/20 재예매 반영
-          var untouched = (Number(existing.rating) || 0) === 0 && !(existing.note || "").trim();
+          var untouched = (Number(existing.rating) || 0) === 0 && (!(existing.note || "").trim() || existing.note === s.note);
           if (untouched) {
             if (s.date && existing.date !== s.date) { existing.date = s.date; changed = true; }
             if (s.time && existing.time !== s.time) { existing.time = s.time; changed = true; }
             if (s.venue && existing.venue !== s.venue) { existing.venue = s.venue; changed = true; }
+            if (s.performer && existing.performer !== s.performer) { existing.performer = s.performer; changed = true; }
           }
         }
       });
